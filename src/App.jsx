@@ -1,20 +1,10 @@
+import "./App.css";
+
 function App() {
   return (
     <div className="App">
       {/* HEADER */}
-      <header
-        style={{
-          backgroundColor: "blue",
-          height: "3.4rem",
-          position: "fixed",
-          width: "100%",
-          top: 0,
-          left: 0,
-          zIndex: 1000,
-        }}
-      >
-        head
-      </header>
+      <header>head</header>
       {/* === HEADER === */}
       {/* FIRST SECTION: HERO */}
       <div
@@ -25,7 +15,7 @@ function App() {
           justifyContent: "center",
           alignItems: "center",
           display: "flex",
-          marginTop: "3.4rem"
+          marginTop: "3.4rem",
         }}
       >
         hero

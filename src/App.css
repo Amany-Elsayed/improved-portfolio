@@ -1,0 +1,12 @@
+header {
+  background: rgba(255, 255, 255, 0.015);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px); /*this is for safari support*/
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  height: 3.4rem;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
