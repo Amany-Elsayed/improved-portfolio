@@ -1,50 +1,29 @@
 import "./App.css";
 
 // MATERIAL UI COMPONENTS
-import Button from '@mui/material/Button';
-import Menu from '@mui/material/Menu';
-import MenuItem from '@mui/material/MenuItem';
+// import Button from '@mui/material/Button';
+// import Menu from '@mui/material/Menu';
+// import MenuItem from '@mui/material/MenuItem';
 
 // STATES
-import { useState } from "react";
+// import { useState } from "react";
 
 function App() {
-  const [anchorEl, setAnchorEl] = useState(null);
-  const open = Boolean(anchorEl);
-  const handleClick = (event) => {
-    setAnchorEl(event.currentTarget);
-  };
-  const handleClose = () => {
-    setAnchorEl(null);
-  };
   return (
     <div className="App">
       {/* HEADER */}
       <header>
-        <Button
-        id="basic-button"
-        aria-controls={open ? 'basic-menu' : undefined}
-        aria-haspopup="true"
-        aria-expanded={open ? 'true' : undefined}
-        onClick={handleClick}
-      >
-        Dashboard
-      </Button>
-      <Menu
-        id="basic-menu"
-        anchorEl={anchorEl}
-        open={open}
-        onClose={handleClose}
-        slotProps={{
-          list: {
-            'aria-labelledby': 'basic-button',
-          },
-        }}
-      >
-        <MenuItem onClick={handleClose}>Profile</MenuItem>
-        <MenuItem onClick={handleClose}>My account</MenuItem>
-        <MenuItem onClick={handleClose}>Logout</MenuItem>
-      </Menu>
+        {/* HEADER HYPERLINKS */}
+        <nav>
+          <h2>【=︿=】</h2>
+          <ul>
+            <li><a href="#about-section">About</a></li>
+            <li><a href="#experience-section">Experience</a></li>
+            <li><a href="#project-section">Projects</a></li>
+            <li><a href="#contact-section">Contact</a></li>
+          </ul>
+        </nav>
+        {/* === HEADER HYPERLINKS === */}
       </header>
       {/* === HEADER === */}
       {/* FIRST SECTION: HERO */}
@@ -64,7 +43,7 @@ function App() {
       {/* === FIRST SECTION: HERO === */}
       {/* SECOND SECTION: ABOUT */}
       <div
-        className="about-section"
+        id="about-section"
         style={{
           backgroundColor: "red",
           height: "30rem",
@@ -78,7 +57,7 @@ function App() {
       {/* === SECOND SECTION: ABOUT === */}
       {/* THIRD SECTION: EXPERIENCE */}
       <div
-        className="experience-section"
+        id="experience-section"
         style={{
           backgroundColor: "purple",
           height: "30rem",
@@ -92,7 +71,7 @@ function App() {
       {/* === THIRD SECTION: EXPERIENCE */}
       {/* FOURTH SECTION: PROJECTS */}
       <div
-        className="project-section"
+        id="project-section"
         style={{
           backgroundColor: "yellow",
           height: "30rem",
@@ -106,7 +85,7 @@ function App() {
       {/* === FOURTH SECTION: PROJECTS === */}
       {/* FIFTH SECTION: CONTACTS */}
       <div
-        className="contact-section"
+        id="contact-section"
         style={{
           backgroundColor: "darkcyan",
           height: "30rem",
