@@ -4,6 +4,7 @@ import "./App.css";
 // import Button from '@mui/material/Button';
 // import Menu from '@mui/material/Menu';
 // import MenuItem from '@mui/material/MenuItem';
+// import Container from '@mui/material/Container';
 
 // STATES
 // import { useState } from "react";
@@ -15,12 +16,33 @@ function App() {
       <header>
         {/* HEADER HYPERLINKS */}
         <nav>
-          <h2>【=︿=】</h2>
-          <ul>
-            <li><a href="#about-section">About</a></li>
-            <li><a href="#experience-section">Experience</a></li>
-            <li><a href="#project-section">Projects</a></li>
-            <li><a href="#contact-section">Contact</a></li>
+          <div className="logo-container">
+            <h2 className="logo">
+              <span className="logo--top">【=︿=】</span>
+              <span className="logo--bottom">【=︿=】</span>
+            </h2>
+          </div>
+          <ul className="nav-list">
+            <li className="nav-list-item">
+              <a href="#about-section" className="nav-list-link">
+                About
+              </a>
+            </li>
+            <li className="nav-list-item">
+              <a href="#experience-section" className="nav-list-link">
+                Experience
+              </a>
+            </li>
+            <li className="nav-list-item">
+              <a href="#project-section" className="nav-list-link">
+                Projects
+              </a>
+            </li>
+            <li className="nav-list-item">
+              <a href="#contact-section" className="nav-list-link">
+                Contact
+              </a>
+            </li>
           </ul>
         </nav>
         {/* === HEADER HYPERLINKS === */}
