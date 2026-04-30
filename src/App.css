@@ -190,7 +190,7 @@ nav {
     linear-gradient(-120deg, var(--_l)),
     linear-gradient(-60deg, var(--_l)) #081a24;
   background-size: var(--s) calc(3.5 * var(--s));
-  animation: p infinite 2s linear;
+  animation: p infinite 5s linear;
 }
 
 .hero-section {

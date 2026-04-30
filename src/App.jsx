@@ -7,8 +7,8 @@ import Button from "@mui/material/Button";
 import Container from "@mui/material/Container";
 
 // MATERIAL UI ICONS
-import DescriptionIcon from '@mui/icons-material/Description';
-import AlternateEmailIcon from '@mui/icons-material/AlternateEmail';
+import DescriptionIcon from "@mui/icons-material/Description";
+import AlternateEmailIcon from "@mui/icons-material/AlternateEmail";
 
 // STATES
 // import { useState } from "react";
@@ -54,17 +54,22 @@ function App() {
       {/* === HEADER === */}
       {/* FIRST SECTION: HERO */}
       <div className="hero-section">
-        <Container
-          className="hero-text"
-          maxWidth="sm"
-        >
+        <Container className="hero-text" maxWidth="xl">
           <h3>Hello, Im</h3>
           <h1>Amany Elsayed</h1>
           <h2>Full Stack Web Developer</h2>
-          <Button variant="contained" style={{ margin: '1rem' }} startIcon={<DescriptionIcon />}>
+          <Button
+            variant="contained"
+            style={{ margin: "1rem" }}
+            startIcon={<DescriptionIcon />}
+          >
             show CV
           </Button>
-          <Button variant="outlined" style={{ margin: '1rem' }} startIcon={<AlternateEmailIcon />}>
+          <Button
+            variant="outlined"
+            style={{ margin: "1rem" }}
+            startIcon={<AlternateEmailIcon />}
+          >
             Contact
           </Button>
         </Container>
@@ -75,7 +80,7 @@ function App() {
         id="about-section"
         style={{
           backgroundColor: "red",
-          height: "30rem",
+          height: "100vh",
           justifyContent: "center",
           alignItems: "center",
           display: "flex",
@@ -89,7 +94,7 @@ function App() {
         id="experience-section"
         style={{
           backgroundColor: "purple",
-          height: "30rem",
+          height: "100vh",
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
@@ -103,7 +108,7 @@ function App() {
         id="project-section"
         style={{
           backgroundColor: "yellow",
-          height: "30rem",
+          height: "100vh",
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
@@ -117,7 +122,7 @@ function App() {
         id="contact-section"
         style={{
           backgroundColor: "darkcyan",
-          height: "30rem",
+          height: "100vh",
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
