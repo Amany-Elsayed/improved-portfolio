@@ -99,7 +99,9 @@ nav {
   top: 0;
   display: inline-block;
   clip-path: polygon(0% 55%, 0% 0%, 100% 0%, 100% 35%);
-  transition: transform 0.5s cubic-bezier(.12,.8,.57,1.00) 0.42s, color 0.5s ease 0.22s;
+  transition:
+    transform 0.5s cubic-bezier(0.12, 0.8, 0.57, 1) 0.42s,
+    color 0.5s ease 0.22s;
 }
 
 .logo--top::after {
@@ -123,7 +125,9 @@ nav {
   background-position: right bottom;
   background-repeat: no-repeat;
   background-image: linear-gradient(to right, #fff 50%, transparent 50%);
-  transition: color 0.5s ease 0.22s, background-position 0.2s ease 0.22s;
+  transition:
+    color 0.5s ease 0.22s,
+    background-position 0.2s ease 0.22s;
 }
 
 .logo--bottom::after {
@@ -153,7 +157,9 @@ nav {
 .logo:hover .logo--bottom {
   color: #aaa;
   background-position: 100% bottom;
-  transition: color 0.5s ease 0.2s, background-position 0.2s ease;
+  transition:
+    color 0.5s ease 0.2s,
+    background-position 0.2s ease;
 }
 
 .logo:hover .logo--bottom::after {
@@ -165,3 +171,63 @@ nav {
 /* === LOGO ANIMATION === */
 
 /* == --------------------------HEADER----------------------------------------- == */
+
+/* --------------------------HERO----------------------------------------- */
+
+.hero-section,
+.hero-section::before {
+  height: 100vh;
+  --s: 56px;
+  --g: 10px;
+  --c: #ddfeff;
+  --_l:
+    #0000 calc(33% - 1 * var(--g)),
+    var(--c) calc(33% - 1 * var(--g)) 33%, #0000 30%;
+  background:
+    repeating-linear-gradient(var(--c) 0 var(--g), #0000 0 50%) 0
+      calc(0.866 * var(--s) - var(--g) / 2),
+    conic-gradient(from -150deg at var(--g) 50%, var(--c) 120deg, #0000 0),
+    linear-gradient(-120deg, var(--_l)),
+    linear-gradient(-60deg, var(--_l)) #081a24;
+  background-size: var(--s) calc(3.5 * var(--s));
+  animation: p infinite 2s linear;
+}
+
+.hero-section {
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.hero-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  mask: linear-gradient(#000 50%, #0000 0) 0 calc(0.866 * var(--s)) / 100%
+    calc(3.466 * var(--s));
+  animation-direction: reverse;
+}
+
+.hero-section::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(11, 72, 107, 0.55); /* matches your #0b486b base color */
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 0;
+}
+
+.hero-section > * {
+  position: relative;
+  z-index: 1;
+}
+
+@keyframes p {
+  to {
+    background-position-x: calc(-1 * var(--s));
+  }
+}
+
+/* == -------------------------- HERO ----------------------------------------- == */

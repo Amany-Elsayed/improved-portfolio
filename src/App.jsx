@@ -1,10 +1,14 @@
 import "./App.css";
 
 // MATERIAL UI COMPONENTS
-// import Button from '@mui/material/Button';
+import Button from "@mui/material/Button";
 // import Menu from '@mui/material/Menu';
 // import MenuItem from '@mui/material/MenuItem';
-// import Container from '@mui/material/Container';
+import Container from "@mui/material/Container";
+
+// MATERIAL UI ICONS
+import DescriptionIcon from '@mui/icons-material/Description';
+import AlternateEmailIcon from '@mui/icons-material/AlternateEmail';
 
 // STATES
 // import { useState } from "react";
@@ -49,18 +53,21 @@ function App() {
       </header>
       {/* === HEADER === */}
       {/* FIRST SECTION: HERO */}
-      <div
-        className="Hero-section"
-        style={{
-          backgroundColor: "green",
-          height: "30rem",
-          justifyContent: "center",
-          alignItems: "center",
-          display: "flex",
-          marginTop: "3.4rem",
-        }}
-      >
-        hero
+      <div className="hero-section">
+        <Container
+          className="hero-text"
+          maxWidth="sm"
+        >
+          <h3>Hello, Im</h3>
+          <h1>Amany Elsayed</h1>
+          <h2>Full Stack Web Developer</h2>
+          <Button variant="contained" style={{ margin: '1rem' }} startIcon={<DescriptionIcon />}>
+            show CV
+          </Button>
+          <Button variant="outlined" style={{ margin: '1rem' }} startIcon={<AlternateEmailIcon />}>
+            Contact
+          </Button>
+        </Container>
       </div>
       {/* === FIRST SECTION: HERO === */}
       {/* SECOND SECTION: ABOUT */}
