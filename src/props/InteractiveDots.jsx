@@ -7,8 +7,63 @@ const parseColor = (hex) => ({
   b: parseInt(hex.slice(5, 7), 16),
 });
 
+/**
+ * Parses a gradient config object into something the canvas can use.
+ * Accepts either:
+ *   - A plain hex string: "#010011"  (solid background)
+ *   - A gradient config object:
+ *       {
+ *         stops: [{ color: "#010011", position: 0 }, { color: "#0d0d2b", position: 1 }],
+ *         angle: 135,       // degrees, default 90
+ *         animated: true,   // whether the gradient shifts over time, default false
+ *         speed: 0.3,       // how fast it shifts (0.1 = slow, 1 = fast), default 0.3
+ *       }
+ */
+const isGradientConfig = (bg) =>
+  bg && typeof bg === "object" && Array.isArray(bg.stops);
+
+const buildCanvasGradient = (ctx, width, height, config, time) => {
+  const angle = ((config.angle ?? 90) * Math.PI) / 180;
+
+  // Animate both angle and length for a visible sweeping wash of color
+  const speed = config.speed ?? 0.3;
+  const angleShift = config.animated ? Math.sin(time * speed) * 0.6 : 0;
+  const animatedAngle = angle + angleShift;
+
+  // Pulse the gradient length so colors visibly sweep across the canvas
+  const lenMultiplier = config.animated
+    ? 1 + Math.sin(time * speed * 0.7) * 0.5
+    : 1;
+
+  const cx = width / 2;
+  const cy = height / 2;
+  const len = (Math.sqrt(width * width + height * height) / 2) * lenMultiplier;
+
+  const x1 = cx - Math.cos(animatedAngle) * len;
+  const y1 = cy - Math.sin(animatedAngle) * len;
+  const x2 = cx + Math.cos(animatedAngle) * len;
+  const y2 = cy + Math.sin(animatedAngle) * len;
+
+  const gradient = ctx.createLinearGradient(x1, y1, x2, y2);
+  config.stops.forEach(({ color, position }) => {
+    gradient.addColorStop(Math.max(0, Math.min(1, position)), color);
+  });
+  return gradient;
+};
+
 const InteractiveDots = ({
-  backgroundColor = "#F0EEE6",
+  /**
+   * background accepts:
+   *   - a hex string:  "#010011"
+   *   - a gradient config object:
+   *       {
+   *         stops: [{ color: "#010011", position: 0 }, { color: "#0d0d2b", position: 1 }],
+   *         angle: 135,
+   *         animated: true,
+   *         speed: 0.3,
+   *       }
+   */
+  background = "#010011",
   dotColor = "#666666",
   gridSpacing = 30,
   animationSpeed = 0.005,
@@ -21,7 +76,7 @@ const InteractiveDots = ({
   const dotsRef = useRef([]);
   const dprRef = useRef(1);
   const colorRef = useRef(parseColor(dotColor));
-  const backgroundColorRef = useRef(backgroundColor);
+  const backgroundRef = useRef(background);
   const animationSpeedRef = useRef(animationSpeed);
 
   useEffect(() => {
@@ -29,8 +84,8 @@ const InteractiveDots = ({
   }, [dotColor]);
 
   useEffect(() => {
-    backgroundColorRef.current = backgroundColor;
-  }, [backgroundColor]);
+    backgroundRef.current = background;
+  }, [background]);
 
   useEffect(() => {
     animationSpeedRef.current = animationSpeed;
@@ -112,8 +167,20 @@ const InteractiveDots = ({
     const currentTime = Date.now();
     const canvasWidth = canvas.clientWidth;
     const canvasHeight = canvas.clientHeight;
+    const bg = backgroundRef.current;
 
-    ctx.fillStyle = backgroundColorRef.current;
+    // Draw background — solid color or animated canvas gradient
+    if (isGradientConfig(bg)) {
+      ctx.fillStyle = buildCanvasGradient(
+        ctx,
+        canvasWidth,
+        canvasHeight,
+        bg,
+        timeRef.current
+      );
+    } else {
+      ctx.fillStyle = bg;
+    }
     ctx.fillRect(0, 0, canvasWidth, canvasHeight);
 
     const mouseX = mouseRef.current.x;
@@ -131,9 +198,8 @@ const InteractiveDots = ({
       const dx = dot.originalX - mouseX;
       const dy = dot.originalY - mouseY;
       const distSq = dx * dx + dy * dy;
-      const mouseInfluence = distSq < 150 * 150
-        ? Math.max(0, 1 - Math.sqrt(distSq) / 150)
-        : 0;
+      const mouseInfluence =
+        distSq < 150 * 150 ? Math.max(0, 1 - Math.sqrt(distSq) / 150) : 0;
 
       let rippleInfluence = 0;
       for (let i = 0; i < ripples.current.length; i++) {
@@ -168,7 +234,12 @@ const InteractiveDots = ({
         BUCKETS - 1,
         Math.floor(((opacity - 0.3) / 0.7) * BUCKETS)
       );
-      buckets[bucketIndex].push({ x: dot.originalX, y: dot.originalY, size: dotSize, opacity });
+      buckets[bucketIndex].push({
+        x: dot.originalX,
+        y: dot.originalY,
+        size: dotSize,
+        opacity,
+      });
     });
 
     for (let i = 0; i < BUCKETS; i++) {
@@ -195,7 +266,6 @@ const InteractiveDots = ({
 
     const handleResize = () => resizeCanvas();
     window.addEventListener("resize", handleResize);
-    // Listen on window so mouse works even when cursor is over elements above the canvas
     window.addEventListener("mousemove", handleMouseMove);
     window.addEventListener("mousedown", handleMouseDown);
     window.addEventListener("mouseup", handleMouseUp);
@@ -225,7 +295,6 @@ const InteractiveDots = ({
         width: "100%",
         height: "100%",
         overflow: "hidden",
-        backgroundColor,
         pointerEvents: "none",
       }}
     >

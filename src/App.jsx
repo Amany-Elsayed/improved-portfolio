@@ -57,12 +57,21 @@ function App() {
       {/* === HEADER === */}
       {/* FIRST SECTION: HERO */}
       <div className="hero-section">
-          <InteractiveDots
-            backgroundColor="#010011"
-            dotColor="#d8d8d8"
-            gridSpacing={30}
-            animationSpeed={0.005}
-          />
+        {/* BACKGROUND ANIMATION */}
+        <InteractiveDots
+          background={{
+            stops: [
+              { color: "#010011", position: 0 },
+              { color: "#000024", position: 0.5 },
+              { color: "#070066", position: 1 },
+            ],
+            angle: 135, // direction in degrees (0 = left→right, 90 = top→bottom)
+            animated: true, // makes it slowly shift back and forth
+            speed: 0.8, // 0.1 = very slow, 1 = fast
+          }}
+          dotColor="#d8d8d8"
+        />
+        {/* == BACKGROUND ANIMATION == */}
         <Container className="hero-text" maxWidth="xl">
           <h3>Hello, Im</h3>
           <h1>Amany Elsayed</h1>
