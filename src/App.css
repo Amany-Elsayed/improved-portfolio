@@ -185,7 +185,7 @@ nav {
 
 .hero-text {
   position: relative;
-  background: radial-gradient(ellipse at center, #cbffff3a 0%, transparent 70%);;
+  background: radial-gradient(ellipse at center, #cbffff3a 0%, transparent 70%);
   border-radius: 20rem;
   z-index: 1;
 }
