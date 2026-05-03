@@ -62,7 +62,6 @@ function App() {
             dotColor="#d8d8d8"
             gridSpacing={30}
             animationSpeed={0.005}
-            removeWaveLine={true}
           />
         <Container className="hero-text" maxWidth="xl">
           <h3>Hello, Im</h3>

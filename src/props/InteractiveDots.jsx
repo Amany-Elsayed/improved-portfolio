@@ -24,7 +24,6 @@ const InteractiveDots = ({
   const backgroundColorRef = useRef(backgroundColor);
   const animationSpeedRef = useRef(animationSpeed);
 
-  // Keep refs in sync with props so animate() never needs to be recreated
   useEffect(() => {
     colorRef.current = parseColor(dotColor);
   }, [dotColor]);
@@ -96,7 +95,6 @@ const InteractiveDots = ({
     const y = e.clientY - rect.top;
     const now = Date.now();
     ripples.current.push({ x, y, time: now, intensity: 2 });
-    // Clean up old ripples on click
     ripples.current = ripples.current.filter((r) => now - r.time < 3000);
   }, []);
 
@@ -104,7 +102,6 @@ const InteractiveDots = ({
     mouseRef.current.isDown = false;
   }, []);
 
-  // Stable animate — no prop dependencies, reads everything via refs
   const animate = useCallback(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
@@ -121,21 +118,23 @@ const InteractiveDots = ({
 
     const mouseX = mouseRef.current.x;
     const mouseY = mouseRef.current.y;
-    const { r, g, b } = colorRef.current; // parsed once per frame, not per dot
+    const { r, g, b } = colorRef.current;
 
-    // Clean up expired ripples once per frame
     ripples.current = ripples.current.filter(
-      (rip) => currentTime - rip.time < 3000,
+      (rip) => currentTime - rip.time < 3000
     );
 
+    const BUCKETS = 20;
+    const buckets = Array.from({ length: BUCKETS }, () => []);
+
     dotsRef.current.forEach((dot) => {
-      // Mouse influence
       const dx = dot.originalX - mouseX;
       const dy = dot.originalY - mouseY;
-      const distance = Math.sqrt(dx * dx + dy * dy);
-      const mouseInfluence = Math.max(0, 1 - distance / 150);
+      const distSq = dx * dx + dy * dy;
+      const mouseInfluence = distSq < 150 * 150
+        ? Math.max(0, 1 - Math.sqrt(distSq) / 150)
+        : 0;
 
-      // Ripple influence
       let rippleInfluence = 0;
       for (let i = 0; i < ripples.current.length; i++) {
         const ripple = ripples.current[i];
@@ -162,14 +161,27 @@ const InteractiveDots = ({
         0.3,
         0.6 +
           totalInfluence * 0.4 +
-          Math.abs(Math.sin(timeRef.current * 0.5 + dot.phase)) * 0.1,
+          Math.abs(Math.sin(timeRef.current * 0.5 + dot.phase)) * 0.1
       );
 
-      ctx.beginPath();
-      ctx.arc(dot.originalX, dot.originalY, dotSize, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(${r}, ${g}, ${b}, ${opacity})`;
-      ctx.fill();
+      const bucketIndex = Math.min(
+        BUCKETS - 1,
+        Math.floor(((opacity - 0.3) / 0.7) * BUCKETS)
+      );
+      buckets[bucketIndex].push({ x: dot.originalX, y: dot.originalY, size: dotSize, opacity });
     });
+
+    for (let i = 0; i < BUCKETS; i++) {
+      if (buckets[i].length === 0) continue;
+      const representativeOpacity = buckets[i][0].opacity;
+      ctx.fillStyle = `rgba(${r}, ${g}, ${b}, ${representativeOpacity.toFixed(2)})`;
+      ctx.beginPath();
+      for (const dot of buckets[i]) {
+        ctx.moveTo(dot.x + dot.size, dot.y);
+        ctx.arc(dot.x, dot.y, dot.size, 0, Math.PI * 2);
+      }
+      ctx.fill();
+    }
 
     // eslint-disable-next-line react-hooks/immutability
     animationFrameId.current = requestAnimationFrame(animate);
@@ -183,16 +195,17 @@ const InteractiveDots = ({
 
     const handleResize = () => resizeCanvas();
     window.addEventListener("resize", handleResize);
-    canvas.addEventListener("mousemove", handleMouseMove);
-    canvas.addEventListener("mousedown", handleMouseDown);
+    // Listen on window so mouse works even when cursor is over elements above the canvas
+    window.addEventListener("mousemove", handleMouseMove);
+    window.addEventListener("mousedown", handleMouseDown);
     window.addEventListener("mouseup", handleMouseUp);
 
     animationFrameId.current = requestAnimationFrame(animate);
 
     return () => {
       window.removeEventListener("resize", handleResize);
-      canvas.removeEventListener("mousemove", handleMouseMove);
-      canvas.removeEventListener("mousedown", handleMouseDown);
+      window.removeEventListener("mousemove", handleMouseMove);
+      window.removeEventListener("mousedown", handleMouseDown);
       window.removeEventListener("mouseup", handleMouseUp);
       if (animationFrameId.current) {
         cancelAnimationFrame(animationFrameId.current);
@@ -213,6 +226,7 @@ const InteractiveDots = ({
         height: "100%",
         overflow: "hidden",
         backgroundColor,
+        pointerEvents: "none",
       }}
     >
       <canvas
