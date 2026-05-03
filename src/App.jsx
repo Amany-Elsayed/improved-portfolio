@@ -72,10 +72,9 @@ function App() {
           dotColor="#d8d8d8"
         />
         {/* == BACKGROUND ANIMATION == */}
-        <Container className="hero-text" maxWidth="xl">
-          <h3>Hello, Im</h3>
-          <h1>Amany Elsayed</h1>
-          <h2>Full Stack Web Developer</h2>
+        <Container className="hero-text" maxWidth="lg">
+          <h1 className="cursor hero-h1">I engineer full-stack experiences</h1>
+          <h1 className="cursor hero-h1">From circuits to code</h1>
           <Button
             variant="contained"
             style={{ margin: "1rem" }}
