@@ -10,6 +10,9 @@ import Container from "@mui/material/Container";
 import DescriptionIcon from "@mui/icons-material/Description";
 import AlternateEmailIcon from "@mui/icons-material/AlternateEmail";
 
+// COMPONENTS
+import InteractiveDots from "./props/InteractiveDots";
+
 // STATES
 // import { useState } from "react";
 
@@ -54,6 +57,13 @@ function App() {
       {/* === HEADER === */}
       {/* FIRST SECTION: HERO */}
       <div className="hero-section">
+          <InteractiveDots
+            backgroundColor="#010011"
+            dotColor="#d8d8d8"
+            gridSpacing={30}
+            animationSpeed={0.005}
+            removeWaveLine={true}
+          />
         <Container className="hero-text" maxWidth="xl">
           <h3>Hello, Im</h3>
           <h1>Amany Elsayed</h1>
