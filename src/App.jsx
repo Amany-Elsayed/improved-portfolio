@@ -10,10 +10,15 @@ import Container from "@mui/material/Container";
 import DescriptionIcon from "@mui/icons-material/Description";
 import AlternateEmailIcon from "@mui/icons-material/AlternateEmail";
 
+// COMPONENTS
+import CodeSpanAnimation from './CodeSpanAnimation.jsx';
+
 // STATES
-// import { useState } from "react";
+// import { useEffect, useState } from "react";
+
 
 function App() {
+
   return (
     <div className="App">
       {/* HEADER */}
@@ -54,10 +59,12 @@ function App() {
       {/* === HEADER === */}
       {/* FIRST SECTION: HERO */}
       <div className="hero-section">
-
         <Container className="hero-text" maxWidth="lg">
-          <h1 className="cursor hero-h1">From Circuits to Code</h1>
-          <h1 className="cursor hero-h1">I Engineer Full-Stack Experiences</h1>
+          <h1 className="hero-h1">
+            From <span className="circuit-span">Circuits</span> to{" "}
+            <CodeSpanAnimation />
+          </h1>
+          <h2 className="hero-h2">I Engineer Full-Stack Experiences</h2>
           <Button
             variant="contained"
             style={{ margin: "1rem" }}
