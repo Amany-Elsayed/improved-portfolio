@@ -10,9 +10,6 @@ import Container from "@mui/material/Container";
 import DescriptionIcon from "@mui/icons-material/Description";
 import AlternateEmailIcon from "@mui/icons-material/AlternateEmail";
 
-// COMPONENTS
-import InteractiveDots from "./props/InteractiveDots";
-
 // STATES
 // import { useState } from "react";
 
@@ -57,24 +54,10 @@ function App() {
       {/* === HEADER === */}
       {/* FIRST SECTION: HERO */}
       <div className="hero-section">
-        {/* BACKGROUND ANIMATION */}
-        <InteractiveDots
-          background={{
-            stops: [
-              { color: "#010011", position: 0 },
-              { color: "#000024", position: 0.5 },
-              { color: "#070066", position: 1 },
-            ],
-            angle: 135, // direction in degrees (0 = left→right, 90 = top→bottom)
-            animated: true, // makes it slowly shift back and forth
-            speed: 0.8, // 0.1 = very slow, 1 = fast
-          }}
-          dotColor="#d8d8d8"
-        />
-        {/* == BACKGROUND ANIMATION == */}
+
         <Container className="hero-text" maxWidth="lg">
-          <h1 className="cursor hero-h1">I engineer full-stack experiences</h1>
-          <h1 className="cursor hero-h1">From circuits to code</h1>
+          <h1 className="cursor hero-h1">From Circuits to Code</h1>
+          <h1 className="cursor hero-h1">I Engineer Full-Stack Experiences</h1>
           <Button
             variant="contained"
             style={{ margin: "1rem" }}
