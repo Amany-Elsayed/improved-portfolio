@@ -11,14 +11,12 @@ import DescriptionIcon from "@mui/icons-material/Description";
 import AlternateEmailIcon from "@mui/icons-material/AlternateEmail";
 
 // COMPONENTS
-import CodeSpanAnimation from './CodeSpanAnimation.jsx';
+import CodeSpanAnimation from "./components/CodeSpanAnimation";
 
 // STATES
 // import { useEffect, useState } from "react";
 
-
 function App() {
-
   return (
     <div className="App">
       {/* HEADER */}
@@ -59,6 +57,13 @@ function App() {
       {/* === HEADER === */}
       {/* FIRST SECTION: HERO */}
       <div className="hero-section">
+
+        <video autoPlay loop muted playsInline className="circuit-video-bg">
+          <source src="../public/background4.mp4" type="video/mp4" />
+        </video>
+
+        <div className="video-overlay" />
+
         <Container className="hero-text" maxWidth="lg">
           <h1 className="hero-h1">
             From <span className="circuit-span">Circuits</span> to{" "}

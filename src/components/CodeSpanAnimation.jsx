@@ -1,4 +1,4 @@
-import "./App.css";
+import "../App.css";
 import { useEffect, useRef } from "react";
 
 const text = "<Code/>";
