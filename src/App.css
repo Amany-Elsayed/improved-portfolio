@@ -180,6 +180,10 @@ nav {
   height: 100vh;
 }
 
+.hero-h1, .hero-h2 {
+  cursor: default;
+}
+
 /* THE CIRCUITS SPAN ANIMATION */
 
 @property --glow {
@@ -234,6 +238,12 @@ nav {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+}
+
+.code-span-wrapper {
+  display: inline-block;
+  width: 7ch;
+  text-align: left;
 }
 
 @keyframes blink {
