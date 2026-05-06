@@ -74,6 +74,10 @@ function App() {
           </h1>
           <h2 className="hero-h2">I Engineer Full-Stack Experiences</h2>
           <Button
+            component="a"
+            href="../public/Amany Elsayed (Eg).pdf"
+            target="_blank"
+            rel="noopener noreferrer"
             variant="contained"
             style={{ margin: "1rem" }}
             startIcon={<DescriptionIcon />}
@@ -81,6 +85,8 @@ function App() {
             show CV
           </Button>
           <Button
+            component="a"
+            href="#contact-section"
             variant="outlined"
             style={{ margin: "1rem" }}
             startIcon={<AlternateEmailIcon />}
