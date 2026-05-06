@@ -285,10 +285,11 @@ nav {
 
 /* -------------------------- ABOUT ----------------------------------------- */
 .about-section {
-  height: 100vh;
+  min-height: 100vh;
   justify-content: center;
   align-items: center;
   display: flex;
+  padding: 4rem 0;
 }
 
 .about-section-starter {
@@ -299,8 +300,38 @@ nav {
   text-align: left;
 }
 
+.about-p {
+  margin-bottom: 1rem;
+}
+
 .about-icon-description {
   display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.about-icon-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.about-icon-text h3 {
+  margin: 0 0 0.2rem 0;
+}
+
+.about-icon-text p {
+  margin: 0;
+}
+
+.about-stats-box {
+  margin-top: 2rem;
+}
+
+.about-picture-section img {
+  width: 25rem;
+  height: 27rem;
 }
 
 /* == -------------------------- ABOUT ----------------------------------------- == */

@@ -2,9 +2,8 @@ import "./App.css";
 
 // MATERIAL UI COMPONENTS
 import Button from "@mui/material/Button";
-// import Menu from '@mui/material/Menu';
-// import MenuItem from '@mui/material/MenuItem';
 import Container from "@mui/material/Container";
+import { Box, Typography, Divider } from "@mui/material";
 
 // MATERIAL UI ICONS
 import DescriptionIcon from "@mui/icons-material/Description";
@@ -13,12 +12,19 @@ import IconButton from "@mui/material/IconButton";
 import CodeOffIcon from "@mui/icons-material/CodeOff";
 import RocketLaunchIcon from "@mui/icons-material/RocketLaunch";
 import EmojiObjectsIcon from "@mui/icons-material/EmojiObjects";
+import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
+import FolderOpenIcon from "@mui/icons-material/FolderOpen";
+import GroupIcon from "@mui/icons-material/Group";
 
 // COMPONENTS
 import CodeSpanAnimation from "./components/CodeSpanAnimation";
 
-// STATES
-// import { useEffect, useState } from "react";
+// VARIABLES
+const stats = [
+  { icon: <CalendarMonthIcon />, value: "3+", label: "Years of Experience" },
+  { icon: <FolderOpenIcon />, value: "15+", label: "Projects Completed" },
+  { icon: <GroupIcon />, value: "10+", label: "Happy Clients" },
+];
 
 function App() {
   return (
@@ -112,7 +118,7 @@ function App() {
             Who I Am & <span className="about-span">What I Do</span>
           </h1>
           <hr className="about-hr" />
-          <p className="about-text">
+          <p className="about-p">
             Lorem ipsum dolor, sit amet consectetur adipisicing elit.
             Reprehenderit pariatur eum vero sequi dignissimos? Unde harum facere
             facilis illum! Error repellat a voluptatibus praesentium nostrum
@@ -126,8 +132,8 @@ function App() {
                 border: "1px solid #0af ",
                 width: "3rem",
                 height: "3rem",
-                marginRight: "2rem",
-                marginTop: "2rem"
+                marginRight: "1rem",
+                flexShrink: 0,
               }}
             >
               <CodeOffIcon />
@@ -145,8 +151,8 @@ function App() {
                 border: "1px solid #0af ",
                 width: "3rem",
                 height: "3rem",
-                marginRight: "2rem",
-                marginTop: "2rem"
+                marginRight: "1rem",
+                flexShrink: 0,
               }}
             >
               <RocketLaunchIcon />
@@ -164,8 +170,8 @@ function App() {
                 border: "1px solid #0af ",
                 width: "3rem",
                 height: "3rem",
-                marginRight: "2rem",
-                marginTop: "2rem"
+                marginRight: "1rem",
+                flexShrink: 0,
               }}
             >
               <EmojiObjectsIcon />
@@ -175,9 +181,50 @@ function App() {
               <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
             </div>
           </div>
+
+          <div className="about-stats-box">
+            <Box
+              sx={{
+                display: "flex",
+                alignItems: "center",
+                border: "1px solid #1e2a3a",
+                borderRadius: "1rem",
+                px: 3,
+                py: 2,
+                width: "fit-content",
+              }}
+            >
+              {stats.map((stat, index) => (
+                <Box
+                  key={stat.label}
+                  sx={{ display: "flex", alignItems: "center" }}
+                >
+                  <Box sx={{ px: 3 }}>
+                    <Box sx={{ color: "#4a90d9", mb: 1 }}>{stat.icon}</Box>
+                    <Typography
+                      variant="h4"
+                      sx={{ color: "#fff", fontWeight: "bold" }}
+                    >
+                      {stat.value}
+                    </Typography>
+                    <Typography variant="body2" sx={{ color: "#8899aa" }}>
+                      {stat.label}
+                    </Typography>
+                  </Box>
+                  {index < stats.length - 1 && (
+                    <Divider
+                      orientation="vertical"
+                      flexItem
+                      sx={{ borderColor: "#1e2a3a", height: "120px" }}
+                    />
+                  )}
+                </Box>
+              ))}
+            </Box>
+          </div>
         </Container>
-        <Container className="about-picture">
-          {/* <img src="/myPicture.png" alt="my picture btw" /> */}
+        <Container className="about-picture-section">
+          <img src="/myPicture.png" alt="my picture btw" />
         </Container>
       </div>
       {/* === SECOND SECTION: ABOUT === */}
