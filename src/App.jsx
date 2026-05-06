@@ -9,6 +9,10 @@ import Container from "@mui/material/Container";
 // MATERIAL UI ICONS
 import DescriptionIcon from "@mui/icons-material/Description";
 import AlternateEmailIcon from "@mui/icons-material/AlternateEmail";
+import IconButton from "@mui/material/IconButton";
+import CodeOffIcon from "@mui/icons-material/CodeOff";
+import RocketLaunchIcon from "@mui/icons-material/RocketLaunch";
+import EmojiObjectsIcon from "@mui/icons-material/EmojiObjects";
 
 // COMPONENTS
 import CodeSpanAnimation from "./components/CodeSpanAnimation";
@@ -60,7 +64,7 @@ function App() {
         {/* VIDEO BACKGROUND */}
 
         <video autoPlay loop muted playsInline className="circuit-video-bg">
-          <source src="../public/background4.mp4" type="video/mp4" />
+          <source src="../public/background1.mp4" type="video/mp4" />
         </video>
 
         <div className="video-overlay" />
@@ -97,22 +101,89 @@ function App() {
       </div>
       {/* === FIRST SECTION: HERO === */}
       {/* SECOND SECTION: ABOUT */}
-      <div
-        id="about-section"
-        style={{
-          backgroundColor: "red",
-          height: "100vh",
-          justifyContent: "center",
-          alignItems: "center",
-          display: "flex",
-        }}
-      >
-        about
+      <div className="about-section">
+        <Container className="about-text">
+          <div className="about-section-starter">
+            <div className="about-section-starter-animation">-&gt;</div>
+            <div className="about-section-starter-text">ABOUT ME</div>
+          </div>
+
+          <h1 className="about-title">
+            Who I Am & <span className="about-span">What I Do</span>
+          </h1>
+          <hr className="about-hr" />
+          <p className="about-text">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+            Reprehenderit pariatur eum vero sequi dignissimos? Unde harum facere
+            facilis illum! Error repellat a voluptatibus praesentium nostrum
+            alias beatae porro sit vero.
+          </p>
+          <div className="about-icon-description">
+            <IconButton
+              aria-label="code"
+              color="primary"
+              sx={{
+                border: "1px solid #0af ",
+                width: "3rem",
+                height: "3rem",
+                marginRight: "2rem",
+                marginTop: "2rem"
+              }}
+            >
+              <CodeOffIcon />
+            </IconButton>
+            <div className="about-icon-text">
+              <h3>Full-Stack Development</h3>
+              <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+            </div>
+          </div>
+          <div className="about-icon-description">
+            <IconButton
+              aria-label="performance"
+              color="primary"
+              sx={{
+                border: "1px solid #0af ",
+                width: "3rem",
+                height: "3rem",
+                marginRight: "2rem",
+                marginTop: "2rem"
+              }}
+            >
+              <RocketLaunchIcon />
+            </IconButton>
+            <div className="about-icon-text">
+              <h3>Performance Focused</h3>
+              <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+            </div>
+          </div>
+          <div className="about-icon-description">
+            <IconButton
+              aria-label="code"
+              color="primary"
+              sx={{
+                border: "1px solid #0af ",
+                width: "3rem",
+                height: "3rem",
+                marginRight: "2rem",
+                marginTop: "2rem"
+              }}
+            >
+              <EmojiObjectsIcon />
+            </IconButton>
+            <div className="about-icon-text">
+              <h3>Problem Solver</h3>
+              <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+            </div>
+          </div>
+        </Container>
+        <Container className="about-picture">
+          {/* <img src="../public/myPicture.png" alt="my picture btw" /> */}
+        </Container>
       </div>
       {/* === SECOND SECTION: ABOUT === */}
       {/* THIRD SECTION: EXPERIENCE */}
       <div
-        id="experience-section"
+        className="experience-section"
         style={{
           backgroundColor: "purple",
           height: "100vh",
@@ -126,7 +197,7 @@ function App() {
       {/* === THIRD SECTION: EXPERIENCE */}
       {/* FOURTH SECTION: PROJECTS */}
       <div
-        id="project-section"
+        className="project-section"
         style={{
           backgroundColor: "yellow",
           height: "100vh",
@@ -140,7 +211,7 @@ function App() {
       {/* === FOURTH SECTION: PROJECTS === */}
       {/* FIFTH SECTION: CONTACTS */}
       <div
-        id="contact-section"
+        className="contact-section"
         style={{
           backgroundColor: "darkcyan",
           height: "100vh",
