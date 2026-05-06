@@ -64,7 +64,7 @@ function App() {
         {/* VIDEO BACKGROUND */}
 
         <video autoPlay loop muted playsInline className="circuit-video-bg">
-          <source src="../public/background1.mp4" type="video/mp4" />
+          <source src="/background1.mp4" type="video/mp4" />
         </video>
 
         <div className="video-overlay" />
@@ -102,7 +102,7 @@ function App() {
       {/* === FIRST SECTION: HERO === */}
       {/* SECOND SECTION: ABOUT */}
       <div className="about-section">
-        <Container className="about-text">
+        <Container className="about-text-section">
           <div className="about-section-starter">
             <div className="about-section-starter-animation">-&gt;</div>
             <div className="about-section-starter-text">ABOUT ME</div>
@@ -158,7 +158,7 @@ function App() {
           </div>
           <div className="about-icon-description">
             <IconButton
-              aria-label="code"
+              aria-label="solver"
               color="primary"
               sx={{
                 border: "1px solid #0af ",
@@ -177,7 +177,7 @@ function App() {
           </div>
         </Container>
         <Container className="about-picture">
-          {/* <img src="../public/myPicture.png" alt="my picture btw" /> */}
+          {/* <img src="/myPicture.png" alt="my picture btw" /> */}
         </Container>
       </div>
       {/* === SECOND SECTION: ABOUT === */}
