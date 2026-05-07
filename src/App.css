@@ -56,12 +56,12 @@
   background: conic-gradient(
     from var(--a),
     #0022bb,
-    #0033ff,
-    #4d79ff,
-    #0033ff,
+    #5274fa,
+    #b9cafd,
+    #5274fa,
     #0022bb,
-    #0033ff,
-    #4d79ff,
+    #5274fa,
+    #b9cafd,
     #0022bb
   );
   -webkit-mask:
@@ -440,6 +440,7 @@ nav {
 .about-picture-container {
   width: 23rem;
   height: 25rem;
+  box-shadow: 0 0 20px #0022bb, 0 0 40px #0033ff33;
 }
 
 .about-picture-window {
