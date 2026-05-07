@@ -4,6 +4,79 @@
   }
 }
 
+/* --------------------------REUSABLES----------------------------------------- */
+
+.neon-blue {
+  box-shadow:
+    0 0 8px #0033ff,
+    0 0 20px #0033ff,
+    0 0 40px #0022bb;
+}
+
+.neon-blue-text {
+  color: #4d79ff;
+  text-shadow:
+    0 0 8px #0033ff,
+    0 0 20px #0033ff,
+    0 0 40px #0022bb;
+}
+
+.neon-blue-icon {
+  color: #4d79ff;
+  filter: drop-shadow(0 0 6px #0033ff) drop-shadow(0 0 14px #0022bb);
+}
+
+.neon-blue-button {
+  box-shadow:
+    0 0 4px #0033ff,
+    0 0 10px #0022bb;
+}
+
+@property --a {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
+@keyframes neonBlueBorder {
+  to { --a: 1turn; }
+}
+
+.neon-blue-border {
+  position: relative;
+  border-radius: 12px;
+}
+
+.neon-blue-border::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  z-index: -1;
+  border-radius: inherit;
+  background: conic-gradient(
+    from var(--a),
+    #0022bb,
+    #0033ff,
+    #4d79ff,
+    #0033ff,
+    #0022bb,
+    #0033ff,
+    #4d79ff,
+    #0022bb
+  );
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  padding: 2px;
+  animation: neonBlueBorder 4s infinite linear;
+}
+/* == --------------------------REUSABLES----------------------------------------- == */
+
 /* --------------------------HEADER----------------------------------------- */
 
 header {
@@ -174,6 +247,7 @@ nav {
 
 /* --------------------------HERO----------------------------------------- */
 .hero-section {
+  /* border-bottom: 1px solid #676aff; */
   position: relative;
   display: flex;
   justify-content: center;
@@ -258,38 +332,47 @@ nav {
 
 /* === THE CIRCUITS SPAN ANIMATION === */
 
-/* THE <CODE/> SPAN STYLING */
-.code-span {
-  border-right: 2px solid #92e5fe;
-  animation: blink 1s step-end infinite;
-
-  background: linear-gradient(180deg, #fff, #92e5fe, #a78bfa);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.code-span-wrapper {
-  display: inline-block;
-  width: 7ch;
-  text-align: left;
-}
-
-@keyframes blink {
-  50% {
-    border-color: transparent;
-  }
-}
-/* === THE <CODE/> SPAN STYLING === */
 /* == -------------------------- HERO ----------------------------------------- == */
 
 /* -------------------------- ABOUT ----------------------------------------- */
+
 .about-section {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   min-height: 100vh;
   justify-content: center;
   align-items: center;
   display: flex;
   padding: 4rem 0;
+}
+
+/* ABOUT BACKGROUND EFFECT */
+
+.about-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("/aboutBackground.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: blur(4px);
+  z-index: 0;
+}
+
+.about-section > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* === ABOUT BACKGROUND EFFECT === */
+
+.about-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .about-section-starter {
@@ -300,6 +383,19 @@ nav {
   text-align: left;
 }
 
+.about-title {
+  line-height: 3.4rem;
+  margin-bottom: 0;
+}
+
+.about-hr {
+  border: 2px solid #0033cce1;
+  width: 5rem;
+  margin-left: 0;
+  margin-right: auto;
+  margin-bottom: 1rem;
+}
+
 .about-p {
   margin-bottom: 1rem;
 }
@@ -308,7 +404,7 @@ nav {
   display: flex;
   align-items: flex-start;
   gap: 1rem;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
 }
 
 .about-icon-text {
@@ -326,12 +422,34 @@ nav {
 }
 
 .about-stats-box {
-  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.about-picture-section {
+  position: relative;
 }
 
 .about-picture-section img {
-  width: 25rem;
-  height: 27rem;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: inherit;
+}
+
+.about-picture-container {
+  width: 23rem;
+  height: 25rem;
+}
+
+.about-picture-window {
+  background-color: #0022bb46;
+  position: absolute;
+  top: 65%;
+  left: 20%;
+  width: 15rem;
+  height: 8rem;
+  z-index: 1;
 }
 
 /* == -------------------------- ABOUT ----------------------------------------- == */

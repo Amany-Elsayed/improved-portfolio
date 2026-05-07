@@ -1,0 +1,22 @@
+.code-span {
+  border-right: 2px solid #92e5fe;
+  animation: blink 1s step-end infinite;
+
+  background: linear-gradient(180deg, #fff, #92e5fe, #a78bfa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.code-span-wrapper {
+  display: inline-block;
+  white-space: nowrap;
+  width: 7ch;
+  text-align: left;
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}

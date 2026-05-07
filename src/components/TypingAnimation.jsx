@@ -1,9 +1,7 @@
-import "../App.css";
+import "./TypingAnimation.css";
 import { useEffect, useRef } from "react";
 
-const text = "<Code/>";
-
-export default function CodeSpan() {
+export default function TypingAnimation({ text = "<Code/>" }) {
   const displayedRef = useRef("");
   const intervalRef = useRef(null);
   const isAnimatingRef = useRef(false);
@@ -32,7 +30,7 @@ export default function CodeSpan() {
         clearAll();
         isAnimatingRef.current = false;
       }
-    }, 150);
+    }, 100);
   };
 
   const deleteBack = () => {
@@ -44,13 +42,13 @@ export default function CodeSpan() {
         clearAll();
         typeForward();
       }
-    }, 150);
+    }, 100);
   };
 
   useEffect(() => {
     typeForward();
     return clearAll;
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const handleMouseEnter = () => {
