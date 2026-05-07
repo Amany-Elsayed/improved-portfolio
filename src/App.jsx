@@ -22,6 +22,9 @@ import TypingAnimation from "./components/TypingAnimation";
 import NeonLineAnimation from "./components/NeonLineAnimation";
 import RevealWrapper from "./components/RevealWrapper";
 
+// HOOKS
+import { useEffect } from "react";
+
 // VARIABLES
 const stats = [
   {
@@ -42,6 +45,10 @@ const stats = [
 ];
 
 function App() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="App">
       {/* HEADER */}
@@ -126,19 +133,23 @@ function App() {
         <Container className="about-container" maxWidth="lg">
           <Container className="about-text-section">
             <RevealWrapper delay={0.1}>
-              <div className="about-section-starter">
-                <NeonLineAnimation text="ABOUT ME" />
-              </div>
+              {(isVisible) => (
+                <div className="about-section-starter">
+                  {isVisible && <NeonLineAnimation text="ABOUT ME" />}
+                </div>
+              )}
             </RevealWrapper>
 
             <RevealWrapper delay={0.2}>
-              <h1 className="about-title">
-                Who I Am &
-                <span className="about-span">
-                  {" "}
-                  <TypingAnimation text="What I Do" />
-                </span>
-              </h1>
+              {(isVisible) => (
+                <h1 className="about-title">
+                  Who I Am &
+                  <span className="about-span">
+                    {" "}
+                    {isVisible && <TypingAnimation text="What I Do" />}
+                  </span>
+                </h1>
+              )}
             </RevealWrapper>
 
             <RevealWrapper delay={0.3}>
@@ -310,7 +321,7 @@ function App() {
       {/* === SECOND SECTION: ABOUT === */}
       {/* THIRD SECTION: EXPERIENCE */}
       <div
-      id="experience-section"
+        id="experience-section"
         className="experience-section"
         style={{
           backgroundColor: "purple",
@@ -325,7 +336,7 @@ function App() {
       {/* === THIRD SECTION: EXPERIENCE */}
       {/* FOURTH SECTION: PROJECTS */}
       <div
-      id='project-section'
+        id="project-section"
         className="project-section"
         style={{
           backgroundColor: "yellow",
@@ -340,7 +351,7 @@ function App() {
       {/* === FOURTH SECTION: PROJECTS === */}
       {/* FIFTH SECTION: CONTACTS */}
       <div
-      id="contact-section"
+        id="contact-section"
         className="contact-section"
         style={{
           backgroundColor: "darkcyan",
