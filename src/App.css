@@ -5,6 +5,24 @@
 }
 
 /* --------------------------REUSABLES----------------------------------------- */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* stagger delays for children */
+.reveal-group > *:nth-child(1) { transition-delay: 0.1s; }
+.reveal-group > *:nth-child(2) { transition-delay: 0.2s; }
+.reveal-group > *:nth-child(3) { transition-delay: 0.3s; }
+.reveal-group > *:nth-child(4) { transition-delay: 0.4s; }
+.reveal-group > *:nth-child(5) { transition-delay: 0.5s; }
+.reveal-group > *:nth-child(6) { transition-delay: 0.6s; }
 
 .neon-blue {
   box-shadow:
@@ -377,19 +395,25 @@ nav {
 
 .about-section-starter {
   display: flex;
+  cursor: default;
 }
 
 .about-text-section {
   text-align: left;
+  max-width: 420px;
 }
 
 .about-title {
-  line-height: 3.4rem;
+  font-size: 2rem;
+  line-height: 2.6rem;
   margin-bottom: 0;
+  margin-top: 0;
+  cursor: default;
 }
 
 .about-hr {
   border: 2px solid #0033cce1;
+  border-radius: 5px;
   width: 5rem;
   margin-left: 0;
   margin-right: auto;
@@ -397,14 +421,17 @@ nav {
 }
 
 .about-p {
+  font-size: 0.95rem;
   margin-bottom: 1rem;
+  line-height: 1.6;
+  color: #8899aa;
 }
 
 .about-icon-description {
   display: flex;
   align-items: flex-start;
   gap: 1rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
 }
 
 .about-icon-text {
@@ -414,11 +441,15 @@ nav {
 }
 
 .about-icon-text h3 {
+  color: #fff;
   margin: 0 0 0.2rem 0;
+  font-size: 0.95rem;
 }
 
 .about-icon-text p {
   margin: 0;
+  font-size: 0.8rem;
+  color: #8899aa;
 }
 
 .about-stats-box {
@@ -444,13 +475,43 @@ nav {
 }
 
 .about-picture-window {
-  background-color: #0022bb46;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  background-color: #00061f5e;
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+  gap: 2rem;
   position: absolute;
   top: 65%;
-  left: 20%;
+  left: 16%;
   width: 15rem;
-  height: 8rem;
+  height: 7rem;
   z-index: 1;
+  padding: 0.5rem;
+}
+
+.about-picture-window-icon {
+  margin-top: 1rem;
+  margin-left: 0.5rem;
+  flex-shrink: 0;
+}
+
+.about-picture-window-text {
+  font-family: monospace;
+  color: white;
+  align-self: flex-start;
+  text-align: left;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.about-picture-window-span1 {
+  color: #0033ff;
+}
+
+.about-picture-window-span2 {
+  color: #5274fa;
 }
 
 /* == -------------------------- ABOUT ----------------------------------------- == */

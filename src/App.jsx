@@ -15,10 +15,12 @@ import EmojiObjectsIcon from "@mui/icons-material/EmojiObjects";
 import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
 import FolderOpenIcon from "@mui/icons-material/FolderOpen";
 import GroupIcon from "@mui/icons-material/Group";
+import TerminalIcon from "@mui/icons-material/Terminal";
 
 // COMPONENTS
 import TypingAnimation from "./components/TypingAnimation";
 import NeonLineAnimation from "./components/NeonLineAnimation";
+import RevealWrapper from "./components/RevealWrapper";
 
 // VARIABLES
 const stats = [
@@ -79,7 +81,7 @@ function App() {
       </header>
       {/* === HEADER === */}
       {/* FIRST SECTION: HERO */}
-      <div className="hero-section">
+      <div id="hero-section" className="hero-section">
         {/* VIDEO BACKGROUND */}
 
         <video autoPlay loop muted playsInline className="circuit-video-bg">
@@ -120,142 +122,195 @@ function App() {
       </div>
       {/* === FIRST SECTION: HERO === */}
       {/* SECOND SECTION: ABOUT */}
-      <div className="about-section">
+      <div id="about-section" className="about-section">
         <Container className="about-container" maxWidth="lg">
           <Container className="about-text-section">
-            <div className="about-section-starter">
-              <NeonLineAnimation text="ABOUT ME" />
-            </div>
-
-            <h1 className="about-title">
-              Who I Am <br />&
-              <span className="about-span">
-                {" "}
-                <TypingAnimation text="What I Do"></TypingAnimation>
-              </span>
-            </h1>
-
-            <hr className="about-hr neon-blue" />
-
-            <p className="about-p">
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-              Reprehenderit pariatur eum vero sequi dignissimos? Unde harum
-              facere facilis illum! Error repellat a voluptatibus praesentium
-              nostrum alias beatae porro sit vero.
-            </p>
-            <div className="about-icon-description">
-              <IconButton
-                className="neon-blue-button"
-                aria-label="code"
-                color="primary"
-                sx={{
-                  border: "1px solid #0af ",
-                  width: "3rem",
-                  height: "3rem",
-                  marginRight: "1rem",
-                  flexShrink: 0,
-                }}
-              >
-                <CodeOffIcon className="neon-blue-icon" />
-              </IconButton>
-              <div className="about-icon-text">
-                <h3>Full-Stack Development</h3>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+            <RevealWrapper delay={0.1}>
+              <div className="about-section-starter">
+                <NeonLineAnimation text="ABOUT ME" />
               </div>
-            </div>
-            <div className="about-icon-description">
-              <IconButton
-                className="neon-blue-button"
-                aria-label="performance"
-                color="primary"
-                sx={{
-                  border: "1px solid #0af ",
-                  width: "3rem",
-                  height: "3rem",
-                  marginRight: "1rem",
-                  flexShrink: 0,
-                }}
-              >
-                <RocketLaunchIcon className="neon-blue-icon" />
-              </IconButton>
-              <div className="about-icon-text">
-                <h3>Performance Focused</h3>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
-              </div>
-            </div>
-            <div className="about-icon-description">
-              <IconButton
-                className="neon-blue-button"
-                aria-label="solver"
-                color="primary"
-                sx={{
-                  border: "1px solid #0af ",
-                  width: "3rem",
-                  height: "3rem",
-                  marginRight: "1rem",
-                  flexShrink: 0,
-                }}
-              >
-                <EmojiObjectsIcon className="neon-blue-icon" />
-              </IconButton>
-              <div className="about-icon-text">
-                <h3>Problem Solver</h3>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
-              </div>
-            </div>
+            </RevealWrapper>
 
-            <div className="about-stats-box">
-              <Box
-                sx={{
-                  display: "flex",
-                  alignItems: "center",
-                  border: "1px solid #1e2a3a",
-                  borderRadius: "1rem",
-                  px: 3,
-                  py: 2,
-                  width: "max-content",
-                }}
-              >
-                {stats.map((stat, index) => (
-                  <Box
-                    key={stat.label}
-                    sx={{ display: "flex", alignItems: "center" }}
-                  >
-                    <Box sx={{ px: 3 }}>
-                      <Box sx={{ color: "#4a90d9", mb: 1 }}>{stat.icon}</Box>
-                      <Typography
-                        variant="h5"
-                        sx={{ color: "#fff", fontWeight: "bold" }}
-                      >
-                        {stat.value}
-                      </Typography>
-                      <Typography variant="p" sx={{ color: "#8899aa" }}>
-                        {stat.label}
-                      </Typography>
+            <RevealWrapper delay={0.2}>
+              <h1 className="about-title">
+                Who I Am &
+                <span className="about-span">
+                  {" "}
+                  <TypingAnimation text="What I Do" />
+                </span>
+              </h1>
+            </RevealWrapper>
+
+            <RevealWrapper delay={0.3}>
+              <hr className="about-hr neon-blue" />
+            </RevealWrapper>
+
+            <RevealWrapper delay={0.4}>
+              <p className="about-p">
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                Reprehenderit pariatur eum vero sequi dignissimos? Unde harum
+                facere facilis illum! Error repellat a voluptatibus praesentium
+                nostrum alias beatae porro sit vero.
+              </p>
+            </RevealWrapper>
+
+            <RevealWrapper delay={0.5}>
+              <div className="about-icon-description">
+                <IconButton
+                  className="neon-blue-button"
+                  aria-label="code"
+                  color="primary"
+                  sx={{
+                    border: "1px solid #0af",
+                    width: "3rem",
+                    height: "3rem",
+                    marginRight: "1rem",
+                    cursor: "default",
+                    flexShrink: 0,
+                  }}
+                >
+                  <CodeOffIcon className="neon-blue-icon" />
+                </IconButton>
+                <div className="about-icon-text">
+                  <h3>Full-Stack Development</h3>
+                  <p>
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                  </p>
+                </div>
+              </div>
+            </RevealWrapper>
+
+            <RevealWrapper delay={0.6}>
+              <div className="about-icon-description">
+                <IconButton
+                  className="neon-blue-button"
+                  aria-label="performance"
+                  color="primary"
+                  sx={{
+                    border: "1px solid #0af",
+                    width: "3rem",
+                    height: "3rem",
+                    marginRight: "1rem",
+                    cursor: "default",
+                    flexShrink: 0,
+                  }}
+                >
+                  <RocketLaunchIcon className="neon-blue-icon" />
+                </IconButton>
+                <div className="about-icon-text">
+                  <h3>Performance Focused</h3>
+                  <p>
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                  </p>
+                </div>
+              </div>
+            </RevealWrapper>
+
+            <RevealWrapper delay={0.7}>
+              <div className="about-icon-description">
+                <IconButton
+                  className="neon-blue-button"
+                  aria-label="solver"
+                  color="primary"
+                  sx={{
+                    border: "1px solid #0af",
+                    width: "3rem",
+                    height: "3rem",
+                    marginRight: "1rem",
+                    cursor: "default",
+                    flexShrink: 0,
+                  }}
+                >
+                  <EmojiObjectsIcon className="neon-blue-icon" />
+                </IconButton>
+                <div className="about-icon-text">
+                  <h3>Problem Solver</h3>
+                  <p>
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                  </p>
+                </div>
+              </div>
+            </RevealWrapper>
+
+            <RevealWrapper delay={0.8}>
+              <div className="about-stats-box">
+                <Box
+                  sx={{
+                    display: "flex",
+                    alignItems: "center",
+                    color: "transparent",
+                    border: "1px solid #1e2a3a",
+                    borderRadius: "1rem",
+                    px: 3,
+                    py: 2,
+                    width: "max-content",
+                  }}
+                >
+                  {stats.map((stat, index) => (
+                    <Box
+                      key={stat.label}
+                      sx={{ display: "flex", alignItems: "center" }}
+                    >
+                      <Box sx={{ px: 3 }}>
+                        <Box sx={{ color: "#4a90d9", mb: 1 }}>{stat.icon}</Box>
+                        <Typography
+                          variant="h5"
+                          sx={{ color: "#fff", fontWeight: "bold" }}
+                        >
+                          {stat.value}
+                        </Typography>
+                        <Typography variant="p" sx={{ color: "#8899aa" }}>
+                          {stat.label}
+                        </Typography>
+                      </Box>
+                      {index < stats.length - 1 && (
+                        <Divider
+                          orientation="vertical"
+                          flexItem
+                          sx={{ borderColor: "#1e2a3a", height: "120px" }}
+                        />
+                      )}
                     </Box>
-                    {index < stats.length - 1 && (
-                      <Divider
-                        orientation="vertical"
-                        flexItem
-                        sx={{ borderColor: "#1e2a3a", height: "120px" }}
-                      />
-                    )}
-                  </Box>
-                ))}
-              </Box>
-            </div>
+                  ))}
+                </Box>
+              </div>
+            </RevealWrapper>
           </Container>
+
           <Container className="about-picture-section">
-            <div className="about-picture-container neon-blue-border">
-              <img src="/myPicture.png" alt="My picture btw" />
-            </div>
-            <div className="about-picture-window neon-blue-border"></div>
+            <RevealWrapper delay={0.3}>
+              <div className="about-picture-container neon-blue-border">
+                <img src="/myPicture.png" alt="My picture btw" />
+              </div>
+              <div className="about-picture-window neon-blue-border">
+                <TerminalIcon
+                  className="about-picture-window-icon neon-blue-icon"
+                  fontSize="large"
+                />
+                <p className="about-picture-window-text">
+                  <span className="about-picture-window-span1">const</span>{" "}
+                  developer = &#123;
+                  <br />
+                  passion:{" "}
+                  <span className="about-picture-window-span2">"Code"</span>
+                  <br />
+                  focus:{" "}
+                  <span className="about-picture-window-span2">"Build"</span>
+                  <br />
+                  mission:{" "}
+                  <span className="about-picture-window-span2">"Impact"</span>
+                  <br />
+                  &#125;
+                </p>
+              </div>
+            </RevealWrapper>
           </Container>
         </Container>
       </div>
       {/* === SECOND SECTION: ABOUT === */}
       {/* THIRD SECTION: EXPERIENCE */}
       <div
+      id="experience-section"
         className="experience-section"
         style={{
           backgroundColor: "purple",
@@ -270,6 +325,7 @@ function App() {
       {/* === THIRD SECTION: EXPERIENCE */}
       {/* FOURTH SECTION: PROJECTS */}
       <div
+      id='project-section'
         className="project-section"
         style={{
           backgroundColor: "yellow",
@@ -284,6 +340,7 @@ function App() {
       {/* === FOURTH SECTION: PROJECTS === */}
       {/* FIFTH SECTION: CONTACTS */}
       <div
+      id="contact-section"
         className="contact-section"
         style={{
           backgroundColor: "darkcyan",
