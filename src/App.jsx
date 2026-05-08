@@ -44,6 +44,8 @@ const stats = [
   },
 ];
 
+// === VARIABLES ===
+
 function App() {
   useEffect(() => {
     if (!window.location.hash) {
@@ -327,19 +329,118 @@ function App() {
       </div>
       {/* === SECOND SECTION: ABOUT === */}
       {/* THIRD SECTION: EXPERIENCE */}
-      <div
-        id="experience-section"
-        className="experience-section"
-        style={{
-          backgroundColor: "purple",
-          height: "100vh",
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-        }}
-      >
-        experience
+      <div id="experience-section" className="experience-section">
+        <div className="experience-content">
+          <div className="experience-grid">
+            <div className="experience-year-label">
+              <span className="experience-year">2026</span>
+            </div>
+
+            <div className="experience-light-beam">
+              <div className="experience-inner-light-beam top neon-blue"></div>
+              <div className="experience-dot neon-blue">
+                <div className="experience-inner-dot neon-blue"></div>
+              </div>
+              <div className="experience-inner-light-beam neon-blue"></div>
+            </div>
+
+            <div className="experience-card neon-blue-border">
+              <h3 className="experience-card-label">Full Stack Engineer</h3>
+              <p className="experience-card-location">TechNova Solutions</p>
+              <p className="experience-card-date">
+                <span>Jan 2025 – Present</span>
+                <span>•</span>
+                <span>Remote</span>
+              </p>
+              <p className="experience-card-text">
+                Building scalable web applications with modern technologies.
+              </p>
+            </div>
+          </div>
+
+          <div className="experience-grid">
+            <div className="experience-year-label">
+              <span className="experience-year">2026</span>
+            </div>
+
+            <div className="experience-light-beam">
+              <div className="experience-inner-light-beam top neon-blue"></div>
+              <div className="experience-dot neon-blue">
+                <div className="experience-inner-dot neon-blue"></div>
+              </div>
+              <div className="experience-inner-light-beam neon-blue"></div>
+            </div>
+
+            <div className="experience-card neon-blue-border">
+              <h3 className="experience-card-label">Full Stack Engineer</h3>
+              <p className="experience-card-location">TechNova Solutions</p>
+              <p className="experience-card-date">
+                <span>Jan 2025 – Present</span>
+                <span>•</span>
+                <span>Remote</span>
+              </p>
+              <p className="experience-card-text">
+                Building scalable web applications with modern technologies.
+              </p>
+            </div>
+          </div>
+
+          <div className="experience-grid">
+            <div className="experience-year-label">
+              <span className="experience-year">2026</span>
+            </div>
+
+            <div className="experience-light-beam">
+              <div className="experience-inner-light-beam top neon-blue"></div>
+              <div className="experience-dot neon-blue">
+                <div className="experience-inner-dot neon-blue"></div>
+              </div>
+              <div className="experience-inner-light-beam neon-blue"></div>
+            </div>
+
+            <div className="experience-card neon-blue-border">
+              <h3 className="experience-card-label">Full Stack Engineer</h3>
+              <p className="experience-card-location">TechNova Solutions</p>
+              <p className="experience-card-date">
+                <span>Jan 2025 – Present</span>
+                <span>•</span>
+                <span>Remote</span>
+              </p>
+              <p className="experience-card-text">
+                Building scalable web applications with modern technologies.
+              </p>
+            </div>
+          </div>
+
+          <div className="experience-grid">
+            <div className="experience-year-label">
+              <span className="experience-year">2026</span>
+            </div>
+
+            <div className="experience-light-beam">
+              <div className="experience-inner-light-beam top neon-blue"></div>
+              <div className="experience-dot neon-blue">
+                <div className="experience-inner-dot neon-blue"></div>
+              </div>
+              <div className="experience-inner-light-beam neon-blue"></div>
+            </div>
+
+            <div className="experience-card neon-blue-border">
+              <h3 className="experience-card-label">Full Stack Engineer</h3>
+              <p className="experience-card-location">TechNova Solutions</p>
+              <p className="experience-card-date">
+                <span>Jan 2025 – Present</span>
+                <span>•</span>
+                <span>Remote</span>
+              </p>
+              <p className="experience-card-text">
+                Building scalable web applications with modern technologies.
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
+
       {/* === THIRD SECTION: EXPERIENCE */}
       {/* FOURTH SECTION: SKILLS */}
       <div
