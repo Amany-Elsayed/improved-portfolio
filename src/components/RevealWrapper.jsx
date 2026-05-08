@@ -8,24 +8,31 @@ export default function RevealWrapper({ children, className = "", delay = 0 }) {
     const el = ref.current;
     if (!el) return;
 
+    let timeoutId;
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setTimeout(() => setIsVisible(true), delay * 1000);
+          timeoutId = setTimeout(() => setIsVisible(true), delay * 1000);
           observer.unobserve(el);
         }
       },
-      { threshold: 0.15, rootMargin: "0px 0px -50px 0px" }
+      { threshold: 0.15, rootMargin: "0px 0px -50px 0px" },
     );
 
     observer.observe(el);
-    return () => observer.disconnect();
+    return () => {
+      observer.disconnect();
+      clearTimeout(timeoutId);
+    };
   }, [delay]);
 
   return (
     <div
       ref={ref}
-      className={`reveal ${isVisible ? "reveal-visible" : ""} ${className}`}
+      className={["reveal", isVisible && "reveal-visible", className]
+        .filter(Boolean)
+        .join(" ")}
     >
       {typeof children === "function" ? children(isVisible) : children}
     </div>

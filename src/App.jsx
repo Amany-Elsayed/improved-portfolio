@@ -46,7 +46,9 @@ const stats = [
 
 function App() {
   useEffect(() => {
-    window.scrollTo(0, 0);
+    if (!window.location.hash) {
+      window.scrollTo(0, 0);
+    }
   }, []);
 
   return (
@@ -70,6 +72,11 @@ function App() {
             <li className="nav-list-item">
               <a href="#experience-section" className="nav-list-link">
                 Experience
+              </a>
+            </li>
+            <li className="nav-list-item">
+              <a href="#skills-section" className="nav-list-link">
+                Skills
               </a>
             </li>
             <li className="nav-list-item">
@@ -334,7 +341,22 @@ function App() {
         experience
       </div>
       {/* === THIRD SECTION: EXPERIENCE */}
-      {/* FOURTH SECTION: PROJECTS */}
+      {/* FOURTH SECTION: SKILLS */}
+      <div
+        id="skills-section"
+        className="skills-section"
+        style={{
+          backgroundColor: "green",
+          height: "100vh",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        skills
+      </div>
+      {/* === FOURTH SECTION: SKILLS === */}
+      {/* FIFTH SECTION: PROJECTS */}
       <div
         id="project-section"
         className="project-section"
@@ -348,8 +370,8 @@ function App() {
       >
         projects
       </div>
-      {/* === FOURTH SECTION: PROJECTS === */}
-      {/* FIFTH SECTION: CONTACTS */}
+      {/* === FIFTH SECTION: PROJECTS === */}
+      {/* SIXTH SECTION: CONTACTS */}
       <div
         id="contact-section"
         className="contact-section"
@@ -363,7 +385,7 @@ function App() {
       >
         contact
       </div>
-      {/* === FIFTH SECTION: CONTACTS */}
+      {/* === SIXTH SECTION: CONTACTS */}
       {/* FOOTER */}
       <footer
         style={{
