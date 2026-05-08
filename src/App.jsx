@@ -21,6 +21,7 @@ import TerminalIcon from "@mui/icons-material/Terminal";
 import TypingAnimation from "./components/TypingAnimation";
 import NeonLineAnimation from "./components/NeonLineAnimation";
 import RevealWrapper from "./components/RevealWrapper";
+import ExperienceReveal from "./components/ExperienceReveal";
 
 // HOOKS
 import { useEffect } from "react";
@@ -361,6 +362,7 @@ function App() {
             <hr className="experience-hr neon-blue" />
           </RevealWrapper>
         </Container>
+
         <div className="experience-content">
           <div className="experience-grid">
             <div className="experience-year-label">
@@ -469,7 +471,9 @@ function App() {
               </p>
             </div>
           </div>
+
         </div>
+
       </div>
 
       {/* === THIRD SECTION: EXPERIENCE */}
