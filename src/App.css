@@ -567,9 +567,23 @@ nav {
 }
 
 /* === EXPERIENCE BACKGROUND EFFECT === */
+.experience-section-starter {
+  margin-top: 4rem;
+  text-align: left;
+}
+
+.experience-hr {
+  border: 2px solid #0033cce1;
+  border-radius: 5px;
+  width: 5rem;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+}
+
 .experience-content {
   padding-top: 4rem;
   padding-bottom: 4rem;
+  right: 4%;
 }
 
 .experience-grid {

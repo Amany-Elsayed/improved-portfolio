@@ -330,6 +330,37 @@ function App() {
       {/* === SECOND SECTION: ABOUT === */}
       {/* THIRD SECTION: EXPERIENCE */}
       <div id="experience-section" className="experience-section">
+        <Container className="experience-title">
+          <RevealWrapper delay={0.1}>
+            {(isVisible) => (
+              <div className="experience-section-starter">
+                {isVisible && <NeonLineAnimation text="EXPERIENCE" />}
+              </div>
+            )}
+          </RevealWrapper>
+
+          <RevealWrapper delay={0.2}>
+            {(isVisible) => (
+              <h1 className="experience-title">
+                My Engineering
+                <span className="experience-span">
+                  {" "}
+                  {isVisible && <TypingAnimation text="Journey" />}
+                </span>
+              </h1>
+            )}
+          </RevealWrapper>
+
+          <RevealWrapper delay={0.3}>
+            <p className="experience-section-title-p">
+              Timeline of All my Professional Growth
+            </p>
+          </RevealWrapper>
+
+          <RevealWrapper delay={0.3}>
+            <hr className="experience-hr neon-blue" />
+          </RevealWrapper>
+        </Container>
         <div className="experience-content">
           <div className="experience-grid">
             <div className="experience-year-label">
