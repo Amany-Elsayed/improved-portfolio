@@ -77,7 +77,7 @@
   padding: 2px;
   animation: neonBlueBorder 4s infinite linear;
 }
-/* == --------------------------REUSABLES----------------------------------------- == */
+/* === --------------------------REUSABLES----------------------------------------- === */
 
 /* --------------------------HEADER----------------------------------------- */
 
@@ -245,7 +245,7 @@ nav {
 
 /* === LOGO ANIMATION === */
 
-/* == --------------------------HEADER----------------------------------------- == */
+/* === --------------------------HEADER----------------------------------------- === */
 
 /* --------------------------HERO----------------------------------------- */
 .hero-section {
@@ -334,7 +334,7 @@ nav {
 
 /* === THE CIRCUITS SPAN ANIMATION === */
 
-/* == -------------------------- HERO ----------------------------------------- == */
+/* === -------------------------- HERO ----------------------------------------- === */
 
 /* -------------------------- ABOUT ----------------------------------------- */
 
@@ -500,10 +500,9 @@ nav {
   color: #5274fa;
 }
 
-/* == -------------------------- ABOUT ----------------------------------------- == */
+/* === -------------------------- ABOUT ----------------------------------------- === */
 
 /* -------------------------- EXPERIENCES ----------------------------------------- */
-
 
 .experience-section {
   position: relative;
@@ -684,4 +683,41 @@ nav {
   border-radius: 5px;
 }
 
-/* -------------------------- EXPERIENCES ----------------------------------------- */
+/* === -------------------------- EXPERIENCES ----------------------------------------- === */
+
+/* -------------------------- SKILLS ----------------------------------------- */
+
+.skills-section {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* SKILLS BACKGROUND EFFECT */
+
+.skills-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("/skillsBackground.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: blur(4px);
+  z-index: 0;
+}
+
+.skills-section > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* === SKILLS BACKGROUND EFFECT === */
+
+/* === -------------------------- SKILLS ----------------------------------------- === */

@@ -133,6 +133,7 @@ function App() {
         {/* === HEADER HYPERLINKS === */}
       </header>
       {/* === HEADER === */}
+
       {/* FIRST SECTION: HERO */}
       <div id="hero-section" className="hero-section">
         {/* VIDEO BACKGROUND */}
@@ -569,17 +570,7 @@ function App() {
       {/* === THIRD SECTION: EXPERIENCE */}
 
       {/* FOURTH SECTION: SKILLS */}
-      <div
-        id="skills-section"
-        className="skills-section"
-        style={{
-          backgroundColor: "green",
-          height: "100vh",
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-        }}
-      >
+      <div id="skills-section" className="skills-section">
         skills
       </div>
       {/* === FOURTH SECTION: SKILLS === */}
@@ -615,7 +606,7 @@ function App() {
         contact
       </div>
       {/* === SIXTH SECTION: CONTACTS */}
-      
+
       {/* FOOTER */}
       <footer
         style={{
