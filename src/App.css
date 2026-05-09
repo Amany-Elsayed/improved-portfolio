@@ -675,11 +675,14 @@ nav {
   margin: 0;
 }
 
-.experience-ground {
+.experience-ground-reveal {
   position: absolute;
   left: 101px;
   transform: translateX(-50%);
   bottom: 1rem;
+}
+
+.experience-ground {
   display: flex;
   flex-direction: column;
   justify-content: center;

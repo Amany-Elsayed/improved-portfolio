@@ -404,11 +404,13 @@ function App() {
             <div className="experience-content">
               <div className="experience-beam-track" ref={beamRef} />
 
-              <div className="experience-ground">
-                <div className="experience-inner-ground1 neon-blue"></div>
-                <div className="experience-inner-ground2 neon-blue"></div>
-                <div className="experience-inner-ground3 neon-blue"></div>
-              </div>
+              <RevealWrapper className="experience-ground-reveal" delay={0.8}>
+                <div className="experience-ground">
+                  <div className="experience-inner-ground1 neon-blue"></div>
+                  <div className="experience-inner-ground2 neon-blue"></div>
+                  <div className="experience-inner-ground3 neon-blue"></div>
+                </div>
+              </RevealWrapper>
 
               {experiences.map((experience, i) => (
                 <div key={i} className="experience-grid" ref={setRowRef(i)}>
