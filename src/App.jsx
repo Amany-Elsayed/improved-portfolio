@@ -456,122 +456,43 @@ function App() {
           )}
         </ExperienceReveal>
 
-        {/* <div className="experience-content">
-          <div className="experience-grid">
-            <div className="experience-year-label">
-              <span className="experience-year">2026</span>
-            </div>
-
-            <div className="experience-light-beam">
-              <div className="experience-inner-light-beam top neon-blue"></div>
-              <div className="experience-dot neon-blue">
-                <div className="experience-inner-dot neon-blue"></div>
-              </div>
-              <div className="experience-inner-light-beam neon-blue"></div>
-            </div>
-
-            <div className="experience-card neon-blue-border">
-              <h3 className="experience-card-label">Full Stack Engineer</h3>
-              <p className="experience-card-location">TechNova Solutions</p>
-              <p className="experience-card-date">
-                <span>Jan 2025 – Present</span>
-                <span>•</span>
-                <span>Remote</span>
-              </p>
-              <p className="experience-card-text">
-                Building scalable web applications with modern technologies.
-              </p>
-            </div>
-          </div>
-
-          <div className="experience-grid">
-            <div className="experience-year-label">
-              <span className="experience-year">2026</span>
-            </div>
-
-            <div className="experience-light-beam">
-              <div className="experience-inner-light-beam top neon-blue"></div>
-              <div className="experience-dot neon-blue">
-                <div className="experience-inner-dot neon-blue"></div>
-              </div>
-              <div className="experience-inner-light-beam neon-blue"></div>
-            </div>
-
-            <div className="experience-card neon-blue-border">
-              <h3 className="experience-card-label">Full Stack Engineer</h3>
-              <p className="experience-card-location">TechNova Solutions</p>
-              <p className="experience-card-date">
-                <span>Jan 2025 – Present</span>
-                <span>•</span>
-                <span>Remote</span>
-              </p>
-              <p className="experience-card-text">
-                Building scalable web applications with modern technologies.
-              </p>
-            </div>
-          </div>
-
-          <div className="experience-grid">
-            <div className="experience-year-label">
-              <span className="experience-year">2026</span>
-            </div>
-
-            <div className="experience-light-beam">
-              <div className="experience-inner-light-beam top neon-blue"></div>
-              <div className="experience-dot neon-blue">
-                <div className="experience-inner-dot neon-blue"></div>
-              </div>
-              <div className="experience-inner-light-beam neon-blue"></div>
-            </div>
-
-            <div className="experience-card neon-blue-border">
-              <h3 className="experience-card-label">Full Stack Engineer</h3>
-              <p className="experience-card-location">TechNova Solutions</p>
-              <p className="experience-card-date">
-                <span>Jan 2025 – Present</span>
-                <span>•</span>
-                <span>Remote</span>
-              </p>
-              <p className="experience-card-text">
-                Building scalable web applications with modern technologies.
-              </p>
-            </div>
-          </div>
-
-          <div className="experience-grid">
-            <div className="experience-year-label">
-              <span className="experience-year">2026</span>
-            </div>
-
-            <div className="experience-light-beam">
-              <div className="experience-inner-light-beam top neon-blue"></div>
-              <div className="experience-dot neon-blue">
-                <div className="experience-inner-dot neon-blue"></div>
-              </div>
-              <div className="experience-inner-light-beam neon-blue"></div>
-            </div>
-
-            <div className="experience-card neon-blue-border">
-              <h3 className="experience-card-label">Full Stack Engineer</h3>
-              <p className="experience-card-location">TechNova Solutions</p>
-              <p className="experience-card-date">
-                <span>Jan 2025 – Present</span>
-                <span>•</span>
-                <span>Remote</span>
-              </p>
-              <p className="experience-card-text">
-                Building scalable web applications with modern technologies.
-              </p>
-            </div>
-          </div>
-
-        </div> */}
       </div>
       {/* === THIRD SECTION: EXPERIENCE */}
 
       {/* FOURTH SECTION: SKILLS */}
       <div id="skills-section" className="skills-section">
-        skills
+        <Container className="skills-title">
+          <RevealWrapper delay={0.1}>
+            {(isVisible) => (
+              <div className="skills-section-starter">
+                {isVisible && <NeonLineAnimation text="SKILLS" />}
+              </div>
+            )}
+          </RevealWrapper>
+
+          <RevealWrapper delay={0.2}>
+            {(isVisible) => (
+              <h1 className="skills-title">
+                Skills &
+                <span className="skills-span">
+                  {" "}
+                  {isVisible && <TypingAnimation text="Expertise" />}
+                </span>
+              </h1>
+            )}
+          </RevealWrapper>
+
+          <RevealWrapper delay={0.3}>
+            <p className="skills-section-title-p">
+              Technologies I've Mastered Along the Way 
+            </p>
+          </RevealWrapper>
+
+          <RevealWrapper delay={0.3}>
+            <hr className="skills-hr neon-blue" />
+          </RevealWrapper>
+
+        </Container>
       </div>
       {/* === FOURTH SECTION: SKILLS === */}
 
