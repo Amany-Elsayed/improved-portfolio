@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import "./RevealWrapper.css";
 
 export default function RevealWrapper({ children, className = "", delay = 0 }) {
   const ref = useRef(null);

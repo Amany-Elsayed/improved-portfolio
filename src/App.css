@@ -5,37 +5,6 @@
 }
 
 /* --------------------------REUSABLES----------------------------------------- */
-.reveal {
-  opacity: 0;
-  transform: translateY(30px);
-  transition:
-    opacity 0.7s ease,
-    transform 0.7s ease;
-}
-
-.reveal-visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.reveal-group > *:nth-child(1) {
-  transition-delay: 0.1s;
-}
-.reveal-group > *:nth-child(2) {
-  transition-delay: 0.2s;
-}
-.reveal-group > *:nth-child(3) {
-  transition-delay: 0.3s;
-}
-.reveal-group > *:nth-child(4) {
-  transition-delay: 0.4s;
-}
-.reveal-group > *:nth-child(5) {
-  transition-delay: 0.5s;
-}
-.reveal-group > *:nth-child(6) {
-  transition-delay: 0.6s;
-}
 
 .neon-blue {
   box-shadow:
@@ -679,7 +648,7 @@ nav {
 
 .experience-ground-reveal {
   position: absolute;
-  left: 101px;
+  left: 84px;
   transform: translateX(-50%);
   bottom: 1rem;
 }

@@ -174,6 +174,7 @@ function App() {
         </Container>
       </div>
       {/* === FIRST SECTION: HERO === */}
+
       {/* SECOND SECTION: ABOUT */}
       <div id="about-section" className="about-section">
         <Container className="about-container" maxWidth="lg">
@@ -365,6 +366,7 @@ function App() {
         </Container>
       </div>
       {/* === SECOND SECTION: ABOUT === */}
+
       {/* THIRD SECTION: EXPERIENCE */}
       <div id="experience-section" className="experience-section">
         <Container className="experience-title">
@@ -564,8 +566,8 @@ function App() {
 
         </div> */}
       </div>
-
       {/* === THIRD SECTION: EXPERIENCE */}
+
       {/* FOURTH SECTION: SKILLS */}
       <div
         id="skills-section"
@@ -581,6 +583,7 @@ function App() {
         skills
       </div>
       {/* === FOURTH SECTION: SKILLS === */}
+
       {/* FIFTH SECTION: PROJECTS */}
       <div
         id="project-section"
@@ -596,6 +599,7 @@ function App() {
         projects
       </div>
       {/* === FIFTH SECTION: PROJECTS === */}
+
       {/* SIXTH SECTION: CONTACTS */}
       <div
         id="contact-section"
@@ -611,6 +615,7 @@ function App() {
         contact
       </div>
       {/* === SIXTH SECTION: CONTACTS */}
+      
       {/* FOOTER */}
       <footer
         style={{
