@@ -535,6 +535,7 @@ nav {
 
 /* -------------------------- EXPERIENCES ----------------------------------------- */
 
+
 .experience-section {
   position: relative;
   background-size: cover;
@@ -567,6 +568,7 @@ nav {
 }
 
 /* === EXPERIENCE BACKGROUND EFFECT === */
+
 .experience-section-starter {
   margin-top: 4rem;
   text-align: left;
