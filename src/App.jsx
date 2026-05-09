@@ -22,6 +22,7 @@ import TypingAnimation from "./components/TypingAnimation";
 import NeonLineAnimation from "./components/NeonLineAnimation";
 import RevealWrapper from "./components/RevealWrapper";
 import ExperienceReveal from "./components/ExperienceReveal";
+import "./components/ExperienceReveal.css";
 
 // HOOKS
 import { useEffect } from "react";
@@ -42,6 +43,41 @@ const stats = [
     icon: <GroupIcon className="neon-blue-icon" fontSize="large" />,
     value: "10+",
     label: "Happy Clients",
+  },
+];
+
+const experiences = [
+  {
+    year: "2026",
+    title: "Full Stack Engineer",
+    company: "TechNova Solutions",
+    dates: "Jan 2025 – Present",
+    location: "Remote",
+    description: "Building scalable web applications with modern technologies.",
+  },
+  {
+    year: "2026",
+    title: "Full Stack Engineer",
+    company: "TechNova Solutions",
+    dates: "Jan 2025 – Present",
+    location: "Remote",
+    description: "Building scalable web applications with modern technologies.",
+  },
+  {
+    year: "2026",
+    title: "Full Stack Engineer",
+    company: "TechNova Solutions",
+    dates: "Jan 2025 – Present",
+    location: "Remote",
+    description: "Building scalable web applications with modern technologies.",
+  },
+  {
+    year: "2026",
+    title: "Full Stack Engineer",
+    company: "TechNova Solutions",
+    dates: "Jan 2025 – Present",
+    location: "Remote",
+    description: "Building scalable web applications with modern technologies.",
   },
 ];
 
@@ -363,7 +399,59 @@ function App() {
           </RevealWrapper>
         </Container>
 
-        <div className="experience-content">
+        <ExperienceReveal>
+          {({ beamRef, rowVisible, setRowRef, setDotRef }) => (
+            <div className="experience-content">
+              <div className="experience-beam-track" ref={beamRef} />
+
+              <div className="experience-ground">
+                <div className="experience-inner-ground1 neon-blue"></div>
+                <div className="experience-inner-ground2 neon-blue"></div>
+                <div className="experience-inner-ground3 neon-blue"></div>
+              </div>
+
+              {experiences.map((experience, i) => (
+                <div key={i} className="experience-grid" ref={setRowRef(i)}>
+                  <div
+                    className={`experience-year-label${rowVisible.has(i) ? " row-item-visible" : ""}`}
+                  >
+                    <span className="experience-year">{experience.year}</span>
+                  </div>
+
+                  <div className="experience-light-beam">
+                    <div
+                      className={`experience-dot neon-blue${rowVisible.has(i) ? " row-item-visible" : ""}`}
+                      ref={setDotRef(i)}
+                    >
+                      <div className="experience-inner-dot neon-blue" />
+                    </div>
+                  </div>
+
+                  <div
+                    className={`experience-card neon-blue-border${rowVisible.has(i) ? " row-item-visible" : ""}`}
+                  >
+                    <h3 className="experience-card-label">
+                      {experience.title}
+                    </h3>
+                    <p className="experience-card-location">
+                      {experience.company}
+                    </p>
+                    <p className="experience-card-date">
+                      <span>{experience.dates}</span>
+                      <span>•</span>
+                      <span>{experience.location}</span>
+                    </p>
+                    <p className="experience-card-text">
+                      {experience.description}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
+        </ExperienceReveal>
+
+        {/* <div className="experience-content">
           <div className="experience-grid">
             <div className="experience-year-label">
               <span className="experience-year">2026</span>
@@ -472,8 +560,7 @@ function App() {
             </div>
           </div>
 
-        </div>
-
+        </div> */}
       </div>
 
       {/* === THIRD SECTION: EXPERIENCE */}

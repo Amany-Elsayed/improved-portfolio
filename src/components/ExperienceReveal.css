@@ -1,0 +1,59 @@
+.experience-timeline-reveal {
+  position: relative;
+}
+
+.experience-beam-track {
+  position: absolute;
+  left: 100px;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  border-radius: 5px;
+  background-color: #5274fa;
+  box-shadow:
+    0 0 8px #0033ff,
+    0 0 20px #0033ff,
+    0 0 40px #0022bb;
+  transform-origin: top center;
+  transform: scaleY(0);
+  z-index: 0;
+}
+
+.experience-timeline-reveal .experience-year-label {
+  opacity: 0;
+  transform: translateX(-16px);
+  transition:
+    opacity 0.5s ease,
+    transform 0.5s ease;
+}
+
+.experience-timeline-reveal .experience-year-label.row-item-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.experience-timeline-reveal .experience-dot {
+  opacity: 0;
+  transform: scale(0);
+  transition:
+    opacity 0.4s ease 0.15s,
+    transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) 0.15s;
+}
+
+.experience-timeline-reveal .experience-dot.row-item-visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.experience-timeline-reveal .experience-card {
+  opacity: 0;
+  transform: translateX(20px);
+  transition:
+    opacity 0.5s ease 0.25s,
+    transform 0.5s ease 0.25s;
+}
+
+.experience-timeline-reveal .experience-card.row-item-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
