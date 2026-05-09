@@ -32,6 +32,12 @@
     0 0 10px #0022bb;
 }
 
+.neon-border {
+  box-shadow:
+    0 0 0 1px #5274fa,
+    0 0 6px 1px rgba(82, 116, 250, 0.4);
+}
+
 @property --a {
   syntax: "<angle>";
   initial-value: 0deg;
@@ -77,6 +83,7 @@
   padding: 2px;
   animation: neonBlueBorder 4s infinite linear;
 }
+
 /* === --------------------------REUSABLES----------------------------------------- === */
 
 /* --------------------------HEADER----------------------------------------- */
@@ -731,6 +738,120 @@ nav {
 .skills-section-starter {
   margin-top: 4rem;
   text-align: left;
+}
+
+.skills-content {
+  padding-top: 2rem;
+  padding-bottom: 4rem;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: 2fr 2fr;
+  column-gap: 48px;
+  row-gap: 24px;
+}
+
+.skills-card-wrapper {
+  clip-path: polygon(
+    20px 0%,
+    100% 0%,
+    100% calc(100% - 20px),
+    calc(100% - 20px) 100%,
+    0% 100%,
+    0% 20px
+  );
+  border-radius: 0;
+}
+
+.skills-card {
+  width: 340px;
+  background: transparent;
+  padding: 24px 20px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.skills-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.skills-card-number {
+  font-size: 19px;
+  color: #5274fa;
+  font-family: monospace;
+  letter-spacing: 0.1em;
+}
+
+.skills-card-dots {
+  display: flex;
+  gap: 5px;
+}
+
+.skills-card-dots span {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #5274fa;
+  display: block;
+  filter: drop-shadow(0 0 6px rgba(136, 159, 250, 0.9));
+}
+
+.skills-card-title-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.skills-card-icon-box {
+  width: 64px;
+  height: 64px;
+  flex-shrink: 0;
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  background: #5274fa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  filter: drop-shadow(0 0 6px rgba(82, 116, 250, 0.5));
+}
+
+.card-icon-box-inner {
+  width: 61px;
+  height: 61px;
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  background: #060a16;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #5274fa;
+  font-size: 18px;
+  font-weight: bold;
+  font-family: monospace;
+}
+
+.skills-card-underline {
+  height: 2px;
+  background: linear-gradient(90deg, #5274fa, transparent);
+  margin-top: 6px;
+  border-radius: 2px;
+}
+
+.skills-chips-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.skills-chip {
+  background: rgba(55, 59, 75, 0.212);
+  border-radius: 25px;
+  padding: 7px 8px;
+  color: #c4d0fb;
+  font-size: 13px;
+  text-transform: capitalize;
 }
 
 /* === -------------------------- SKILLS ----------------------------------------- === */

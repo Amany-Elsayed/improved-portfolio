@@ -81,6 +81,33 @@ const experiences = [
   },
 ];
 
+const skills = [
+  {
+    number: "01",
+    icon: "icon-link",
+    title: "FRONTEND",
+    chips: ["html", "js", "css", "html", "js", "css"],
+  },
+  {
+    number: "02",
+    icon: "icon-link",
+    title: "FRONTEND",
+    chips: ["html", "js", "css", "html", "js", "css"],
+  },
+  {
+    number: "03",
+    icon: "icon-link",
+    title: "FRONTEND",
+    chips: ["html", "js", "css", "html", "js", "css"],
+  },
+  {
+    number: "04",
+    icon: "icon-link",
+    title: "FRONTEND",
+    chips: ["html", "js", "css", "html", "js", "css"],
+  },
+];
+
 // === VARIABLES ===
 
 function App() {
@@ -455,7 +482,6 @@ function App() {
             </div>
           )}
         </ExperienceReveal>
-
       </div>
       {/* === THIRD SECTION: EXPERIENCE */}
 
@@ -484,15 +510,53 @@ function App() {
 
           <RevealWrapper delay={0.3}>
             <p className="skills-section-title-p">
-              Technologies I've Mastered Along the Way 
+              Technologies I've Mastered Along the Way
             </p>
           </RevealWrapper>
 
           <RevealWrapper delay={0.3}>
             <hr className="skills-hr neon-blue" />
           </RevealWrapper>
-
         </Container>
+
+        <div className="skills-content">
+          <div className="skills-grid">
+            {skills.map((skill) => (
+              <div className="skill-card-wrapper neon-blue-border">
+                <div className="skills-card">
+                  <div className="skills-card-header">
+                    <span className="skills-card-number neon-blue-text">
+                      {skill.number}
+                    </span>
+                    <div className="skills-card-dots">
+                      <span />
+                      <span />
+                      <span />
+                    </div>
+                  </div>
+
+                  <div className="skills-card-title-row">
+                    <div className="skills-card-icon-box">
+                      <div className="card-icon-box-inner">{skill.icon}</div>
+                    </div>
+                    <div>
+                      <h2 className="skills-card-title">{skill.title}</h2>
+                      <div className="skills-card-underline" />
+                    </div>
+                  </div>
+
+                  <div className="skills-chips-grid">
+                    {skill.chips.map((chip) => (
+                      <div key={chip} className="skills-chip neon-border">
+                        {chip}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
       {/* === FOURTH SECTION: SKILLS === */}
 
