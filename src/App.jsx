@@ -16,6 +16,10 @@ import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
 import FolderOpenIcon from "@mui/icons-material/FolderOpen";
 import GroupIcon from "@mui/icons-material/Group";
 import TerminalIcon from "@mui/icons-material/Terminal";
+import CodeIcon from '@mui/icons-material/Code';
+import StorageIcon from '@mui/icons-material/Storage';
+import BrushIcon from '@mui/icons-material/Brush';
+import ControlPointIcon from '@mui/icons-material/ControlPoint';
 
 // COMPONENTS
 import TypingAnimation from "./components/TypingAnimation";
@@ -84,25 +88,25 @@ const experiences = [
 const skills = [
   {
     number: "01",
-    icon: "icon-link",
+    icon: <CodeIcon className="neon-blue-icon" />,
     title: "FRONTEND",
     chips: ["html", "js", "css", "html", "js", "css"],
   },
   {
     number: "02",
-    icon: "icon-link",
+    icon: <StorageIcon className="neon-blue-icon" />,
     title: "FRONTEND",
     chips: ["html", "js", "css", "html", "js", "css"],
   },
   {
     number: "03",
-    icon: "icon-link",
+    icon: <BrushIcon className="neon-blue-icon" />,
     title: "FRONTEND",
     chips: ["html", "js", "css", "html", "js", "css"],
   },
   {
     number: "04",
-    icon: "icon-link",
+    icon: <ControlPointIcon className="neon-blue-icon" />,
     title: "FRONTEND",
     chips: ["html", "js", "css", "html", "js", "css"],
   },
