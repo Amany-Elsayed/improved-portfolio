@@ -519,6 +519,13 @@ function App() {
           </RevealWrapper>
         </Container>
 
+        <div className="skills-tree-diagram">
+          <div className="skills-tree-diagram1"></div>
+          <div className="skills-tree-diagram2"></div>
+          <div className="skills-tree-diagram3"></div>
+          <div className="skills-tree-diagram4"></div>
+        </div>
+
         <div className="skills-content">
           <div className="skills-grid">
             {skills.map((skill) => (
