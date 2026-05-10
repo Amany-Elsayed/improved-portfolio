@@ -16,10 +16,10 @@ import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
 import FolderOpenIcon from "@mui/icons-material/FolderOpen";
 import GroupIcon from "@mui/icons-material/Group";
 import TerminalIcon from "@mui/icons-material/Terminal";
-import CodeIcon from '@mui/icons-material/Code';
-import StorageIcon from '@mui/icons-material/Storage';
-import BrushIcon from '@mui/icons-material/Brush';
-import ControlPointIcon from '@mui/icons-material/ControlPoint';
+import CodeIcon from "@mui/icons-material/Code";
+import StorageIcon from "@mui/icons-material/Storage";
+import BrushIcon from "@mui/icons-material/Brush";
+import ControlPointIcon from "@mui/icons-material/ControlPoint";
 
 // COMPONENTS
 import TypingAnimation from "./components/TypingAnimation";
@@ -529,6 +529,14 @@ function App() {
           <div className="skills-tree-diagram3"></div>
           <div className="skills-tree-diagram4"></div>
         </div>
+
+        <RevealWrapper className="skills-ground-reveal" delay={0.8}>
+          <div className="skills-ground">
+            <div className="skills-inner-ground1 neon-blue"></div>
+            <div className="skills-inner-ground2 neon-blue"></div>
+            <div className="skills-inner-ground3 neon-blue"></div>
+          </div>
+        </RevealWrapper>
 
         <div className="skills-content">
           <div className="skills-grid">

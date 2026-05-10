@@ -979,4 +979,163 @@ nav {
   text-transform: capitalize;
 }
 
+.skills-tree-diagram {
+  position: absolute;
+  top: 14.7rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 900px;
+  height: 620px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.skills-tree-diagram::before {
+  content: "";
+  position: absolute;
+
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+
+  width: 5px;
+  height: 100%;
+
+  border-radius: 999px;
+
+  background: #5274fa;
+
+  box-shadow:
+    0 0 8px rgba(0, 109, 255, 0.95),
+    0 0 18px rgba(0, 109, 255, 0.65),
+    0 0 32px rgba(0, 109, 255, 0.35);
+}
+
+.skills-tree-diagram1,
+.skills-tree-diagram2,
+.skills-tree-diagram3,
+.skills-tree-diagram4 {
+  position: absolute;
+
+  width: 120px;
+  height: 5px;
+
+  border-radius: 999px;
+
+  background: #5274fa;
+
+  box-shadow:
+    0 0 8px rgba(0, 109, 255, 0.95),
+    0 0 18px rgba(0, 109, 255, 0.55);
+}
+
+.skills-tree-diagram1::before,
+.skills-tree-diagram2::before,
+.skills-tree-diagram3::before,
+.skills-tree-diagram4::before {
+  content: "";
+
+  position: absolute;
+
+  left: -11px;
+  top: 50%;
+  transform: translateY(-50%);
+
+  width: 16px;
+  height: 16px;
+
+  border-radius: 50%;
+
+  background: #050816;
+  border: 4px solid #5274fa;
+
+  box-shadow:
+    0 0 8px rgba(0, 109, 255, 0.95),
+    0 0 18px rgba(0, 109, 255, 0.55);
+}
+
+.skills-tree-diagram1::after,
+.skills-tree-diagram2::after,
+.skills-tree-diagram3::after,
+.skills-tree-diagram4::after {
+  content: "";
+
+  position: absolute;
+
+  left: -2px;
+  top: 50%;
+  transform: translateY(-50%);
+
+  width: 6px;
+  height: 6px;
+
+  border-radius: 50%;
+
+  background: #5274fa;
+
+  box-shadow:
+    0 0 6px rgba(77, 163, 255, 1);
+}
+
+.skills-tree-diagram1 {
+  top: 145px;
+  left: 50%;
+  transform: translateX(-100%);
+}
+
+.skills-tree-diagram2 {
+  top: 145px;
+  left: 50%;
+}
+
+.skills-tree-diagram3 {
+  top: 470px;
+  left: 50%;
+  transform: translateX(-100%);
+}
+
+.skills-tree-diagram4 {
+  top: 470px;
+  left: 50%;
+}
+
+.skills-ground-reveal {
+  position: absolute;
+  top: calc(14.7rem + 620px - 5px);
+  transform: translateX(-50%);
+  z-index: 2;
+  pointer-events: none;
+}
+
+.skills-ground {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  width: 2rem;
+  height: 2rem;
+}
+
+.skills-inner-ground1 {
+  background-color: #5274fa;
+  width: 80%;
+  height: 5px;
+  border-radius: 5px;
+}
+
+.skills-inner-ground2 {
+  background-color: #5274fa;
+  width: 65%;
+  height: 5px;
+  border-radius: 5px;
+}
+
+.skills-inner-ground3 {
+  background-color: #5274fa;
+  width: 45%;
+  height: 5px;
+  border-radius: 5px;
+}
+
 /* === -------------------------- SKILLS ----------------------------------------- === */
