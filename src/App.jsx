@@ -522,7 +522,7 @@ function App() {
         <div className="skills-content">
           <div className="skills-grid">
             {skills.map((skill) => (
-              <div className="skill-card-wrapper neon-blue-border">
+              <div className="skill-card-wrapper">
                 <div className="skills-card">
                   <div className="skills-card-header">
                     <span className="skills-card-number neon-blue-text">

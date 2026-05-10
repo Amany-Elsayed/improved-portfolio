@@ -748,11 +748,15 @@ nav {
 .skills-grid {
   display: grid;
   grid-template-columns: 2fr 2fr;
-  column-gap: 48px;
-  row-gap: 24px;
+  column-gap: 100px;
+  row-gap: 40px;
 }
 
 .skills-card-wrapper {
+  position: relative;
+  display: inline-block;
+  padding: 2px;
+  z-index: 1;
   clip-path: polygon(
     20px 0%,
     100% 0%,
@@ -762,16 +766,158 @@ nav {
     0% 20px
   );
   border-radius: 0;
+  /* animation: floatCard 6s ease-in-out infinite; */
 }
 
+/* @keyframes floatCard {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+} */
+
 .skills-card {
-  width: 340px;
-  background: transparent;
-  padding: 24px 20px 28px;
+  position: relative;
+  width: 220px;
   display: flex;
   flex-direction: column;
   gap: 20px;
+  background: rgba(10, 15, 35, 0.65);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(0, 200, 255, 0.15);
+  border-radius: 20px;
+  padding: 24px 20px 28px;
+  overflow: hidden;
+
+  box-shadow:
+    0 0 40px rgba(0, 150, 255, 0.1),
+    inset 0 0 60px rgba(0, 100, 255, 0.05),
+    0 20px 50px rgba(0, 0, 0, 0.5);
+
+  /* transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); */
 }
+
+/* .skills-card:hover {
+  box-shadow:
+    0 0 60px rgba(0, 200, 255, 0.2),
+    inset 0 0 80px rgba(0, 150, 255, 0.08),
+    0 25px 60px rgba(0, 0, 0, 0.6);
+  border-color: rgba(0, 200, 255, 0.3);
+  transform: translateY(-2px);
+} */
+
+.skills-card::before,
+.skills-card::after {
+  content: "";
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border: 2px solid rgba(0, 200, 255, 0.6);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  pointer-events: none;
+}
+
+.skills-card::before {
+  top: -1px;
+  left: -1px;
+  border-right: none;
+  border-bottom: none;
+  border-top-left-radius: 20px;
+}
+
+.skills-card::after {
+  bottom: -1px;
+  right: -1px;
+  border-left: none;
+  border-top: none;
+  border-bottom-right-radius: 20px;
+}
+
+/* SKILLS CARD ANIMATION */
+
+.skills-card {
+  animation: idleBorderPulse 3s ease-in-out infinite;
+}
+
+@keyframes idleBorderPulse {
+  0%, 100% {
+    box-shadow: 
+      0 0 40px rgba(0, 150, 255, 0.1),
+      inset 0 0 60px rgba(0, 100, 255, 0.05),
+      0 20px 15px rgba(0, 0, 0, 0.5),
+
+      0 -3px 15px rgba(0, 68, 255, 0.15),
+      0 -3px 20px rgba(0, 102, 255, 0.05),
+
+      3px 0 15px rgba(0, 200, 255, 0.0),
+
+      0 3px 15px rgba(0, 200, 255, 0.0),
+
+      -3px 0 15px rgba(0, 89, 255, 0.35),
+      -3px 0 20px rgba(0, 17, 255, 0.2);
+    border-color: rgba(0, 200, 255, 0.25);
+  }
+  25% {
+    box-shadow: 
+      0 0 40px rgba(0, 150, 255, 0.1),
+      inset 0 0 60px rgba(0, 100, 255, 0.05),
+      0 20px 50px rgba(0, 0, 0, 0.5),
+
+      0 -3px 15px rgba(0, 68, 255, 0.15),
+      0 -3px 20px rgba(0, 102, 255, 0.05),
+
+      3px 0 15px rgba(0, 68, 255, 0.15),
+      3px 0 20px rgba(0, 102, 255, 0.05),
+
+      0 3px 15px rgba(0, 200, 255, 0.0),
+  
+      -3px 0 15px rgba(0, 89, 255, 0.15),
+      -3px 0 20px rgba(0, 17, 255, 0.5);
+    border-color: rgba(0, 200, 255, 0.35);
+  }
+  50% {
+    box-shadow: 
+      0 0 40px rgba(0, 150, 255, 0.1),
+      inset 0 0 60px rgba(0, 100, 255, 0.05),
+      0 20px 50px rgba(0, 0, 0, 0.5),
+  
+      0 -3px 15px rgba(0, 200, 255, 0.0),
+
+      3px 0 15px rgba(0, 68, 255, 0.15),
+      3px 0 20px rgba(0, 102, 255, 0.05),
+
+      0 3px 15px rgba(0, 68, 255, 0.15),
+      0 3px 20px rgba(0, 102, 255, 0.05),
+
+      -3px 0 15px rgba(0, 89, 255, 0.15),
+      -3px 0 20px rgba(0, 17, 255, 0.5);
+    border-color: rgba(0, 200, 255, 0.4);
+  }
+  75% {
+    box-shadow: 
+      0 0 40px rgba(0, 150, 255, 0.1),
+      inset 0 0 60px rgba(0, 100, 255, 0.05),
+      0 20px 50px rgba(0, 0, 0, 0.5),
+
+      0 -3px 15px rgba(0, 68, 255, 0.15),
+      0 -3px 20px rgba(0, 102, 255, 0.05),
+
+      3px 0 15px rgba(0, 200, 255, 0.0),
+
+      0 3px 15px rgba(0, 68, 255, 0.15),
+      0 3px 20px rgba(0, 102, 255, 0.05),
+
+      -3px 0 15px rgba(0, 89, 255, 0.45),
+      -3px 0 20px rgba(0, 17, 255, 0.2);
+    border-color: rgba(0, 89, 255, 0.35);
+  }
+}
+
+/* === SKILLS CARD ANIMATION === */
 
 .skills-card-header {
   display: flex;
