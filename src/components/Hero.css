@@ -1,0 +1,88 @@
+/* --------------------------HERO----------------------------------------- */
+.hero-section {
+  /* border-bottom: 1px solid #676aff; */
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.circuit-video-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.video-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+}
+
+.hero-text {
+  text-align: center;
+  position: relative;
+  z-index: 10;
+}
+
+.hero-h1,
+.hero-h2 {
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+  cursor: default;
+}
+
+/* THE CIRCUITS SPAN ANIMATION */
+
+@property --glow {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 0;
+}
+
+.circuit-span {
+  --glow: 0;
+  transition:
+    --glow 0.8s ease,
+    color 0.8s ease;
+  text-shadow:
+    0 0 calc(var(--glow) * 5px) #92e5fe,
+    0 0 calc(var(--glow) * 10px) #92e5fe,
+    0 0 calc(var(--glow) * 20px) #0af;
+}
+
+.circuit-span:hover {
+  --glow: 1;
+  color: #92e5fe;
+  animation: lightUp 1.5s 0.7s ease-in-out infinite alternate;
+}
+
+@keyframes lightUp {
+  from {
+    text-shadow:
+      0 0 5px #92e5fe,
+      0 0 10px #92e5fe,
+      0 0 20px #0af;
+  }
+  to {
+    text-shadow:
+      0 0 10px #92e5fe,
+      0 0 20px #92e5fe,
+      0 0 30px #0af,
+      0 0 40px #0af,
+      0 0 70px #0af,
+      0 0 80px #0af;
+  }
+}
+
+/* === THE CIRCUITS SPAN ANIMATION === */
+
+/* === -------------------------- HERO ----------------------------------------- === */
