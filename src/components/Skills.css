@@ -275,7 +275,7 @@
   left: 50%;
   transform: translateX(-50%);
   width: 900px;
-  height: 620px;
+  height: 640px;
   pointer-events: none;
   z-index: 0;
 }
