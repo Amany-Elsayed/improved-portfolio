@@ -31,3 +31,18 @@
   position: relative;
   z-index: 1;
 }
+
+.projects-hr {
+  border: 2px solid #0033cce1;
+  border-radius: 5px;
+
+  width: 5rem;
+
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.projects-section-starter {
+  margin-top: 4rem;
+  text-align: left;
+}
