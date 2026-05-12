@@ -6,6 +6,7 @@ import About from "./components/About"
 import Hero from "./components/Hero"
 import Experience from "./components/Experience";
 import Skills from "./components/Skills";
+import Projects from "./components/Projects";
 
 // HOOKS
 import { useEffect } from "react";
@@ -40,19 +41,7 @@ function App() {
       {/* === FOURTH SECTION: SKILLS === */}
 
       {/* FIFTH SECTION: PROJECTS */}
-      <div
-        id="project-section"
-        className="project-section"
-        style={{
-          backgroundColor: "yellow",
-          height: "100vh",
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-        }}
-      >
-        projects
-      </div>
+      <Projects />
       {/* === FIFTH SECTION: PROJECTS === */}
 
       {/* SIXTH SECTION: CONTACTS */}

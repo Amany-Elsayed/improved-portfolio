@@ -29,7 +29,7 @@ export default function Header() {
               </a>
             </li>
             <li className="nav-list-item">
-              <a href="#project-section" className="nav-list-link">
+              <a href="#projects-section" className="nav-list-link">
                 Projects
               </a>
             </li>

@@ -1,0 +1,33 @@
+.projects-section {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.projects-section::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background-image: url("/projectsBackground.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  filter: blur(2px);
+
+  z-index: 0;
+}
+
+.projects-section > * {
+  position: relative;
+  z-index: 1;
+}
