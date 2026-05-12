@@ -1,28 +1,33 @@
-/* -------------------------- EXPERIENCES ----------------------------------------- */
+/* -------------------------- EXPERIENCE ----------------------------------------- */
 
 .experience-section {
   position: relative;
+
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+
   min-height: 100vh;
+
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-/* EXPERIENCE BACKGROUND EFFECT */
-
 .experience-section::before {
   content: "";
+
   position: absolute;
   inset: 0;
+
   background-image: url("/experiencesBackground.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+
   filter: blur(4px);
+
   z-index: 0;
 }
 
@@ -31,8 +36,6 @@
   z-index: 1;
 }
 
-/* === EXPERIENCE BACKGROUND EFFECT === */
-
 .experience-section-starter {
   margin-top: 4rem;
   text-align: left;
@@ -40,58 +43,88 @@
 
 .experience-hr {
   border: 2px solid #0033cce1;
+
   border-radius: 5px;
+
   width: 5rem;
-  margin-bottom: 1rem;
+
   margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 
 .experience-content {
   padding-top: 4rem;
   padding-bottom: 4rem;
+
   right: 4%;
 }
 
 .experience-grid {
   display: grid;
+
   grid-template-columns: 80px 40px 1fr;
+
   align-items: start;
 }
 
 .experience-light-beam {
   height: 100%;
+
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
 .experience-dot {
-  background-color: #040d1a;
+  background-color: #050816;
+
   width: 22px;
   height: 22px;
+
   border-radius: 50%;
+
   margin-top: 3.6rem;
-  border: 2px solid #5274fa;
+
+  border: 4px solid rgba(0, 51, 255, 0.3);
+
   display: flex;
   align-items: center;
   justify-content: center;
+
   flex-shrink: 0;
+
+  box-shadow:
+    0 0 8px rgba(0, 51, 255, 0.45),
+    0 0 18px rgba(0, 51, 255, 0.18);
+
+  z-index: 5;
 }
 
 .experience-inner-dot {
-  width: 8px;
-  height: 8px;
+  width: 6px;
+  height: 6px;
+
   border-radius: 50%;
-  background-color: #5274fa;
+
+  background: #0033ff;
+
+  box-shadow:
+    0 0 6px #0033ff,
+    0 0 14px #0033ff;
+
+  z-index: 6;
 }
 
 .experience-year-label {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+
   padding-right: 10px;
   padding-top: 43px;
+
   gap: 3px;
+
   margin-top: 1.2rem;
   margin-bottom: 2rem;
 }
@@ -99,37 +132,104 @@
 .experience-year {
   font-size: 18px;
   font-weight: 700;
+
   color: #3b8ef3;
+
   line-height: 1;
+
+  text-shadow:
+    0 0 6px rgba(0, 51, 255, 0.4),
+    0 0 12px rgba(0, 51, 255, 0.2);
 }
 
 .experience-card {
-  background-color: transparent;
+  position: relative;
+
+  background: rgba(10, 15, 35, 0.65);
+
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+
+  border: 1px solid rgba(0, 200, 255, 0.15);
+
+  border-radius: 20px;
+
   padding: 20px 24px;
+
   margin-left: 20px;
   margin-bottom: 2rem;
+
+  box-shadow:
+    0 0 40px rgba(0, 150, 255, 0.1),
+    inset 0 0 60px rgba(0, 100, 255, 0.05),
+    0 20px 50px rgba(0, 0, 0, 0.5);
+
+  animation: experienceBorderPulse 3s ease-in-out infinite;
+}
+
+@keyframes experienceBorderPulse {
+  0%,
+  100% {
+    box-shadow:
+      0 0 40px rgba(0, 150, 255, 0.1),
+      inset 0 0 60px rgba(0, 100, 255, 0.05),
+      0 20px 15px rgba(0, 0, 0, 0.5),
+      0 -3px 15px rgba(0, 68, 255, 0.15),
+      0 -3px 20px rgba(0, 102, 255, 0.05),
+      3px 0 15px rgba(0, 200, 255, 0),
+      0 3px 15px rgba(0, 200, 255, 0),
+      -3px 0 15px rgba(0, 89, 255, 0.35),
+      -3px 0 20px rgba(0, 17, 255, 0.2);
+
+    border-color: rgba(0, 200, 255, 0.25);
+  }
+
+  25% {
+    border-color: rgba(0, 200, 255, 0.35);
+  }
+
+  50% {
+    border-color: rgba(0, 200, 255, 0.4);
+  }
+
+  75% {
+    border-color: rgba(0, 89, 255, 0.35);
+  }
 }
 
 .experience-card-label {
   font-size: 18px;
   font-weight: 600;
+
   text-align: left;
+
   color: #f0f4ff;
+
   margin: 0 0 4px;
 }
 
 .experience-card-location {
   font-size: 14px;
   font-weight: 500;
+
   text-align: left;
+
   color: #3b8ef3;
+
   margin: 0 0 8px;
+
+  text-shadow:
+    0 0 6px rgba(0, 51, 255, 0.4),
+    0 0 12px rgba(0, 51, 255, 0.2);
 }
 
 .experience-card-date {
   font-size: 14px;
+
   color: #6b7fa3;
+
   margin: 0 0 12px;
+
   display: flex;
   gap: 8px;
 }
@@ -137,15 +237,19 @@
 .experience-card-text {
   font-size: 14px;
   line-height: 1.65;
+
   color: #8fa0c0;
+
   margin: 0;
 }
 
 .experience-ground-reveal {
   position: absolute;
+
   left: 102px;
-  transform: translateX(-50%);
   bottom: 1rem;
+
+  transform: translateX(-50%);
 }
 
 .experience-ground {
@@ -153,30 +257,33 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
   gap: 4px;
+
   width: 2rem;
   height: 2rem;
 }
 
-.experience-inner-ground1 {
+.experience-inner-ground1,
+.experience-inner-ground2,
+.experience-inner-ground3 {
   background-color: #5274fa;
-  width: 80%;
+
   height: 5px;
+
   border-radius: 5px;
+}
+
+.experience-inner-ground1 {
+  width: 80%;
 }
 
 .experience-inner-ground2 {
-  background-color: #5274fa;
   width: 65%;
-  height: 5px;
-  border-radius: 5px;
 }
 
 .experience-inner-ground3 {
-  background-color: #5274fa;
   width: 45%;
-  height: 5px;
-  border-radius: 5px;
 }
 
-/* === -------------------------- EXPERIENCES ----------------------------------------- === */
+/* === -------------------------- EXPERIENCE ----------------------------------------- === */

@@ -1,4 +1,4 @@
-import "./Skills.css"
+import "./Skills.css";
 import "../App.css";
 
 import Container from "@mui/material/Container";
@@ -10,6 +10,7 @@ import ControlPointIcon from "@mui/icons-material/ControlPoint";
 
 import TypingAnimation from "../animations/TypingAnimation";
 import NeonLineAnimation from "../animations/NeonLineAnimation";
+import SkillsTreeReveal from "../animations/SkillsTreeReveal";
 import RevealWrapper from "../animations/RevealWrapper";
 
 const skills = [
@@ -76,10 +77,13 @@ export default function Skills() {
         </Container>
 
         <div className="skills-tree-diagram">
+
           <div className="skills-tree-diagram1"></div>
           <div className="skills-tree-diagram2"></div>
           <div className="skills-tree-diagram3"></div>
           <div className="skills-tree-diagram4"></div>
+
+          <SkillsTreeReveal />
         </div>
 
         <RevealWrapper className="skills-ground-reveal" delay={0.8}>

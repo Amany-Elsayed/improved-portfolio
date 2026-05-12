@@ -1,57 +1,114 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import "./SkillsTreeReveal.css";
 
-const BEAM_TRIGGER_Y = 300;
-const BEAM_END = 0.98;
+const TRIGGER_Y = 300;
+const MAX_PROGRESS = 0.95;
 
-export default function SkillsTreeReveal({ children }) {
+export default function SkillsTreeReveal() {
   const containerRef = useRef(null);
-  const trunkRef = useRef(null);
-  const [lit, setLit] = useState(new Set());
+
+  const beamRef = useRef(null);
+
+  const branch1Ref = useRef(null);
+  const branch2Ref = useRef(null);
+  const branch3Ref = useRef(null);
+  const branch4Ref = useRef(null);
 
   useEffect(() => {
     const container = containerRef.current;
-    const trunk = trunkRef.current;
-    if (!container || !trunk) return;
+
+    if (!container) return;
 
     let maxProgress = 0;
-    const branchTops = [145, 145, 470, 470];
 
-    const update = () => {
-      const { top, height } = container.getBoundingClientRect();
-      const raw = (BEAM_TRIGGER_Y - top) / height;
-      const progress = Math.min(BEAM_END, Math.max(0, raw));
+    const updateBeam = () => {
+      const rect = container.getBoundingClientRect();
+
+      const rawProgress =
+        (TRIGGER_Y - rect.top) / rect.height;
+
+      const progress = Math.min(
+        MAX_PROGRESS,
+        Math.max(0, rawProgress)
+      );
 
       if (progress > maxProgress) {
         maxProgress = progress;
-        trunk.style.transform = `translateX(-50%) scaleY(${maxProgress})`;
-      }
 
-      const beamTipY = top + maxProgress * height;
-
-      branchTops.forEach((branchOffsetFromTop, i) => {
-        const branchAbsoluteY = top + branchOffsetFromTop + 2.5;
-        if (beamTipY >= branchAbsoluteY) {
-          setLit((prev) => {
-            if (prev.has(i)) return prev;
-            return new Set([...prev, i]);
-          });
+        if (beamRef.current) {
+          beamRef.current.style.transform =
+            `translateX(-50%) scaleY(${maxProgress})`;
         }
-      });
 
-      if (maxProgress >= BEAM_END) {
-        window.removeEventListener("scroll", update);
+        if (maxProgress > 0.22) {
+          branch1Ref.current?.classList.add(
+            "skills-branch-visible"
+          );
+
+          branch2Ref.current?.classList.add(
+            "skills-branch-visible"
+          );
+        }
+
+        if (maxProgress > 0.72) {
+          branch3Ref.current?.classList.add(
+            "skills-branch-visible"
+          );
+
+          branch4Ref.current?.classList.add(
+            "skills-branch-visible"
+          );
+        }
       }
     };
 
-    window.addEventListener("scroll", update, { passive: true });
-    update();
-    return () => window.removeEventListener("scroll", update);
+    window.addEventListener("scroll", updateBeam, {
+      passive: true,
+    });
+
+    updateBeam();
+
+    return () =>
+      window.removeEventListener(
+        "scroll",
+        updateBeam
+      );
   }, []);
 
   return (
-    <div ref={containerRef} className="skills-tree-reveal">
-      {children({ trunkRef, lit })}
+    <div
+      ref={containerRef}
+      className="skills-tree-overlay"
+    >
+      {/* ANIMATED CENTER BEAM */}
+      <div
+        ref={beamRef}
+        className="skills-tree-animated-beam"
+      />
+
+      {/* TOP LEFT */}
+      <div
+        ref={branch1Ref}
+        className="skills-animated-branch left top"
+      />
+
+      {/* TOP RIGHT */}
+      <div
+        ref={branch2Ref}
+        className="skills-animated-branch right top"
+      />
+
+      {/* BOTTOM LEFT */}
+      <div
+        ref={branch3Ref}
+        className="skills-animated-branch left bottom"
+      />
+
+      {/* BOTTOM RIGHT */}
+      <div
+        ref={branch4Ref}
+        className="skills-animated-branch right bottom"
+      />
     </div>
   );
 }

@@ -1,72 +1,94 @@
-.skills-tree-reveal {
+.skills-tree-overlay {
   position: absolute;
-  top: 14.7rem;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 900px;
-  height: 620px;
+  inset: 0;
+  z-index: 3;
   pointer-events: none;
-  z-index: 0;
 }
 
-.skills-tree-trunk {
+.skills-tree-animated-beam {
   position: absolute;
+
   left: 50%;
   top: 0;
+
   transform: translateX(-50%) scaleY(0);
   transform-origin: top center;
+
   width: 5px;
   height: 100%;
+
   border-radius: 999px;
-  background: #5274fa;
+
+  background: #0033ff;
+
   box-shadow:
-    0 0 8px rgba(0, 109, 255, 0.95),
-    0 0 18px rgba(0, 109, 255, 0.65),
-    0 0 32px rgba(0, 109, 255, 0.35);
+    0 0 8px #0033ff,
+    0 0 20px #0033ff,
+    0 0 40px #0022bb;
+
+  z-index: 3;
 }
 
-.skills-tree-diagram1,
-.skills-tree-diagram2,
-.skills-tree-diagram3,
-.skills-tree-diagram4 {
+.skills-animated-branch {
+  position: absolute;
+
+  width: 120px;
+  height: 5px;
+
+  border-radius: 999px;
+
+  background: #0033ff;
+
+  box-shadow:
+    0 0 8px #0033ff,
+    0 0 20px #0033ff,
+    0 0 40px #0022bb;
+
   opacity: 0;
+
   transition:
-    opacity 0.4s ease,
-    clip-path 0.45s ease;
+    opacity 0.2s ease,
+    transform 0.45s ease;
+
+  z-index: 4;
 }
 
-.skills-tree-diagram1,
-.skills-tree-diagram3 {
-  clip-path: inset(0 100% 0 0);
+.skills-animated-branch.left {
+  left: 50%;
+  transform-origin: right center;
 }
 
-.skills-tree-diagram2,
-.skills-tree-diagram4 {
-  clip-path: inset(0 0 0 100%);
+.skills-animated-branch.right {
+  left: 50%;
+  transform-origin: left center;
 }
 
-.skills-tree-diagram1.branch-lit,
-.skills-tree-diagram2.branch-lit,
-.skills-tree-diagram3.branch-lit,
-.skills-tree-diagram4.branch-lit {
+.skills-animated-branch.top {
+  top: 145px;
+}
+
+.skills-animated-branch.bottom {
+  top: 470px;
+}
+
+.skills-animated-branch.left.top,
+.skills-animated-branch.left.bottom {
+  transform: translateX(-100%) scaleX(0);
+}
+
+.skills-animated-branch.right.top,
+.skills-animated-branch.right.bottom {
+  transform: scaleX(0);
+}
+
+.skills-animated-branch.left.skills-branch-visible.top,
+.skills-animated-branch.left.skills-branch-visible.bottom {
   opacity: 1;
-  clip-path: inset(0 0% 0 0%);
+  transform: translateX(-100%) scaleX(1);
 }
 
-.skills-tree-diagram1.branch-lit::after,
-.skills-tree-diagram2.branch-lit::after,
-.skills-tree-diagram3.branch-lit::after,
-.skills-tree-diagram4.branch-lit::after {
-  animation: led-blink 1.8s ease-in-out infinite;
-}
-
-@keyframes led-blink {
-  0%, 100% {
-    opacity: 1;
-    box-shadow: 0 0 6px rgba(77, 163, 255, 1);
-  }
-  50% {
-    opacity: 0.35;
-    box-shadow: 0 0 2px rgba(77, 163, 255, 0.3);
-  }
+.skills-animated-branch.right.skills-branch-visible.top,
+.skills-animated-branch.right.skills-branch-visible.bottom {
+  opacity: 1;
+  transform: scaleX(1);
 }
