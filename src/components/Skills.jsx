@@ -40,6 +40,8 @@ const skills = [
   },
 ];
 
+const cardDelays = [0.1, 0.25, 0.4, 0.55];
+
 export default function Skills() {
   return (
     <>
@@ -95,39 +97,41 @@ export default function Skills() {
 
         <div className="skills-content">
           <div className="skills-grid">
-            {skills.map((skill) => (
-              <div className="skill-card-wrapper">
-                <div className="skills-card">
-                  <div className="skills-card-header">
-                    <span className="skills-card-number neon-blue-text">
-                      {skill.number}
-                    </span>
-                    <div className="skills-card-dots">
-                      <span />
-                      <span />
-                      <span />
-                    </div>
-                  </div>
-
-                  <div className="skills-card-title-row">
-                    <div className="skills-card-icon-box">
-                      <div className="card-icon-box-inner">{skill.icon}</div>
-                    </div>
-                    <div>
-                      <h2 className="skills-card-title">{skill.title}</h2>
-                      <div className="skills-card-underline" />
-                    </div>
-                  </div>
-
-                  <div className="skills-chips-grid">
-                    {skill.chips.map((chip) => (
-                      <div key={chip} className="skills-chip neon-border">
-                        {chip}
+            {skills.map((skill, index) => (
+              <RevealWrapper key={skill.number} delay={cardDelays[index]}>
+                <div className="skill-card-wrapper">
+                  <div className="skills-card">
+                    <div className="skills-card-header">
+                      <span className="skills-card-number neon-blue-text">
+                        {skill.number}
+                      </span>
+                      <div className="skills-card-dots">
+                        <span />
+                        <span />
+                        <span />
                       </div>
-                    ))}
+                    </div>
+
+                    <div className="skills-card-title-row">
+                      <div className="skills-card-icon-box">
+                        <div className="card-icon-box-inner">{skill.icon}</div>
+                      </div>
+                      <div>
+                        <h2 className="skills-card-title">{skill.title}</h2>
+                        <div className="skills-card-underline" />
+                      </div>
+                    </div>
+
+                    <div className="skills-chips-grid">
+                      {skill.chips.map((chip, chipIndex) => (
+                        <div key={chipIndex} className="skills-chip neon-border">
+                          {chip}
+                        </div>
+                      ))}
+                    </div>
                   </div>
                 </div>
-              </div>
+              </RevealWrapper>
             ))}
           </div>
         </div>

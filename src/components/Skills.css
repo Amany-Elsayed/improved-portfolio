@@ -24,7 +24,7 @@
   background-position: center;
   background-repeat: no-repeat;
 
-  filter: blur(4px);
+  filter: blur(3px);
 
   z-index: 0;
 }
@@ -408,6 +408,13 @@
     0 0 14px #0033ff;
 
   z-index: 6;
+}
+
+.skills-tree-diagram1::before,
+.skills-tree-diagram1::after,
+.skills-tree-diagram3::before,
+.skills-tree-diagram3::after {
+  display: none;
 }
 
 .skills-tree-diagram1 {
