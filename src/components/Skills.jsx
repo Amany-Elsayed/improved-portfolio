@@ -77,7 +77,6 @@ export default function Skills() {
         </Container>
 
         <div className="skills-tree-diagram">
-
           <div className="skills-tree-diagram1"></div>
           <div className="skills-tree-diagram2"></div>
           <div className="skills-tree-diagram3"></div>

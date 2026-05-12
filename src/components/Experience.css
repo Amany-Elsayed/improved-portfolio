@@ -145,7 +145,7 @@
 .experience-card {
   position: relative;
 
-  background: rgba(10, 15, 35, 0.65);
+  background: rgba(10, 15, 35, 0.85);
 
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
@@ -167,20 +167,21 @@
   animation: experienceBorderPulse 3s ease-in-out infinite;
 }
 
+.experience-card::after {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border-radius: 20px;
+  background: linear-gradient(135deg, rgba(0, 200, 255, 0.3), rgba(0, 89, 255, 0.3));
+  opacity: 0.5;
+  z-index: -1;
+  animation: experienceBorderPulse 3s ease-in-out infinite;
+}
+
 @keyframes experienceBorderPulse {
   0%,
   100% {
-    box-shadow:
-      0 0 40px rgba(0, 150, 255, 0.1),
-      inset 0 0 60px rgba(0, 100, 255, 0.05),
-      0 20px 15px rgba(0, 0, 0, 0.5),
-      0 -3px 15px rgba(0, 68, 255, 0.15),
-      0 -3px 20px rgba(0, 102, 255, 0.05),
-      3px 0 15px rgba(0, 200, 255, 0),
-      0 3px 15px rgba(0, 200, 255, 0),
-      -3px 0 15px rgba(0, 89, 255, 0.35),
-      -3px 0 20px rgba(0, 17, 255, 0.2);
-
+    background-color: transparent;
     border-color: rgba(0, 200, 255, 0.25);
   }
 
