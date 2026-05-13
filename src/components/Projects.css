@@ -46,3 +46,184 @@
   margin-top: 4rem;
   text-align: left;
 }
+
+.projects-tree-diagram {
+  position: absolute;
+
+  top: 14.7rem;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  width: 900px;
+  height: 640px;
+
+  pointer-events: none;
+
+  z-index: 0;
+}
+
+.projects-tree-center-line {
+  position: absolute;
+
+  left: 50%;
+  top: 0;
+
+  transform: translateX(-50%);
+
+  width: 5px;
+  height: 100%;
+
+  border-radius: 999px;
+
+  background: rgba(0, 51, 255, 0.12);
+
+  box-shadow: 0 0 4px rgba(0, 51, 255, 0.18);
+}
+
+.projects-tree-diagram1,
+.projects-tree-diagram2,
+.projects-tree-diagram3,
+.projects-tree-diagram4 {
+  position: absolute;
+
+  width: 120px;
+  height: 5px;
+
+  border-radius: 999px;
+
+  background: rgba(0, 51, 255, 0.12);
+
+  box-shadow: 0 0 4px rgba(0, 51, 255, 0.18);
+}
+
+.projects-tree-diagram1::before,
+.projects-tree-diagram2::before,
+.projects-tree-diagram3::before,
+.projects-tree-diagram4::before {
+  content: "";
+
+  position: absolute;
+
+  left: -11px;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  width: 16px;
+  height: 16px;
+
+  border-radius: 50%;
+
+  background: #050816;
+
+  border: 4px solid rgba(0, 51, 255, 0.3);
+
+  box-shadow:
+    0 0 8px rgba(0, 51, 255, 0.45),
+    0 0 18px rgba(0, 51, 255, 0.18);
+
+  position: absolute;
+  z-index: 5;
+}
+
+.projects-tree-diagram1::after,
+.projects-tree-diagram2::after,
+.projects-tree-diagram3::after,
+.projects-tree-diagram4::after {
+  content: "";
+
+  position: absolute;
+
+  left: -2px;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  width: 6px;
+  height: 6px;
+
+  border-radius: 50%;
+
+  background: #0033ff;
+
+  box-shadow:
+    0 0 6px #0033ff,
+    0 0 14px #0033ff;
+
+  z-index: 6;
+}
+
+.projects-tree-diagram1::before,
+.projects-tree-diagram1::after,
+.projects-tree-diagram3::before,
+.projects-tree-diagram3::after {
+  display: none;
+}
+
+.projects-tree-diagram1 {
+  top: 145px;
+  left: 50%;
+
+  transform: translateX(-100%);
+}
+
+.projects-tree-diagram2 {
+  top: 145px;
+  left: 50%;
+}
+
+.projects-tree-diagram3 {
+  top: 470px;
+  left: 50%;
+
+  transform: translateX(-100%);
+}
+
+.projects-tree-diagram4 {
+  top: 470px;
+  left: 50%;
+}
+
+.projects-ground-reveal {
+  position: absolute;
+
+  left: 50%;
+  bottom: 2.5rem;
+
+  transform: translateX(-50%);
+}
+
+.projects-ground {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  gap: 4px;
+
+  width: 2rem;
+  height: 2rem;
+}
+
+.projects-inner-ground1,
+.projects-inner-ground2,
+.projects-inner-ground3 {
+  background-color: #5274fa;
+
+  height: 5px;
+
+  border-radius: 5px;
+}
+
+.projects-inner-ground1 {
+  width: 80%;
+}
+
+.projects-inner-ground2 {
+  width: 65%;
+}
+
+.projects-inner-ground3 {
+  width: 45%;
+}
