@@ -6,6 +6,7 @@ import Container from "@mui/material/Container";
 import RevealWrapper from "../animations/RevealWrapper";
 import TypingAnimation from "../animations/TypingAnimation";
 import NeonLineAnimation from "../animations/NeonLineAnimation";
+import SkillsTreeReveal from "../animations/SkillsTreeReveal";
 
 export default function Projects() {
   return (
@@ -42,6 +43,26 @@ export default function Projects() {
             <hr className="projects-hr neon-blue" />
           </RevealWrapper>
         </Container>
+
+        <div className="projects-tree-diagram">
+          <div className="projects-tree-diagram1"></div>
+          <div className="projects-tree-diagram2"></div>
+          <div className="projects-tree-diagram3"></div>
+          <div className="projects-tree-diagram4"></div>
+
+          <SkillsTreeReveal />
+        </div>
+
+        <RevealWrapper className="projects-ground-reveal" delay={0.8}>
+          <div className="projects-ground">
+            <div className="projects-inner-ground1 neon-blue"></div>
+            <div className="projects-inner-ground2 neon-blue"></div>
+            <div className="projects-inner-ground3 neon-blue"></div>
+          </div>
+        </RevealWrapper>
+
+        <div className="projects-content">
+        </div>
       </div>
     </>
   );
