@@ -2,11 +2,145 @@ import "../App.css";
 import "./Projects.css";
 
 import Container from "@mui/material/Container";
+import Button from "@mui/material/Button";
 
 import RevealWrapper from "../animations/RevealWrapper";
 import TypingAnimation from "../animations/TypingAnimation";
 import NeonLineAnimation from "../animations/NeonLineAnimation";
 import SkillsTreeReveal from "../animations/SkillsTreeReveal";
+
+const projects = [
+  {
+    number: "01",
+    pic: "pic-link",
+    section: "FULL-STACK",
+    title: "portfolio",
+    desc: "a simple protfolio design using css, js, and html",
+    chips: ["html", "js", "css", "html"],
+    gitButton: (
+      <Button
+        component="a"
+        href="https://github.com/Amany-Elsayed"
+        target="_blank"
+        rel="noopener noreferrer"
+        variant="contained"
+        style={{ margin: "1rem" }}
+      >
+        Open GitHub
+      </Button>
+    ),
+    openButton: (
+      <Button
+        component="a"
+        href="https://github.com/Amany-Elsayed"
+        target="_blank"
+        rel="noopener noreferrer"
+        variant="contained"
+        style={{ margin: "1rem" }}
+      >
+        Try It Out
+      </Button>
+    ),
+  },
+  {
+    number: "01",
+    pic: "pic-link",
+    section: "FULL-STACK",
+    title: "portfolio",
+    desc: "a simple protfolio design using css, js, and html",
+    chips: ["html", "js", "css", "html"],
+    gitButton: (
+      <Button
+        component="a"
+        href="https://github.com/Amany-Elsayed"
+        target="_blank"
+        rel="noopener noreferrer"
+        variant="contained"
+        style={{ margin: "1rem" }}
+      >
+        Open GitHub
+      </Button>
+    ),
+    openButton: (
+      <Button
+        component="a"
+        href="https://github.com/Amany-Elsayed"
+        target="_blank"
+        rel="noopener noreferrer"
+        variant="contained"
+        style={{ margin: "1rem" }}
+      >
+        Try It Out
+      </Button>
+    ),
+  },
+  {
+    number: "01",
+    pic: "pic-link",
+    section: "FULL-STACK",
+    title: "portfolio",
+    desc: "a simple protfolio design using css, js, and html",
+    chips: ["html", "js", "css", "html"],
+    gitButton: (
+      <Button
+        component="a"
+        href="https://github.com/Amany-Elsayed"
+        target="_blank"
+        rel="noopener noreferrer"
+        variant="contained"
+        style={{ margin: "1rem" }}
+      >
+        Open GitHub
+      </Button>
+    ),
+    openButton: (
+      <Button
+        component="a"
+        href="https://github.com/Amany-Elsayed"
+        target="_blank"
+        rel="noopener noreferrer"
+        variant="contained"
+        style={{ margin: "1rem" }}
+      >
+        Try It Out
+      </Button>
+    ),
+  },
+  {
+    number: "01",
+    pic: "pic-link",
+    section: "FULL-STACK",
+    title: "portfolio",
+    desc: "a simple protfolio design using css, js, and html",
+    chips: ["html", "js", "css", "html"],
+    gitButton: (
+      <Button
+        component="a"
+        href="https://github.com/Amany-Elsayed"
+        target="_blank"
+        rel="noopener noreferrer"
+        variant="contained"
+        style={{ margin: "1rem" }}
+      >
+        Open GitHub
+      </Button>
+    ),
+    openButton: (
+      <Button
+        component="a"
+        href="https://github.com/Amany-Elsayed"
+        target="_blank"
+        rel="noopener noreferrer"
+        variant="contained"
+        style={{ margin: "1rem" }}
+      >
+        Try It Out
+      </Button>
+    ),
+  },
+];
+
+const cardDelays = [0.1, 0.25, 0.4, 0.55];
 
 export default function Projects() {
   return (
@@ -62,6 +196,46 @@ export default function Projects() {
         </RevealWrapper>
 
         <div className="projects-content">
+          <div className="projects-grid">
+            {projects.map((project, index) => (
+              <RevealWrapper key={project.number} delay={cardDelays[index]}>
+                <div className="projects-card-wrapper">
+                  <div className="projects-card">
+                    <div className="project-pic">
+                      <img src={project.pic} alt={`project${project.number}`} />
+                    </div>
+                    <div className="projects-card-header">
+                      <span className="projects-card-number neon-blue-text">
+                        {project.number}
+                      </span>
+                    </div>
+
+                    <div className="projects-card-title-row">
+                      <div>
+                        <h2 className="projects-card-title">{project.title}</h2>
+                        <p>{project.desc}</p>
+                      </div>
+                    </div>
+
+                    <div className="projects-chips-grid">
+                      {project.chips.map((chip, chipIndex) => (
+                        <div
+                          key={chipIndex}
+                          className="projects-chip neon-border"
+                        >
+                          {chip}
+                        </div>
+                      ))}
+                    </div>
+                    <div className="projects-bottons-container">
+                      {project.gitButton}
+                      {project.openButton}
+                    </div>
+                  </div>
+                </div>
+              </RevealWrapper>
+            ))}
+          </div>
         </div>
       </div>
     </>
