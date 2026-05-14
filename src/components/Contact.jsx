@@ -25,7 +25,7 @@ export default function Contact() {
                 Let's Build The
                 <span className="contact-span">
                   {" "}
-                  {isVisible && <TypingAnimation text="Futur Together" />}
+                  {isVisible && <TypingAnimation text="Future Together" />}
                 </span>
               </h1>
             )}
