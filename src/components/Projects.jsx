@@ -7,12 +7,12 @@ import Button from "@mui/material/Button";
 import RevealWrapper from "../animations/RevealWrapper";
 import TypingAnimation from "../animations/TypingAnimation";
 import NeonLineAnimation from "../animations/NeonLineAnimation";
-import SkillsTreeReveal from "../animations/SkillsTreeReveal";
+import ProjectsTreeReveal from "../animations/ProjectsTreeReveal";
 
 const projects = [
   {
     number: "01",
-    pic: "pic-link",
+    pic: "./project1.png",
     section: "FULL-STACK",
     title: "portfolio",
     desc: "a simple protfolio design using css, js, and html",
@@ -44,7 +44,7 @@ const projects = [
   },
   {
     number: "01",
-    pic: "pic-link",
+    pic: "./project2.png",
     section: "FULL-STACK",
     title: "portfolio",
     desc: "a simple protfolio design using css, js, and html",
@@ -76,7 +76,7 @@ const projects = [
   },
   {
     number: "01",
-    pic: "pic-link",
+    pic: "/project3.png",
     section: "FULL-STACK",
     title: "portfolio",
     desc: "a simple protfolio design using css, js, and html",
@@ -108,7 +108,7 @@ const projects = [
   },
   {
     number: "01",
-    pic: "pic-link",
+    pic: "/project4.png",
     section: "FULL-STACK",
     title: "portfolio",
     desc: "a simple protfolio design using css, js, and html",
@@ -140,7 +140,7 @@ const projects = [
   },
 ];
 
-const cardDelays = [0.1, 0.25, 0.4, 0.55];
+const cardDelays = [0.1, 0.25, 0.3, 0.45];
 
 export default function Projects() {
   return (
@@ -184,7 +184,7 @@ export default function Projects() {
           <div className="projects-tree-diagram3"></div>
           <div className="projects-tree-diagram4"></div>
 
-          <SkillsTreeReveal />
+          <ProjectsTreeReveal />
         </div>
 
         <RevealWrapper className="projects-ground-reveal" delay={0.8}>
@@ -202,11 +202,18 @@ export default function Projects() {
                 <div className="projects-card-wrapper">
                   <div className="projects-card">
                     <div className="project-pic">
-                      <img src={project.pic} alt={`project${project.number}`} />
+                      <img
+                        src={project.pic}
+                        alt={`project ${project.number}`}
+                      />
                     </div>
+
                     <div className="projects-card-header">
                       <span className="projects-card-number neon-blue-text">
                         {project.number}
+                      </span>
+                      <span className="projects-card-section">
+                        {project.section}
                       </span>
                     </div>
 
@@ -227,9 +234,12 @@ export default function Projects() {
                         </div>
                       ))}
                     </div>
-                    <div className="projects-bottons-container">
-                      {project.gitButton}
-                      {project.openButton}
+
+                    <div className="projects-hover-overlay">
+                      <div className="projects-bottons-container">
+                        {project.gitButton}
+                        {project.openButton}
+                      </div>
                     </div>
                   </div>
                 </div>

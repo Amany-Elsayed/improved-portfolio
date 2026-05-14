@@ -1,0 +1,94 @@
+.projects-tree-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.projects-tree-animated-beam {
+  position: absolute;
+
+  left: 50%;
+  top: 0;
+
+  transform: translateX(-50%) scaleY(0);
+  transform-origin: top center;
+
+  width: 5px;
+  height: 100%;
+
+  border-radius: 999px;
+
+  background: #0033ff;
+
+  box-shadow:
+    0 0 8px #0033ff,
+    0 0 20px #0033ff,
+    0 0 40px #0022bb;
+
+  z-index: 3;
+}
+
+.projects-animated-branch {
+  position: absolute;
+
+  width: 120px;
+  height: 5px;
+
+  border-radius: 999px;
+
+  background: #0033ff;
+
+  box-shadow:
+    0 0 8px #0033ff,
+    0 0 20px #0033ff,
+    0 0 40px #0022bb;
+
+  opacity: 0;
+
+  transition:
+    opacity 0.2s ease,
+    transform 0.45s ease;
+
+  z-index: 4;
+}
+
+.projects-animated-branch.left {
+  left: 50%;
+  transform-origin: right center;
+}
+
+.projects-animated-branch.right {
+  left: 50%;
+  transform-origin: left center;
+}
+
+.projects-animated-branch.top {
+  top: 240px;
+}
+
+.projects-animated-branch.bottom {
+  top: 650px;
+}
+
+.projects-animated-branch.left.top,
+.projects-animated-branch.left.bottom {
+  transform: translateX(-100%) scaleX(0);
+}
+
+.projects-animated-branch.right.top,
+.projects-animated-branch.right.bottom {
+  transform: scaleX(0);
+}
+
+.projects-animated-branch.left.projects-branch-visible.top,
+.projects-animated-branch.left.projects-branch-visible.bottom {
+  opacity: 1;
+  transform: translateX(-100%) scaleX(1);
+}
+
+.projects-animated-branch.right.projects-branch-visible.top,
+.projects-animated-branch.right.projects-branch-visible.bottom {
+  opacity: 1;
+  transform: scaleX(1);
+}
