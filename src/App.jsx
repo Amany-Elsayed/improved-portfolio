@@ -7,6 +7,7 @@ import Hero from "./components/Hero"
 import Experience from "./components/Experience";
 import Skills from "./components/Skills";
 import Projects from "./components/Projects";
+import Contact from "./components/Contact";
 
 // HOOKS
 import { useEffect } from "react";
@@ -45,19 +46,7 @@ function App() {
       {/* === FIFTH SECTION: PROJECTS === */}
 
       {/* SIXTH SECTION: CONTACTS */}
-      <div
-        id="contact-section"
-        className="contact-section"
-        style={{
-          backgroundColor: "darkcyan",
-          height: "100vh",
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-        }}
-      >
-        contact
-      </div>
+      <Contact />
       {/* === SIXTH SECTION: CONTACTS */}
 
       {/* FOOTER */}

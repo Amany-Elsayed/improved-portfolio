@@ -1,0 +1,66 @@
+.contact-section {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  padding: 4rem 0;
+}
+
+/* CONTACT BACKGROUND EFFECT */
+
+.contact-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("/contactBackground.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: blur(2px);
+  z-index: 0;
+}
+
+.contact-section > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* === CONTACT BACKGROUND EFFECT === */
+
+.contact-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact-section-starter {
+  display: flex;
+  cursor: default;
+}
+
+.contact-text-section {
+  text-align: left;
+  max-width: 420px;
+}
+
+.contact-title {
+  font-size: 2rem;
+  line-height: 2.6rem;
+  margin-bottom: 0;
+  margin-top: 0;
+  cursor: default;
+}
+
+.contact-hr {
+  border: 2px solid #0033cce1;
+  border-radius: 5px;
+  width: 5rem;
+  margin-left: 0;
+  margin-right: auto;
+  margin-bottom: 1rem;
+}
+
