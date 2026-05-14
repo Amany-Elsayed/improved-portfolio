@@ -7,6 +7,7 @@
   justify-content: center;
   align-items: center;
   display: flex;
+  flex-direction: column;
   padding: 4rem 0;
 }
 
@@ -31,20 +32,13 @@
 
 /* === CONTACT BACKGROUND EFFECT === */
 
-.contact-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.contact-section-title {
+  text-align: left;
 }
 
 .contact-section-starter {
   display: flex;
   cursor: default;
-}
-
-.contact-text-section {
-  text-align: left;
-  max-width: 420px;
 }
 
 .contact-title {
@@ -64,3 +58,21 @@
   margin-bottom: 1rem;
 }
 
+.contact-content {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.contact-box {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.contact-box-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
