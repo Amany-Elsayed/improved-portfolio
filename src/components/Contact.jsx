@@ -32,7 +32,37 @@ export default function Contact() {
     setPopperType(null);
   };
 
-  // const open = Boolean(anchorEl);
+  const codeLines = [
+    {
+      number: "01",
+      content: [
+        { text: `const `, color: "purple" },
+        { text: `status = {`, color: "blue" },
+      ],
+    },
+    {
+      number: "02",
+      content: [
+        { text: `    responseTime: `, color: "blue" },
+        { text: `"24 Hours"`, color: "green" },
+      ],
+    },
+    {
+      number: "03",
+      content: [
+        { text: `    collaboration: `, color: "blue" },
+        { text: `"Open"`, color: "green" },
+      ],
+    },
+    {
+      number: "04",
+      content: [
+        { text: `    location: `, color: "blue" },
+        { text: `"Worldwide"`, color: "green" },
+      ],
+    },
+    { number: "05", content: [{ text: `}`, color: "blue" }] },
+  ];
 
   return (
     <>
@@ -75,6 +105,10 @@ export default function Contact() {
             </RevealWrapper>
 
             <RevealWrapper delay={0.5}>
+              <p className="contact-get-in-touch neon-blue-text">Get In Touch</p>
+            </RevealWrapper>
+
+            <RevealWrapper delay={0.5}>
               <div className="contact-box neon-blue-border">
                 <IconButton
                   className="neon-blue-button"
@@ -98,7 +132,7 @@ export default function Contact() {
                 <div className="contact-box-icon">
                   <IconButton
                     aria-haspopup="true"
-                    onMouseEnter={(e) => handleHover (e, "copy")}
+                    onMouseEnter={(e) => handleHover(e, "copy")}
                     onMouseLeave={handleClose}
                     aria-label="code"
                     color="primary"
@@ -158,7 +192,7 @@ export default function Contact() {
                 <div className="contact-box-icon">
                   <IconButton
                     aria-haspopup="true"
-                    onMouseEnter={(e) => handleHover (e, "open")}
+                    onMouseEnter={(e) => handleHover(e, "open")}
                     onMouseLeave={handleClose}
                     aria-label="code"
                     color="primary"
@@ -218,7 +252,7 @@ export default function Contact() {
                 <div className="contact-box-icon">
                   <IconButton
                     aria-haspopup="true"
-                    onMouseEnter={(e) => handleHover (e, "open")}
+                    onMouseEnter={(e) => handleHover(e, "open")}
                     onMouseLeave={handleClose}
                     aria-label="code"
                     color="primary"
@@ -255,6 +289,36 @@ export default function Contact() {
               </div>
             </RevealWrapper>
 
+            <RevealWrapper delay={0.8}>
+              <div className="contact-availability-card neon-blue-border">
+                <div className="contact-availability-header">
+                  <span className="contact-availability-title">
+                    AVAILABILITY
+                  </span>
+                  <span className="contact-availability-status">
+                    <span className="contact-status-dot" />
+                    Available for work
+                  </span>
+                </div>
+                <div className="contact-code-block">
+                  {codeLines.map((line, i) => (
+                    <div className="contact-code-line" key={i}>
+                      <span className="contact-line-number">{line.number}</span>
+                      <span className="contact-line-content">
+                        {line.content.map((segment, j) => (
+                          <span
+                            key={j}
+                            className={`contact-code-${segment.color}`}
+                          >
+                            {segment.text}
+                          </span>
+                        ))}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </RevealWrapper>
           </Container>
 
           <Container className="contact-form-section"></Container>

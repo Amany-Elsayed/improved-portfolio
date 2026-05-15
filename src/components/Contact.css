@@ -64,6 +64,19 @@
   display: flex;
 }
 
+.contact-information-section {
+  text-align: left;
+}
+
+.contact-p {
+  margin: 1.4rem 0;
+}
+
+.contact-get-in-touch {
+  margin: 0.5rem;
+  font-size: large;
+}
+
 .contact-box {
   display: flex;
   align-items: flex-start;
@@ -97,4 +110,77 @@
   justify-content: flex-end;
   margin-left: auto;
   padding: 5px;
+}
+
+.contact-availability-card {
+  margin-top: 2rem;
+  padding: 1.25rem;
+}
+
+.contact-availability-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.contact-availability-title {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: #7ab3d4;
+}
+
+.contact-availability-status {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8rem;
+  color: #4caf7d;
+}
+
+.contact-status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #4caf7d;
+}
+
+.contact-code-block {
+  background-color: #0a0f1e;
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.contact-code-line {
+  display: flex;
+  gap: 1.25rem;
+  font-family: monospace;
+  font-size: 0.82rem;
+}
+
+.contact-line-number {
+  color: #3a4a6b;
+  min-width: 16px;
+  user-select: none;
+}
+
+.contact-line-content {
+  color: #7ab3d4;
+  white-space: pre;
+}
+
+.contact-code-blue {
+  color: #7ab3d4;
+}
+
+.contact-code-purple {
+  color: #9d5dc2;
+}
+
+.contact-code-green {
+  color: #4caf7d;
 }
