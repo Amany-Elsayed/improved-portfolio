@@ -184,3 +184,66 @@
 .contact-code-green {
   color: #4caf7d;
 }
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 1.5rem;
+}
+
+.contact-form-title {
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-align: left;
+  color: #7ab3d4;
+  margin-bottom: 0.5rem;
+}
+
+.contact-form-input-wrapper {
+  width: 100%;
+}
+
+.contact-form-input {
+  width: 100%;
+  background: transparent;
+  border: 1px solid #1a2a4a;
+  border-radius: 8px;
+  padding: 0.85rem 1rem;
+  font-family: monospace;
+  color: #fff;
+  font-size: 0.9rem;
+  outline: none;
+  box-sizing: border-box;
+  transition: border-color 0.2s;
+}
+
+.contact-form-input::placeholder {
+  color: #3a5a7a;
+}
+
+.contact-form-input:focus {
+  border-color: #0af;
+}
+
+.contact-form-textarea {
+  resize: vertical;
+  min-height: 200px;
+}
+
+.contact-form-error {
+  color: #f44;
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+.contact-form-notice {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-size: 0.75rem;
+  color: #3a5a7a;
+  margin: 0;
+}
+

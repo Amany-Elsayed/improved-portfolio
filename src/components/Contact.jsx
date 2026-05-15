@@ -1,26 +1,37 @@
 import "./Contact.css";
 
+import emailjs from "@emailjs/browser";
+
 import Container from "@mui/material/Container";
 import IconButton from "@mui/material/IconButton";
+import Button from "@mui/material/Button";
 import Popper from "@mui/material/Popper";
 import Fade from "@mui/material/Fade";
 import Box from "@mui/material/Box";
+import Snackbar from "@mui/material/Snackbar";
+import Alert from "@mui/material/Alert";
 
 import EmailIcon from "@mui/icons-material/Email";
 import ContentCopyIcon from "@mui/icons-material/ContentCopy";
 import OpenInNewIcon from "@mui/icons-material/OpenInNew";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GitHubIcon from "@mui/icons-material/GitHub";
+import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 
 import TypingAnimation from "../animations/TypingAnimation";
 import NeonLineAnimation from "../animations/NeonLineAnimation";
 import RevealWrapper from "../animations/RevealWrapper";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 
 export default function Contact() {
   const [popperType, setPopperType] = useState(null);
   const [anchorEl, setAnchorEl] = useState(null);
+  const [copyToastOpen, setCopyToastOpen] = useState(false);
+  const [status, setStatus] = useState("");
+  const [toastOpen, setToastOpen] = useState(false);
+  const [sentToastOpen, setSentToastOpen] = useState(false);
+  const formRef = useRef();
 
   const handleHover = (event, type) => {
     setAnchorEl(event.currentTarget);
@@ -30,6 +41,11 @@ export default function Contact() {
   const handleClose = () => {
     setAnchorEl(null);
     setPopperType(null);
+  };
+
+  const handleCopy = () => {
+    navigator.clipboard.writeText("amanyelsayed@outlook.com");
+    setCopyToastOpen(true);
   };
 
   const codeLines = [
@@ -62,6 +78,45 @@ export default function Contact() {
       ],
     },
     { number: "05", content: [{ text: `}`, color: "blue" }] },
+  ];
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    if (status === "sent") {
+      setToastOpen(true);
+      return;
+    }
+
+    setStatus("sending");
+    emailjs
+      .sendForm(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        formRef.current,
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
+      )
+      .then(() => {
+        setStatus("sent");
+        setSentToastOpen(true);
+      })
+      .catch(() => setStatus("error"));
+  };
+
+  const fields = [
+    {
+      name: "from_name",
+      placeholder: "Your Name",
+      type: "text",
+      icon: "person",
+    },
+    {
+      name: "from_email",
+      placeholder: "Your Email",
+      type: "email",
+      icon: "email",
+    },
+    { name: "subject", placeholder: "Subject", type: "text", icon: "subject" },
   ];
 
   return (
@@ -105,10 +160,12 @@ export default function Contact() {
             </RevealWrapper>
 
             <RevealWrapper delay={0.5}>
-              <p className="contact-get-in-touch neon-blue-text">Get In Touch</p>
+              <p className="contact-get-in-touch neon-blue-text">
+                Get In Touch
+              </p>
             </RevealWrapper>
 
-            <RevealWrapper delay={0.5}>
+            <RevealWrapper delay={0.6}>
               <div className="contact-box neon-blue-border">
                 <IconButton
                   className="neon-blue-button"
@@ -134,7 +191,8 @@ export default function Contact() {
                     aria-haspopup="true"
                     onMouseEnter={(e) => handleHover(e, "copy")}
                     onMouseLeave={handleClose}
-                    aria-label="code"
+                    onClick={handleCopy}
+                    aria-label="copy email"
                     color="primary"
                     className="neon-blue-icon"
                   >
@@ -168,7 +226,7 @@ export default function Contact() {
                 </div>
               </div>
             </RevealWrapper>
-            <RevealWrapper delay={0.6}>
+            <RevealWrapper delay={0.7}>
               <div className="contact-box neon-blue-border">
                 <IconButton
                   className="neon-blue-button"
@@ -194,6 +252,12 @@ export default function Contact() {
                     aria-haspopup="true"
                     onMouseEnter={(e) => handleHover(e, "open")}
                     onMouseLeave={handleClose}
+                    onClick={() =>
+                      window.open(
+                        "https://www.linkedin.com/in/amany-elsayed0/",
+                        "_blank",
+                      )
+                    }
                     aria-label="code"
                     color="primary"
                     className="neon-blue-icon"
@@ -228,7 +292,7 @@ export default function Contact() {
                 </div>
               </div>
             </RevealWrapper>
-            <RevealWrapper delay={0.7}>
+            <RevealWrapper delay={0.8}>
               <div className="contact-box neon-blue-border">
                 <IconButton
                   className="neon-blue-button"
@@ -254,6 +318,9 @@ export default function Contact() {
                     aria-haspopup="true"
                     onMouseEnter={(e) => handleHover(e, "open")}
                     onMouseLeave={handleClose}
+                    onClick={() =>
+                      window.open("https://github.com/Amany-Elsayed", "_blank")
+                    }
                     aria-label="code"
                     color="primary"
                     className="neon-blue-icon"
@@ -289,7 +356,7 @@ export default function Contact() {
               </div>
             </RevealWrapper>
 
-            <RevealWrapper delay={0.8}>
+            <RevealWrapper delay={0.9}>
               <div className="contact-availability-card neon-blue-border">
                 <div className="contact-availability-header">
                   <span className="contact-availability-title">
@@ -321,7 +388,90 @@ export default function Contact() {
             </RevealWrapper>
           </Container>
 
-          <Container className="contact-form-section"></Container>
+          <Container className="contact-form-section">
+            <RevealWrapper delay={1.0}>
+              <form
+                ref={formRef}
+                onSubmit={handleSubmit}
+                className="contact-form neon-blue-border"
+              >
+                <h3 className="contact-form-title neon-blue-text">
+                  SEND ME A MESSAGE
+                </h3>
+
+                {fields.map((f) => (
+                  <div className="contact-form-input-wrapper" key={f.name}>
+                    <input
+                      type={f.type}
+                      name={f.name}
+                      placeholder={f.placeholder}
+                      required
+                      className="contact-form-input"
+                    />
+                  </div>
+                ))}
+
+                <div className="contact-input-wrapper">
+                  <textarea
+                    name="message"
+                    placeholder="Your Message"
+                    required
+                    className="contact-form-input contact-form-textarea"
+                  />
+                </div>
+
+                <Button
+                  variant="outlined"
+                  type="submit"
+                  className="contact-form-submit-btn"
+                  disabled={status === "sending"}
+                >
+                  {status === "sending" ? "Sending..." : "SEND MESSAGE"}
+                </Button>
+                {status === "error" && (
+                  <p className="contact-form-error">
+                    Something went wrong. Try again.
+                  </p>
+                )}
+
+                <p className="contact-form-notice">
+                  <LockOutlinedIcon sx={{ fontSize: "0.85rem" }} /> Your
+                  Information is Secure and Private
+                </p>
+              </form>
+            </RevealWrapper>
+          </Container>
+
+          <Snackbar
+            open={copyToastOpen}
+            autoHideDuration={3000}
+            onClose={() => setCopyToastOpen(false)}
+            anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
+          >
+            <Alert severity="success" onClose={() => setCopyToastOpen(false)}>
+              Email copied to clipboard!
+            </Alert>
+          </Snackbar>
+          <Snackbar
+            open={toastOpen}
+            autoHideDuration={4000}
+            onClose={() => setToastOpen(false)}
+            anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
+          >
+            <Alert severity="info" onClose={() => setToastOpen(false)}>
+              You already sent a message. I'll get back to you soon!
+            </Alert>
+          </Snackbar>
+          <Snackbar
+            open={sentToastOpen}
+            autoHideDuration={4000}
+            onClose={() => setSentToastOpen(false)}
+            anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
+          >
+            <Alert severity="success" onClose={() => setSentToastOpen(false)}>
+              Message sent! I'll get back to you soon.
+            </Alert>
+          </Snackbar>
         </Container>
       </div>
     </>
