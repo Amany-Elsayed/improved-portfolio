@@ -4,14 +4,17 @@ export default function Header() {
   return (
     <>
       <header>
-        {/* HEADER HYPERLINKS */}
         <nav>
+          {/* LOGO */}
           <div className="logo-container">
             <h2 className="logo">
               <span className="logo--top">【=︿=】</span>
               <span className="logo--bottom">【=︿=】</span>
             </h2>
           </div>
+          {/* === LOGO === */}
+
+          {/* HEADER HYPERLINKS */}
           <ul className="nav-list">
             <li className="nav-list-item">
               <a href="#about-section" className="nav-list-link">
@@ -41,8 +44,8 @@ export default function Header() {
           </ul>
         </nav>
         {/* === HEADER HYPERLINKS === */}
+
       </header>
-      {/* === HEADER === */}
     </>
   );
 }
