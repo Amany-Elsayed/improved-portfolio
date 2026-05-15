@@ -34,6 +34,7 @@
 /* === ABOUT BACKGROUND EFFECT === */
 
 .about-container {
+  color: #001464;
   display: flex;
   justify-content: center;
   align-items: center;

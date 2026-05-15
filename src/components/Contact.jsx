@@ -2,15 +2,38 @@ import "./Contact.css";
 
 import Container from "@mui/material/Container";
 import IconButton from "@mui/material/IconButton";
+import Popper from "@mui/material/Popper";
+import Fade from "@mui/material/Fade";
+import Box from "@mui/material/Box";
 
 import EmailIcon from "@mui/icons-material/Email";
 import ContentCopyIcon from "@mui/icons-material/ContentCopy";
+import OpenInNewIcon from "@mui/icons-material/OpenInNew";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import GitHubIcon from "@mui/icons-material/GitHub";
 
 import TypingAnimation from "../animations/TypingAnimation";
 import NeonLineAnimation from "../animations/NeonLineAnimation";
 import RevealWrapper from "../animations/RevealWrapper";
 
+import { useState } from "react";
+
 export default function Contact() {
+  const [popperType, setPopperType] = useState(null);
+  const [anchorEl, setAnchorEl] = useState(null);
+
+  const handleHover = (event, type) => {
+    setAnchorEl(event.currentTarget);
+    setPopperType(type);
+  };
+
+  const handleClose = () => {
+    setAnchorEl(null);
+    setPopperType(null);
+  };
+
+  // const open = Boolean(anchorEl);
+
   return (
     <>
       <div id="contact-section" className="contact-section">
@@ -74,11 +97,39 @@ export default function Contact() {
                 </div>
                 <div className="contact-box-icon">
                   <IconButton
+                    aria-haspopup="true"
+                    onMouseEnter={(e) => handleHover (e, "copy")}
+                    onMouseLeave={handleClose}
                     aria-label="code"
                     color="primary"
                     className="neon-blue-icon"
                   >
                     <ContentCopyIcon />
+                    <Popper
+                      id="mouse-over-copy-popper"
+                      open={popperType === "copy"}
+                      anchorEl={anchorEl}
+                      placement="right"
+                      sx={{ pointerEvents: "none", zIndex: 100 }}
+                      container={document.body}
+                      transition
+                    >
+                      {({ TransitionProps }) => (
+                        <Fade {...TransitionProps} timeout={350}>
+                          <Box
+                            sx={{
+                              border: 1,
+                              borderRadius: 2,
+                              borderColor: "#001464",
+                              p: 1,
+                              bgcolor: "#00061f",
+                            }}
+                          >
+                            Copy
+                          </Box>
+                        </Fade>
+                      )}
+                    </Popper>
                   </IconButton>
                 </div>
               </div>
@@ -98,7 +149,7 @@ export default function Contact() {
                     flexShrink: 0,
                   }}
                 >
-                  <EmailIcon className="neon-blue-icon" />
+                  <LinkedInIcon className="neon-blue-icon" />
                 </IconButton>
                 <div className="contact-box-text">
                   <h3>EMAIL</h3>
@@ -106,11 +157,39 @@ export default function Contact() {
                 </div>
                 <div className="contact-box-icon">
                   <IconButton
+                    aria-haspopup="true"
+                    onMouseEnter={(e) => handleHover (e, "open")}
+                    onMouseLeave={handleClose}
                     aria-label="code"
                     color="primary"
                     className="neon-blue-icon"
                   >
-                    <ContentCopyIcon />
+                    <OpenInNewIcon />
+                    <Popper
+                      id="mouse-over-open-popper"
+                      open={popperType === "open"}
+                      anchorEl={anchorEl}
+                      placement="right"
+                      sx={{ pointerEvents: "none", zIndex: 100 }}
+                      container={document.body}
+                      transition
+                    >
+                      {({ TransitionProps }) => (
+                        <Fade {...TransitionProps} timeout={350}>
+                          <Box
+                            sx={{
+                              border: 1,
+                              borderRadius: 2,
+                              borderColor: "#001464",
+                              p: 1,
+                              bgcolor: "#00061f",
+                            }}
+                          >
+                            Open
+                          </Box>
+                        </Fade>
+                      )}
+                    </Popper>
                   </IconButton>
                 </div>
               </div>
@@ -130,7 +209,7 @@ export default function Contact() {
                     flexShrink: 0,
                   }}
                 >
-                  <EmailIcon className="neon-blue-icon" />
+                  <GitHubIcon className="neon-blue-icon" />
                 </IconButton>
                 <div className="contact-box-text">
                   <h3>EMAIL</h3>
@@ -138,11 +217,39 @@ export default function Contact() {
                 </div>
                 <div className="contact-box-icon">
                   <IconButton
+                    aria-haspopup="true"
+                    onMouseEnter={(e) => handleHover (e, "open")}
+                    onMouseLeave={handleClose}
                     aria-label="code"
                     color="primary"
                     className="neon-blue-icon"
                   >
-                    <ContentCopyIcon />
+                    <OpenInNewIcon />
+                    <Popper
+                      id="mouse-over-open-popper"
+                      open={popperType === "open"}
+                      anchorEl={anchorEl}
+                      placement="right"
+                      sx={{ pointerEvents: "none", zIndex: 100 }}
+                      container={document.body}
+                      transition
+                    >
+                      {({ TransitionProps }) => (
+                        <Fade {...TransitionProps} timeout={350}>
+                          <Box
+                            sx={{
+                              border: 1,
+                              borderRadius: 2,
+                              borderColor: "#001464",
+                              p: 1,
+                              bgcolor: "#00061f",
+                            }}
+                          >
+                            Open
+                          </Box>
+                        </Fade>
+                      )}
+                    </Popper>
                   </IconButton>
                 </div>
               </div>
