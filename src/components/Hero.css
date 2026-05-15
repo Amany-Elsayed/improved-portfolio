@@ -1,12 +1,12 @@
-/* --------------------------HERO----------------------------------------- */
 .hero-section {
-  /* border-bottom: 1px solid #676aff; */
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
 }
+
+/* VIDEO BACKGROUD */
 
 .circuit-video-bg {
   position: absolute;
@@ -27,6 +27,8 @@
   background: rgba(0, 0, 0, 0.4);
   z-index: 1;
 }
+
+/* === VIDEO BACKGROUD === */
 
 .hero-text {
   text-align: center;
@@ -84,5 +86,3 @@
 }
 
 /* === THE CIRCUITS SPAN ANIMATION === */
-
-/* === -------------------------- HERO ----------------------------------------- === */
