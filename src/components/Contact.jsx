@@ -3,7 +3,8 @@ import "./Contact.css";
 import Container from "@mui/material/Container";
 import IconButton from "@mui/material/IconButton";
 
-import EmailIcon from '@mui/icons-material/Email';
+import EmailIcon from "@mui/icons-material/Email";
+import ContentCopyIcon from "@mui/icons-material/ContentCopy";
 
 import TypingAnimation from "../animations/TypingAnimation";
 import NeonLineAnimation from "../animations/NeonLineAnimation";
@@ -68,11 +69,85 @@ export default function Contact() {
                   <EmailIcon className="neon-blue-icon" />
                 </IconButton>
                 <div className="contact-box-text">
-                    <h3>EMAIL</h3>
-                    <p>amanyelsayed@outlook.com</p>
+                  <h3>EMAIL</h3>
+                  <p>amanyelsayed@outlook.com</p>
+                </div>
+                <div className="contact-box-icon">
+                  <IconButton
+                    aria-label="code"
+                    color="primary"
+                    className="neon-blue-icon"
+                  >
+                    <ContentCopyIcon />
+                  </IconButton>
                 </div>
               </div>
             </RevealWrapper>
+            <RevealWrapper delay={0.6}>
+              <div className="contact-box neon-blue-border">
+                <IconButton
+                  className="neon-blue-button"
+                  aria-label="code"
+                  color="primary"
+                  sx={{
+                    border: "1px solid #0af",
+                    width: "3rem",
+                    height: "3rem",
+                    marginRight: "1rem",
+                    cursor: "default",
+                    flexShrink: 0,
+                  }}
+                >
+                  <EmailIcon className="neon-blue-icon" />
+                </IconButton>
+                <div className="contact-box-text">
+                  <h3>EMAIL</h3>
+                  <p>amanyelsayed@outlook.com</p>
+                </div>
+                <div className="contact-box-icon">
+                  <IconButton
+                    aria-label="code"
+                    color="primary"
+                    className="neon-blue-icon"
+                  >
+                    <ContentCopyIcon />
+                  </IconButton>
+                </div>
+              </div>
+            </RevealWrapper>
+            <RevealWrapper delay={0.7}>
+              <div className="contact-box neon-blue-border">
+                <IconButton
+                  className="neon-blue-button"
+                  aria-label="code"
+                  color="primary"
+                  sx={{
+                    border: "1px solid #0af",
+                    width: "3rem",
+                    height: "3rem",
+                    marginRight: "1rem",
+                    cursor: "default",
+                    flexShrink: 0,
+                  }}
+                >
+                  <EmailIcon className="neon-blue-icon" />
+                </IconButton>
+                <div className="contact-box-text">
+                  <h3>EMAIL</h3>
+                  <p>amanyelsayed@outlook.com</p>
+                </div>
+                <div className="contact-box-icon">
+                  <IconButton
+                    aria-label="code"
+                    color="primary"
+                    className="neon-blue-icon"
+                  >
+                    <ContentCopyIcon />
+                  </IconButton>
+                </div>
+              </div>
+            </RevealWrapper>
+
           </Container>
 
           <Container className="contact-form-section"></Container>

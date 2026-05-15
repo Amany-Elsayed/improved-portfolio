@@ -69,10 +69,32 @@
   align-items: flex-start;
   gap: 1rem;
   margin-bottom: 1rem;
+  padding: 0.8rem;
 }
 
 .contact-box-text {
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+.contact-box-text h3 {
+  text-align: left;
+  color: #0033cc;
+  margin: 0 0 0.2rem 0;
+  font-size: 0.95rem;
+}
+
+.contact-box-text p {
+  text-align: left;
+  margin: 0;
+  font-size: 0.8rem;
+  color: #8899aa;
+}
+
+.contact-box-icon {
+  display: flex;
+  justify-content: flex-end;
+  margin-left: auto;
+  padding: 5px;
 }
