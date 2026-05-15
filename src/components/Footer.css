@@ -6,9 +6,7 @@ footer {
   overflow: hidden;
 }
 
-/* ========================= */
 /* TOP CONTENT */
-/* ========================= */
 
 .footer-content {
   display: flex;
@@ -27,9 +25,9 @@ footer {
   flex-direction: column;
 }
 
-/* ========================= */
-/* BRAND */
-/* ========================= */
+/* === TOP CONTENT === */
+
+/* BRAND NAME */
 
 .footer-brand {
   flex: 1.4;
@@ -54,9 +52,9 @@ footer {
   color: #b7c2d3;
 }
 
-/* ========================= */
+/* === BRAND NAME ==== */
+
 /* SOCIALS */
-/* ========================= */
 
 .footer-socials {
   display: flex;
@@ -79,9 +77,9 @@ footer {
   transform: translateY(-2px);
 }
 
-/* ========================= */
+/* === SOCIALS === */
+
 /* LINKS + CONTACT */
-/* ========================= */
 
 .footer-links,
 .footer-contact {
@@ -113,9 +111,9 @@ footer {
   color: white;
 }
 
-/* ========================= */
+/* === LINKS + CONTACT === */
+
 /* BOTTOM */
-/* ========================= */
 
 .footer-bottom {
   display: flex;
@@ -141,9 +139,9 @@ footer {
   font-size: 1rem !important;
 }
 
-/* ========================= */
-/* RESPONSIVE */
-/* ========================= */
+/* === BOTTOM === */
+
+/* RESPONSITIVITY */
 
 @media (max-width: 900px) {
   footer {
@@ -192,3 +190,5 @@ footer {
     text-align: center;
   }
 }
+
+/* === RESPONSITIVITY === */
