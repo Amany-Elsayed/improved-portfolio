@@ -3,18 +3,30 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  min-height: 100svh;
 }
 
 /* VIDEO BACKGROUND */
 
 .circuit-video-bg,
-.video-overlay
-{
+.video-overlay {
   position: absolute;
-  inset: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 100svh;
+  object-fit: cover;
   z-index: 0;
+}
+
+.video-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
   background: rgba(0, 0, 0, 0.4);
+  z-index: 1;
 }
 
 /* === VIDEO BACKGROUND === */
@@ -75,3 +87,20 @@
 }
 
 /* === THE CIRCUITS SPAN ANIMATION === */
+
+/* RESPONSITIVITY */
+
+@media (max-width: 768px) {
+  .hero-section {
+    min-height: calc(100dvh + 300px);
+    align-items: flex-start;
+    padding-top: calc(50dvh - 80px);
+  }
+
+  .circuit-video-bg,
+  .video-overlay {
+    min-height: calc(100dvh + 550px);
+  }
+}
+
+/* === RESPONSITIVITY === */

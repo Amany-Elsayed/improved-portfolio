@@ -10,21 +10,46 @@ export default function RevealWrapper({ children, className = "", delay = 0 }) {
     if (!el) return;
 
     let timeoutId;
+    let observerTimeout;
+    const isMobile = window.innerWidth <= 768;
 
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          timeoutId = setTimeout(() => setIsVisible(true), delay * 1000);
-          observer.unobserve(el);
-        }
-      },
-      { threshold: 0.15, rootMargin: "0px 0px -50px 0px" },
-    );
+    const startObserving = () => {
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            timeoutId = setTimeout(() => setIsVisible(true), delay * 1000);
+            observer.unobserve(el);
+          }
+        },
+        {
+          threshold: 0.1,
+          rootMargin: "0px 0px -5% 0px",
+        },
+      );
 
-    observer.observe(el);
+      observer.observe(el);
+      return observer;
+    };
+
+    let observer;
+
+    if (isMobile) {
+      const rect = el.getBoundingClientRect();
+      const isNearTop = rect.top < window.innerHeight * 1.5;
+      observerTimeout = setTimeout(
+        () => {
+          observer = startObserving();
+        },
+        isNearTop ? 500 : 0,
+      );
+    } else {
+      observer = startObserving();
+    }
+
     return () => {
-      observer.disconnect();
+      observer?.disconnect();
       clearTimeout(timeoutId);
+      clearTimeout(observerTimeout);
     };
   }, [delay]);
 

@@ -3,7 +3,7 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  min-height: 100vh;
+  min-height: 100svh;
   justify-content: center;
   align-items: center;
   display: flex;
@@ -110,7 +110,7 @@
 
 .about-picture-section {
   position: relative;
-  transform: translateY(-1.5rem);
+  margin-top: -1.5rem;
 }
 
 .about-picture-section img {
@@ -264,7 +264,7 @@
 
 @media (max-width: 768px) {
   .about-section {
-    padding: 4rem 1rem;
+    padding: 6rem 1rem;
   }
 
   .about-container {
@@ -377,4 +377,3 @@
 }
 
 /* === RESPONSITIVITY === */
-

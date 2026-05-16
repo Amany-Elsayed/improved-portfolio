@@ -1,6 +1,10 @@
 .reveal {
   opacity: 0;
-  transform: translateY(30px);
+  transform: translate3d(0, 24px, 0);
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+  will-change: transform, opacity;
+
   transition:
     opacity 0.7s ease,
     transform 0.7s ease;
@@ -8,24 +12,40 @@
 
 .reveal-visible {
   opacity: 1;
-  transform: translateY(0);
+  transform: translate3d(0, 0, 0);
 }
 
+@media (max-width: 768px) {
+  .reveal {
+    transform: translate3d(0, 16px, 0);
+
+    transition:
+      opacity 0.55s ease,
+      transform 0.55s ease;
+  }
+}
+
+/* optional stagger groups */
 .reveal-group > *:nth-child(1) {
   transition-delay: 0.1s;
 }
+
 .reveal-group > *:nth-child(2) {
   transition-delay: 0.2s;
 }
+
 .reveal-group > *:nth-child(3) {
   transition-delay: 0.3s;
 }
+
 .reveal-group > *:nth-child(4) {
   transition-delay: 0.4s;
 }
+
 .reveal-group > *:nth-child(5) {
   transition-delay: 0.5s;
 }
+
 .reveal-group > *:nth-child(6) {
   transition-delay: 0.6s;
 }

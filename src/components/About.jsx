@@ -47,7 +47,7 @@ export default function About() {
           {/* ABOUT TEXT SECTION */}
           <Container className="about-text-section">
             {/* SECTION STARTER */}
-            <RevealWrapper delay={0.1}>
+            <RevealWrapper delay={0.5}>
               {(isVisible) => (
                 <div className="about-section-starter">
                   {isVisible && <NeonLineAnimation text="ABOUT ME" />}
@@ -57,7 +57,7 @@ export default function About() {
             {/* === SECTION STARTER === */}
 
             {/* SECTION TITLE */}
-            <RevealWrapper delay={0.2}>
+            <RevealWrapper delay={0.6}>
               {(isVisible) => (
                 <h1 className="about-title">
                   Who I Am &
@@ -71,13 +71,13 @@ export default function About() {
             {/* === SECTION TITLE === */}
 
             {/* THE TITLE'S LINE */}
-            <RevealWrapper delay={0.3}>
+            <RevealWrapper delay={0.7}>
               <hr className="about-hr neon-blue" />
             </RevealWrapper>
             {/* === THE TITLE'S LINE === */}
 
             {/* THE ABOUT ME DESCRIPTION */}
-            <RevealWrapper delay={0.4}>
+            <RevealWrapper delay={0.8}>
               <p className="about-p">
                 Lorem ipsum dolor, sit amet consectetur adipisicing elit.
                 Reprehenderit pariatur eum vero sequi dignissimos? Unde harum
@@ -88,7 +88,7 @@ export default function About() {
             {/* === THE ABOUT ME DESCRIPTION === */}
 
             {/* THE ABOUT ME ICON POINTS */}
-            <RevealWrapper delay={0.5}>
+            <RevealWrapper delay={0.9}>
               <div className="about-icon-description">
                 <IconButton
                   className="neon-blue-button"
@@ -114,7 +114,7 @@ export default function About() {
               </div>
             </RevealWrapper>
 
-            <RevealWrapper delay={0.6}>
+            <RevealWrapper delay={1.0}>
               <div className="about-icon-description">
                 <IconButton
                   className="neon-blue-button"
@@ -140,7 +140,7 @@ export default function About() {
               </div>
             </RevealWrapper>
 
-            <RevealWrapper delay={0.7}>
+            <RevealWrapper delay={1.1}>
               <div className="about-icon-description">
                 <IconButton
                   className="neon-blue-button"
@@ -168,7 +168,7 @@ export default function About() {
             {/* === THE ABOUT ME ICON POINTS === */}
 
             {/* STATS BOX */}
-            <RevealWrapper delay={0.8}>
+            <RevealWrapper delay={1.2}>
               <div className="about-stats-box">
                 <Box
                   sx={{
@@ -217,7 +217,7 @@ export default function About() {
 
           {/* ABOUT PICTURE SECTION */}
           <Container className="about-picture-section">
-            <RevealWrapper delay={0.3}>
+            <RevealWrapper delay={1.3}>
               {/* MY PICTURE */}
               <div className="about-picture-container neon-blue-border">
                 <img src="/myPicture.png" alt="My picture btw" />
