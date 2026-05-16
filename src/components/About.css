@@ -1,5 +1,3 @@
-/* -------------------------- ABOUT ----------------------------------------- */
-
 .about-section {
   position: relative;
   background-size: cover;
@@ -38,7 +36,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: clamp(2rem, 6vw, 6rem);
 }
+
+/* ABOUT TEXT */
 
 .about-section-starter {
   display: flex;
@@ -99,12 +100,17 @@
   color: #8899aa;
 }
 
+/* === ABOUT TEXT === */
+
 .about-stats-box {
   margin-bottom: 2rem;
 }
 
+/* ABOUT PICTURE */
+
 .about-picture-section {
   position: relative;
+  transform: translateY(-1.5rem);
 }
 
 .about-picture-section img {
@@ -116,28 +122,36 @@
 }
 
 .about-picture-container {
-  width: 23rem;
-  height: 25rem;
+  width: clamp(18rem, 30vw, 23rem);
+  height: clamp(20rem, 33vw, 25rem);
   box-shadow:
     0 0 20px #0022bb,
     0 0 40px #0033ff33;
 }
 
+/* CODING WINDOW */
+
 .about-picture-window {
   display: flex;
   flex-direction: row;
-  align-items: flex-start;
+  align-items: center;
   background-color: #00061f5e;
   backdrop-filter: blur(3px);
   -webkit-backdrop-filter: blur(3px);
-  gap: 2rem;
+
+  gap: 1.2rem;
+
   position: absolute;
-  top: 65%;
-  left: 16%;
-  width: 15rem;
-  height: 7rem;
+  top: 68%;
+  left: 50%;
+  transform: translateX(-50%);
+
+  width: 17rem;
+  height: 8rem;
+
   z-index: 1;
-  padding: 0.5rem;
+  padding: 0.8rem;
+  box-sizing: border-box;
 }
 
 .about-picture-window-icon {
@@ -163,4 +177,204 @@
   color: #5274fa;
 }
 
-/* === -------------------------- ABOUT ----------------------------------------- === */
+/* === CODING WINDOW === */
+
+/* === ABOUT PICTURE === */
+
+/* RESPONSITIVITY */
+
+@media (max-width: 992px) {
+  .about-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 4rem;
+  }
+
+  .about-text-section {
+    order: 1;
+    width: 100%;
+    max-width: 700px;
+    text-align: center;
+  }
+
+  .about-section-starter {
+    justify-content: center;
+  }
+
+  .about-hr {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .about-icon-description {
+    justify-content: center;
+    text-align: left;
+  }
+
+  .about-stats-box {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .about-stats-box > div {
+    width: 24rem !important;
+    justify-content: space-between;
+    padding: 1.5rem 1rem !important;
+    box-sizing: border-box;
+  }
+
+  .about-stats-box > div > div {
+    flex: 1;
+  }
+
+  .about-picture-section {
+    order: 2;
+    display: flex;
+    justify-content: center;
+  }
+
+  .about-picture-container {
+    width: 24rem;
+    height: 26rem;
+  }
+
+  .about-picture-window {
+    width: 16rem;
+    height: 7.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 68%;
+    gap: 1rem;
+    align-items: center;
+    padding: 0.8rem;
+    box-sizing: border-box;
+  }
+
+  .about-picture-window-text {
+    font-size: 0.82rem;
+    line-height: 1.5;
+  }
+
+  .about-picture-window-icon {
+    margin: 0;
+    align-self: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-section {
+    padding: 4rem 1rem;
+  }
+
+  .about-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+  }
+
+  .about-text-section {
+    order: 1;
+    width: 100%;
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .about-section-starter {
+    justify-content: center;
+  }
+
+  .about-title {
+    font-size: 1.7rem;
+    line-height: 2.2rem;
+  }
+
+  .about-hr {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .about-p {
+    font-size: 0.9rem;
+  }
+
+  .about-icon-description {
+    justify-content: center;
+    text-align: left;
+  }
+
+  .about-picture-section {
+    order: 2;
+    display: flex;
+    justify-content: center;
+  }
+
+  .about-picture-container {
+    width: 20rem;
+    max-width: 100%;
+    height: 22rem;
+  }
+
+  .about-picture-window {
+    width: 15rem;
+    height: 7rem;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 70%;
+    gap: 0.8rem;
+    align-items: center;
+    padding: 0.7rem;
+    box-sizing: border-box;
+  }
+
+  .about-picture-window-icon {
+    margin: 0;
+    align-self: center;
+  }
+
+  .about-picture-window-text {
+    font-size: 0.78rem;
+    line-height: 1.5;
+  }
+
+  .about-stats-box {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .about-stats-box > div {
+    width: 20rem !important;
+    max-width: 100%;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    padding: 1.2rem !important;
+    box-sizing: border-box;
+  }
+
+  .about-stats-box > div > div {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center;
+    width: 100%;
+  }
+
+  .about-stats-box svg {
+    margin-bottom: 0.5rem;
+  }
+
+  .about-stats-box .MuiDivider-root {
+    display: block !important;
+    width: 100% !important;
+    height: 1px !important;
+    min-height: 1px !important;
+    margin: 1rem 0 !important;
+    border-color: #1e2a3a !important;
+  }
+}
+
+/* === RESPONSITIVITY === */
+
