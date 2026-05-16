@@ -35,11 +35,11 @@ export default function Hero() {
           {/* HERO BUTTONS */}
           <Button
             component="a"
-            href="./Amany Elsayed (Eg).pdf"
+            href="./Amany_Elsayed_Eg.pdf"
             target="_blank"
             rel="noopener noreferrer"
             variant="contained"
-            style={{ margin: "1rem" }}
+            sx={{ m: 2 }}
             startIcon={<DescriptionIcon />}
           >
             show CV
@@ -48,7 +48,7 @@ export default function Hero() {
             component="a"
             href="#contact-section"
             variant="outlined"
-            style={{ margin: "1rem" }}
+            sx={{ m: 2 }}
             startIcon={<AlternateEmailIcon />}
           >
             Contact

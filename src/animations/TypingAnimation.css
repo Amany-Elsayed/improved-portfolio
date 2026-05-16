@@ -1,22 +1,32 @@
-.code-span {
-  border-right: 2px solid #92e5fe;
-  animation: blink 1s step-end infinite;
+.code-span-wrapper {
+  display: inline-block;
+  white-space: nowrap;
+  min-width: 1ch;
+  text-align: left;
+  position: relative;
+}
 
-  background: linear-gradient(180deg, #fff, #92e5fe, #a78bfa);
+.code-span-text {
+  background: linear-gradient(180deg, #fff 0%, #92e5fe 50%, #a78bfa 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
-.code-span-wrapper {
+.code-cursor {
   display: inline-block;
-  white-space: nowrap;
-  width: 7ch;
-  text-align: left;
+  width: 2px;
+  height: 1em;
+  background: #92e5fe;
+  vertical-align: middle;
+  margin-left: 1px;
+  border-radius: 1px;
+}
+
+.code-cursor.blinking {
+  animation: blink 1s step-end infinite;
 }
 
 @keyframes blink {
-  50% {
-    border-color: transparent;
-  }
+  50% { opacity: 0; }
 }

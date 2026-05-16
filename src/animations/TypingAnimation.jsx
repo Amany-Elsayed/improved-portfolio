@@ -1,26 +1,33 @@
 import "./TypingAnimation.css";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useCallback } from "react";
 
-export default function TypingAnimation({ text = "<Code/>" }) {
+export default function TypingAnimation({ text = "" }) {
   const displayedRef = useRef("");
   const intervalRef = useRef(null);
   const isAnimatingRef = useRef(false);
   const spanRef = useRef(null);
+  const cursorRef = useRef(null);
 
-  const clearAll = () => {
+  const clearAll = useCallback(() => {
     if (intervalRef.current) {
       clearInterval(intervalRef.current);
       intervalRef.current = null;
     }
-  };
+  }, []);
 
-  const setDisplayed = (str) => {
+  const setDisplayed = useCallback((str) => {
     displayedRef.current = str;
     if (spanRef.current) spanRef.current.textContent = str;
-  };
+  }, []);
 
-  const typeForward = () => {
+  const setTypingCursor = useCallback((active) => {
+    if (!cursorRef.current) return;
+    cursorRef.current.classList.toggle("blinking", !active);
+  }, []);
+
+  const typeForward = useCallback(() => {
     clearAll();
+    setTypingCursor(true);
     let i = displayedRef.current.length;
     intervalRef.current = setInterval(() => {
       if (i < text.length) {
@@ -29,12 +36,14 @@ export default function TypingAnimation({ text = "<Code/>" }) {
       } else {
         clearAll();
         isAnimatingRef.current = false;
+        setTypingCursor(false);
       }
     }, 100);
-  };
+  }, [text, clearAll, setDisplayed, setTypingCursor]);
 
-  const deleteBack = () => {
+  const deleteBack = useCallback(() => {
     clearAll();
+    setTypingCursor(true);
     intervalRef.current = setInterval(() => {
       if (displayedRef.current.length > 0) {
         setDisplayed(displayedRef.current.slice(0, -1));
@@ -42,24 +51,25 @@ export default function TypingAnimation({ text = "<Code/>" }) {
         clearAll();
         typeForward();
       }
-    }, 100);
-  };
+    }, 80);
+  }, [clearAll, setDisplayed, setTypingCursor, typeForward]);
 
   useEffect(() => {
+    isAnimatingRef.current = true;
     typeForward();
     return clearAll;
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [typeForward, clearAll]);
 
-  const handleMouseEnter = () => {
+  const handleMouseEnter = useCallback(() => {
     if (isAnimatingRef.current) return;
     isAnimatingRef.current = true;
     deleteBack();
-  };
+  }, [deleteBack]);
 
   return (
-    <span className="code-span-wrapper" onMouseEnter={handleMouseEnter}>
-      <span className="code-span" ref={spanRef}></span>
+    <span className="code-span-wrapper" onMouseEnter={handleMouseEnter} aria-label={text}>
+      <span className="code-span-text" ref={spanRef} />
+      <span className="code-cursor blinking" ref={cursorRef} />
     </span>
   );
 }
