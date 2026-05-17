@@ -1,7 +1,8 @@
 import { useEffect, useRef } from "react";
 import "./SkillsTreeReveal.css";
 
-const TRIGGER_Y = 300;
+const isMobile = window.innerWidth <= 768;
+const TRIGGER_Y = isMobile ? 750 : 300;
 const MAX_PROGRESS = 0.95;
 
 export default function SkillsTreeReveal() {
@@ -24,40 +25,29 @@ export default function SkillsTreeReveal() {
     const updateBeam = () => {
       const rect = container.getBoundingClientRect();
 
-      const rawProgress =
-        (TRIGGER_Y - rect.top) / rect.height;
+      const rawProgress = (TRIGGER_Y - rect.top) / rect.height;
 
-      const progress = Math.min(
-        MAX_PROGRESS,
-        Math.max(0, rawProgress)
-      );
+      const progress = Math.min(MAX_PROGRESS, Math.max(0, rawProgress));
 
       if (progress > maxProgress) {
         maxProgress = progress;
 
         if (beamRef.current) {
-          beamRef.current.style.transform =
-            `translateX(-50%) scaleY(${maxProgress})`;
+          beamRef.current.style.transform = `translateX(-50%) scaleY(${maxProgress})`;
         }
 
         if (maxProgress > 0.22) {
-          branch1Ref.current?.classList.add(
-            "skills-branch-visible"
-          );
-
-          branch2Ref.current?.classList.add(
-            "skills-branch-visible"
-          );
+          if (!isMobile) {
+            branch1Ref.current?.classList.add("skills-branch-visible");
+            branch2Ref.current?.classList.add("skills-branch-visible");
+          }
         }
 
         if (maxProgress > 0.72) {
-          branch3Ref.current?.classList.add(
-            "skills-branch-visible"
-          );
-
-          branch4Ref.current?.classList.add(
-            "skills-branch-visible"
-          );
+          if (!isMobile) {
+            branch3Ref.current?.classList.add("skills-branch-visible");
+            branch4Ref.current?.classList.add("skills-branch-visible");
+          }
         }
       }
     };
@@ -68,47 +58,25 @@ export default function SkillsTreeReveal() {
 
     updateBeam();
 
-    return () =>
-      window.removeEventListener(
-        "scroll",
-        updateBeam
-      );
+    return () => window.removeEventListener("scroll", updateBeam);
   }, []);
 
   return (
-    <div
-      ref={containerRef}
-      className="skills-tree-overlay"
-    >
+    <div ref={containerRef} className="skills-tree-overlay">
       {/* ANIMATED CENTER BEAM */}
-      <div
-        ref={beamRef}
-        className="skills-tree-animated-beam"
-      />
+      <div ref={beamRef} className="skills-tree-animated-beam" />
 
       {/* TOP LEFT */}
-      <div
-        ref={branch1Ref}
-        className="skills-animated-branch left top"
-      />
+      <div ref={branch1Ref} className="skills-animated-branch left top" />
 
       {/* TOP RIGHT */}
-      <div
-        ref={branch2Ref}
-        className="skills-animated-branch right top"
-      />
+      <div ref={branch2Ref} className="skills-animated-branch right top" />
 
       {/* BOTTOM LEFT */}
-      <div
-        ref={branch3Ref}
-        className="skills-animated-branch left bottom"
-      />
+      <div ref={branch3Ref} className="skills-animated-branch left bottom" />
 
       {/* BOTTOM RIGHT */}
-      <div
-        ref={branch4Ref}
-        className="skills-animated-branch right bottom"
-      />
+      <div ref={branch4Ref} className="skills-animated-branch right bottom" />
     </div>
   );
 }

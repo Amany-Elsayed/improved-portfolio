@@ -650,7 +650,7 @@
   }
 
   .skills-section-starter {
-    text-align: center;
+    justify-self: center;
     margin-top: 2.5rem;
   }
 
@@ -712,9 +712,11 @@
     width: 4px;
   }
 
-  .skills-animated-branch {
-    width: 75px;
-    height: 4px;
+  .skills-tree-diagram1,
+  .skills-tree-diagram2,
+  .skills-tree-diagram3,
+  .skills-tree-diagram4 {
+    display: none;
   }
 
   .skills-ground-reveal {
@@ -741,12 +743,12 @@
   }
 
   .skills-title {
-    font-size: 1.5rem;
-    line-height: 1.9rem;
+    font-size: 2rem;
   }
 
   .skills-section-title-p {
-    font-size: 0.85rem;
+    font-size: medium;
+    text-align: center;
   }
 
   .skills-card {
@@ -791,8 +793,11 @@
     width: 3px;
   }
 
-  .skills-tree-animated-beam {
-    width: 3px;
+  .skills-tree-diagram1,
+  .skills-tree-diagram2,
+  .skills-tree-diagram3,
+  .skills-tree-diagram4 {
+    display: none;
   }
 
   .skills-ground-reveal {
