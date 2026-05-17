@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import "./ExperienceReveal.css";
 
-const BEAM_TRIGGER_Y = 300;
 const BEAM_END = 0.95;
 
 export default function ExperienceReveal({ children }) {
@@ -25,11 +24,15 @@ export default function ExperienceReveal({ children }) {
     if (!container || !beam) return;
 
     let maxProgress = 0;
+    let done = false;
 
     const updateBeam = () => {
-      const { top, height } = container.getBoundingClientRect();
+      if (done) return;
 
-      const rawProgress = (BEAM_TRIGGER_Y - top) / height;
+      const { top, height } = container.getBoundingClientRect();
+      const vh = window.innerHeight;
+
+      const rawProgress = (vh - top - vh * 0.3) / height;
       const progress = Math.min(BEAM_END, Math.max(0, rawProgress));
 
       if (progress > maxProgress) {
@@ -41,22 +44,33 @@ export default function ExperienceReveal({ children }) {
 
       dotRefs.current.forEach((dot, i) => {
         if (!dot) return;
-        const dotViewportY =
-          dot.getBoundingClientRect().top + dot.offsetHeight * 0.5;
-        if (beamTipViewportY >= dotViewportY) {
-          setVisibleRows((prev) => new Set([...prev, i]));
+
+        const dotRect = dot.getBoundingClientRect();
+        const dotCentreY = dotRect.top + dotRect.height / 2;
+
+        if (beamTipViewportY >= dotCentreY) {
+          setVisibleRows((prev) => {
+            if (prev.has(i)) return prev;
+            return new Set([...prev, i]);
+          });
         }
       });
 
       if (maxProgress >= BEAM_END) {
+        done = true;
         window.removeEventListener("scroll", updateBeam);
+        window.removeEventListener("resize", updateBeam);
       }
     };
 
     window.addEventListener("scroll", updateBeam, { passive: true });
+    window.addEventListener("resize", updateBeam, { passive: true });
     updateBeam();
 
-    return () => window.removeEventListener("scroll", updateBeam);
+    return () => {
+      window.removeEventListener("scroll", updateBeam);
+      window.removeEventListener("resize", updateBeam);
+    };
   }, []);
 
   return (
