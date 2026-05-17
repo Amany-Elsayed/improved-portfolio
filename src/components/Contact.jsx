@@ -48,6 +48,32 @@ export default function Contact() {
     setCopyToastOpen(true);
   };
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    if (status === "sent") {
+      setToastOpen(true);
+      return;
+    }
+
+    setStatus("sending");
+    emailjs
+      .sendForm(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        formRef.current,
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
+      )
+      .then(() => {
+        setStatus("sent");
+        setSentToastOpen(true);
+      })
+      .catch(() => setStatus("error"));
+  };
+
+  // VARIABLES
+
+  // TERMINAL CODELINES
   const codeLines = [
     {
       number: "01",
@@ -80,29 +106,7 @@ export default function Contact() {
     { number: "05", content: [{ text: `}`, color: "blue" }] },
   ];
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    if (status === "sent") {
-      setToastOpen(true);
-      return;
-    }
-
-    setStatus("sending");
-    emailjs
-      .sendForm(
-        import.meta.env.VITE_EMAILJS_SERVICE_ID,
-        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
-        formRef.current,
-        import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
-      )
-      .then(() => {
-        setStatus("sent");
-        setSentToastOpen(true);
-      })
-      .catch(() => setStatus("error"));
-  };
-
+  // EMAIL FORM FIELDS
   const fields = [
     {
       name: "from_name",
@@ -117,6 +121,214 @@ export default function Contact() {
       icon: "email",
     },
     { name: "subject", placeholder: "Subject", type: "text", icon: "subject" },
+  ];
+
+  // SOCIALS ICONS SX
+  const socialSxBtn = {
+    border: "1px solid #0af",
+    width: "3rem",
+    height: "3rem",
+    marginRight: "1rem",
+    cursor: "default",
+    flexShrink: 0,
+  };
+
+  // POPPER BOX SX
+  const popperBoxSx = {
+    border: 1,
+    borderRadius: 2,
+    borderColor: "#001464",
+    p: 1,
+    bgcolor: "#00061f",
+  };
+
+  // SOCIALS FOR SOCIAL BOXES
+  const socials = [
+    {
+      id: 1,
+      boxIcon: (
+        <IconButton
+          className="neon-blue-button"
+          aria-label="code"
+          color="primary"
+          sx={socialSxBtn}
+        >
+          <EmailIcon className="neon-blue-icon" />
+        </IconButton>
+      ),
+      title: "EMAIL",
+      link: "amanyelsayed@outlook.com",
+      actionIcon: (
+        <IconButton
+          aria-haspopup="true"
+          onMouseEnter={(e) => handleHover(e, "copy")}
+          onMouseLeave={handleClose}
+          onClick={handleCopy}
+          aria-label="copy email"
+          color="primary"
+          className="neon-blue-icon"
+        >
+          <ContentCopyIcon />
+          <Popper
+            id="mouse-over-copy-popper"
+            open={popperType === "copy"}
+            anchorEl={anchorEl}
+            placement="right"
+            sx={{ pointerEvents: "none", zIndex: 100 }}
+            container={document.body}
+            transition
+          >
+            {({ TransitionProps }) => (
+              <Fade {...TransitionProps} timeout={350}>
+                <Box sx={popperBoxSx}>Copy</Box>
+              </Fade>
+            )}
+          </Popper>
+        </IconButton>
+      ),
+    },
+    {
+      id: 2,
+      boxIcon: (
+        <IconButton
+          className="neon-blue-button"
+          aria-label="code"
+          color="primary"
+          sx={socialSxBtn}
+        >
+          <LinkedInIcon className="neon-blue-icon" />
+        </IconButton>
+      ),
+      title: "EMAIL",
+      link: "amanyelsayed@outlook.com",
+      actionIcon: (
+        <IconButton
+          aria-haspopup="true"
+          onMouseEnter={(e) => handleHover(e, "open")}
+          onMouseLeave={handleClose}
+          onClick={() =>
+            window.open("https://www.linkedin.com/in/amany-elsayed0/", "_blank")
+          }
+          aria-label="code"
+          color="primary"
+          className="neon-blue-icon"
+        >
+          <OpenInNewIcon />
+          <Popper
+            id="mouse-over-open-popper"
+            open={popperType === "open"}
+            anchorEl={anchorEl}
+            placement="right"
+            sx={{ pointerEvents: "none", zIndex: 100 }}
+            container={document.body}
+            transition
+          >
+            {({ TransitionProps }) => (
+              <Fade {...TransitionProps} timeout={350}>
+                <Box sx={popperBoxSx}>Open</Box>
+              </Fade>
+            )}
+          </Popper>
+        </IconButton>
+      ),
+    },
+    {
+      id: 3,
+      boxIcon: (
+        <IconButton
+          className="neon-blue-button"
+          aria-label="code"
+          color="primary"
+          sx={socialSxBtn}
+        >
+          <GitHubIcon className="neon-blue-icon" />
+        </IconButton>
+      ),
+      title: "EMAIL",
+      link: "amanyelsayed@outlook.com",
+      actionIcon: (
+        <IconButton
+          aria-haspopup="true"
+          onMouseEnter={(e) => handleHover(e, "open")}
+          onMouseLeave={handleClose}
+          onClick={() =>
+            window.open("https://github.com/Amany-Elsayed", "_blank")
+          }
+          aria-label="code"
+          color="primary"
+          className="neon-blue-icon"
+        >
+          <OpenInNewIcon />
+          <Popper
+            id="mouse-over-open-popper"
+            open={popperType === "open"}
+            anchorEl={anchorEl}
+            placement="right"
+            sx={{ pointerEvents: "none", zIndex: 100 }}
+            container={document.body}
+            transition
+          >
+            {({ TransitionProps }) => (
+              <Fade {...TransitionProps} timeout={350}>
+                <Box sx={popperBoxSx}>Open</Box>
+              </Fade>
+            )}
+          </Popper>
+        </IconButton>
+      ),
+    },
+  ];
+
+  // SOCAIAL BOXES DELAYS
+  const socialDelays = [0.6, 0.7, 0.8];
+
+  // SNACKBARS
+  const toasts = [
+    {
+      key: 1,
+      toast: (
+        <Snackbar
+          open={copyToastOpen}
+          autoHideDuration={3000}
+          onClose={() => setCopyToastOpen(false)}
+          anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
+        >
+          <Alert severity="success" onClose={() => setCopyToastOpen(false)}>
+            Email copied to clipboard!
+          </Alert>
+        </Snackbar>
+      ),
+    },
+    {
+      key: 2,
+      toast: (
+        <Snackbar
+          open={toastOpen}
+          autoHideDuration={4000}
+          onClose={() => setToastOpen(false)}
+          anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
+        >
+          <Alert severity="info" onClose={() => setToastOpen(false)}>
+            You already sent a message. I'll get back to you soon!
+          </Alert>
+        </Snackbar>
+      ),
+    },
+    {
+      key: 3,
+      toast: (
+        <Snackbar
+          open={sentToastOpen}
+          autoHideDuration={4000}
+          onClose={() => setSentToastOpen(false)}
+          anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
+        >
+          <Alert severity="success" onClose={() => setSentToastOpen(false)}>
+            Message sent! I'll get back to you soon.
+          </Alert>
+        </Snackbar>
+      ),
+    },
   ];
 
   return (
@@ -165,196 +377,18 @@ export default function Contact() {
               </p>
             </RevealWrapper>
 
-            <RevealWrapper delay={0.6}>
-              <div className="contact-box neon-blue-border">
-                <IconButton
-                  className="neon-blue-button"
-                  aria-label="code"
-                  color="primary"
-                  sx={{
-                    border: "1px solid #0af",
-                    width: "3rem",
-                    height: "3rem",
-                    marginRight: "1rem",
-                    cursor: "default",
-                    flexShrink: 0,
-                  }}
-                >
-                  <EmailIcon className="neon-blue-icon" />
-                </IconButton>
-                <div className="contact-box-text">
-                  <h3>EMAIL</h3>
-                  <p>amanyelsayed@outlook.com</p>
+            {socials.map((social, index) => (
+              <RevealWrapper key={social.id} delay={socialDelays[index]}>
+                <div className="contact-box neon-blue-border">
+                  {social.boxIcon}
+                  <div className="contact-box-text">
+                    <h3>{social.title}</h3>
+                    <p>{social.link}</p>
+                  </div>
+                  <div className="contact-box-icon">{social.actionIcon}</div>
                 </div>
-                <div className="contact-box-icon">
-                  <IconButton
-                    aria-haspopup="true"
-                    onMouseEnter={(e) => handleHover(e, "copy")}
-                    onMouseLeave={handleClose}
-                    onClick={handleCopy}
-                    aria-label="copy email"
-                    color="primary"
-                    className="neon-blue-icon"
-                  >
-                    <ContentCopyIcon />
-                    <Popper
-                      id="mouse-over-copy-popper"
-                      open={popperType === "copy"}
-                      anchorEl={anchorEl}
-                      placement="right"
-                      sx={{ pointerEvents: "none", zIndex: 100 }}
-                      container={document.body}
-                      transition
-                    >
-                      {({ TransitionProps }) => (
-                        <Fade {...TransitionProps} timeout={350}>
-                          <Box
-                            sx={{
-                              border: 1,
-                              borderRadius: 2,
-                              borderColor: "#001464",
-                              p: 1,
-                              bgcolor: "#00061f",
-                            }}
-                          >
-                            Copy
-                          </Box>
-                        </Fade>
-                      )}
-                    </Popper>
-                  </IconButton>
-                </div>
-              </div>
-            </RevealWrapper>
-            <RevealWrapper delay={0.7}>
-              <div className="contact-box neon-blue-border">
-                <IconButton
-                  className="neon-blue-button"
-                  aria-label="code"
-                  color="primary"
-                  sx={{
-                    border: "1px solid #0af",
-                    width: "3rem",
-                    height: "3rem",
-                    marginRight: "1rem",
-                    cursor: "default",
-                    flexShrink: 0,
-                  }}
-                >
-                  <LinkedInIcon className="neon-blue-icon" />
-                </IconButton>
-                <div className="contact-box-text">
-                  <h3>EMAIL</h3>
-                  <p>amanyelsayed@outlook.com</p>
-                </div>
-                <div className="contact-box-icon">
-                  <IconButton
-                    aria-haspopup="true"
-                    onMouseEnter={(e) => handleHover(e, "open")}
-                    onMouseLeave={handleClose}
-                    onClick={() =>
-                      window.open(
-                        "https://www.linkedin.com/in/amany-elsayed0/",
-                        "_blank",
-                      )
-                    }
-                    aria-label="code"
-                    color="primary"
-                    className="neon-blue-icon"
-                  >
-                    <OpenInNewIcon />
-                    <Popper
-                      id="mouse-over-open-popper"
-                      open={popperType === "open"}
-                      anchorEl={anchorEl}
-                      placement="right"
-                      sx={{ pointerEvents: "none", zIndex: 100 }}
-                      container={document.body}
-                      transition
-                    >
-                      {({ TransitionProps }) => (
-                        <Fade {...TransitionProps} timeout={350}>
-                          <Box
-                            sx={{
-                              border: 1,
-                              borderRadius: 2,
-                              borderColor: "#001464",
-                              p: 1,
-                              bgcolor: "#00061f",
-                            }}
-                          >
-                            Open
-                          </Box>
-                        </Fade>
-                      )}
-                    </Popper>
-                  </IconButton>
-                </div>
-              </div>
-            </RevealWrapper>
-            <RevealWrapper delay={0.8}>
-              <div className="contact-box neon-blue-border">
-                <IconButton
-                  className="neon-blue-button"
-                  aria-label="code"
-                  color="primary"
-                  sx={{
-                    border: "1px solid #0af",
-                    width: "3rem",
-                    height: "3rem",
-                    marginRight: "1rem",
-                    cursor: "default",
-                    flexShrink: 0,
-                  }}
-                >
-                  <GitHubIcon className="neon-blue-icon" />
-                </IconButton>
-                <div className="contact-box-text">
-                  <h3>EMAIL</h3>
-                  <p>amanyelsayed@outlook.com</p>
-                </div>
-                <div className="contact-box-icon">
-                  <IconButton
-                    aria-haspopup="true"
-                    onMouseEnter={(e) => handleHover(e, "open")}
-                    onMouseLeave={handleClose}
-                    onClick={() =>
-                      window.open("https://github.com/Amany-Elsayed", "_blank")
-                    }
-                    aria-label="code"
-                    color="primary"
-                    className="neon-blue-icon"
-                  >
-                    <OpenInNewIcon />
-                    <Popper
-                      id="mouse-over-open-popper"
-                      open={popperType === "open"}
-                      anchorEl={anchorEl}
-                      placement="right"
-                      sx={{ pointerEvents: "none", zIndex: 100 }}
-                      container={document.body}
-                      transition
-                    >
-                      {({ TransitionProps }) => (
-                        <Fade {...TransitionProps} timeout={350}>
-                          <Box
-                            sx={{
-                              border: 1,
-                              borderRadius: 2,
-                              borderColor: "#001464",
-                              p: 1,
-                              bgcolor: "#00061f",
-                            }}
-                          >
-                            Open
-                          </Box>
-                        </Fade>
-                      )}
-                    </Popper>
-                  </IconButton>
-                </div>
-              </div>
-            </RevealWrapper>
+              </RevealWrapper>
+            ))}
 
             <RevealWrapper delay={0.9}>
               <div className="contact-availability-card neon-blue-border">
@@ -442,36 +476,7 @@ export default function Contact() {
             </RevealWrapper>
           </Container>
 
-          <Snackbar
-            open={copyToastOpen}
-            autoHideDuration={3000}
-            onClose={() => setCopyToastOpen(false)}
-            anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
-          >
-            <Alert severity="success" onClose={() => setCopyToastOpen(false)}>
-              Email copied to clipboard!
-            </Alert>
-          </Snackbar>
-          <Snackbar
-            open={toastOpen}
-            autoHideDuration={4000}
-            onClose={() => setToastOpen(false)}
-            anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
-          >
-            <Alert severity="info" onClose={() => setToastOpen(false)}>
-              You already sent a message. I'll get back to you soon!
-            </Alert>
-          </Snackbar>
-          <Snackbar
-            open={sentToastOpen}
-            autoHideDuration={4000}
-            onClose={() => setSentToastOpen(false)}
-            anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
-          >
-            <Alert severity="success" onClose={() => setSentToastOpen(false)}>
-              Message sent! I'll get back to you soon.
-            </Alert>
-          </Snackbar>
+          {toasts.map((t) => {t.toast})}
         </Container>
       </div>
     </>
