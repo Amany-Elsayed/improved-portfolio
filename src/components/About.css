@@ -8,6 +8,8 @@
   align-items: center;
   display: flex;
   padding: 4rem 0;
+  overflow: hidden;
+  isolation: isolate;
 }
 
 /* ABOUT BACKGROUND EFFECT */
@@ -453,4 +455,3 @@
 /* === SMALL PHONE === */
 
 /* === RESPONSITIVITY === */
-

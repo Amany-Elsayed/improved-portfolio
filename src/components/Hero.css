@@ -101,7 +101,8 @@
 
   .circuit-video-bg,
   .video-overlay {
-    min-height: calc(100dvh + 550px);
+    height: 100%;
+    min-height: 100%;
   }
 }
 
@@ -118,7 +119,8 @@
 
   .circuit-video-bg,
   .video-overlay {
-    min-height: calc(100dvh + 550px);
+    height: 100%;
+    min-height: 100%;
   }
 }
 
@@ -135,7 +137,8 @@
 
   .circuit-video-bg,
   .video-overlay {
-    min-height: calc(100dvh + 550px);
+    height: 100%;
+    min-height: 100%;
   }
 }
 
