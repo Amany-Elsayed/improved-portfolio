@@ -90,3 +90,29 @@
   opacity: 1;
   transform: translateX(0);
 }
+
+/* ================= TABLET ================= */
+
+@media (max-width: 992px) {
+  .experience-timeline-reveal::before,
+  .experience-beam-track {
+    left: 82px;
+  }
+
+  .experience-ground-reveal {
+    left: 84px;
+  }
+}
+
+/* ================= PHONE ================= */
+
+@media (max-width: 600px) {
+  .experience-timeline-reveal::before,
+  .experience-beam-track {
+    left: 64px;
+  }
+
+  .experience-ground-reveal {
+    left: 66px;
+  }
+}

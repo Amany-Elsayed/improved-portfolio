@@ -55,6 +55,14 @@ export default function TypingAnimation({ text = "" }) {
   }, [clearAll, setDisplayed, setTypingCursor, typeForward]);
 
   useEffect(() => {
+    if (!spanRef.current) return;
+    const wrapper = spanRef.current.parentElement;
+    spanRef.current.textContent = text;
+    wrapper.style.width = wrapper.offsetWidth + "px";
+    spanRef.current.textContent = "";
+  }, [text]);
+
+  useEffect(() => {
     isAnimatingRef.current = true;
     typeForward();
     return clearAll;
@@ -67,7 +75,11 @@ export default function TypingAnimation({ text = "" }) {
   }, [deleteBack]);
 
   return (
-    <span className="code-span-wrapper" onMouseEnter={handleMouseEnter} aria-label={text}>
+    <span
+      className="code-span-wrapper"
+      onMouseEnter={handleMouseEnter}
+      aria-label={text}
+    >
       <span className="code-span-text" ref={spanRef} />
       <span className="code-cursor blinking" ref={cursorRef} />
     </span>
