@@ -90,6 +90,25 @@
 
 /* RESPONSITIVITY */
 
+/* TABLET */
+
+@media (max-width: 900px) {
+  .hero-section {
+    min-height: calc(100dvh + 300px);
+    align-items: flex-start;
+    padding-top: calc(50dvh - 80px);
+  }
+
+  .circuit-video-bg,
+  .video-overlay {
+    min-height: calc(100dvh + 550px);
+  }
+}
+
+/* === TABLET === */
+
+/* PHONE */
+
 @media (max-width: 768px) {
   .hero-section {
     min-height: calc(100dvh + 300px);
@@ -102,5 +121,24 @@
     min-height: calc(100dvh + 550px);
   }
 }
+
+/* === PHONE === */
+
+/* SMALL PHONE */
+
+@media (max-width: 480px) {
+  .hero-section {
+    min-height: calc(100dvh + 300px);
+    align-items: flex-start;
+    padding-top: calc(50dvh - 80px);
+  }
+
+  .circuit-video-bg,
+  .video-overlay {
+    min-height: calc(100dvh + 550px);
+  }
+}
+
+/* === SMALL PHONE === */
 
 /* === RESPONSITIVITY === */

@@ -1,5 +1,3 @@
-/* -------------------------- EXPERIENCE ----------------------------------------- */
-
 .experience-section {
   position: relative;
 
@@ -291,7 +289,9 @@
   width: 45%;
 }
 
-/* ================= TABLET ================= */
+/* RESPONSITIVITY */
+
+/* TABLET */
 
 @media (max-width: 992px) {
   .experience-content {
@@ -347,7 +347,9 @@
   }
 }
 
-/* ================= PHONE ================= */
+/* === TABLET === */
+
+/* PHONE */
 
 @media (max-width: 600px) {
   .experience-content {
@@ -429,4 +431,6 @@
   }
 }
 
-/* === -------------------------- EXPERIENCE ----------------------------------------- === */
+/* === PHONE === */
+
+/* === RESPONSITIVITY === */
