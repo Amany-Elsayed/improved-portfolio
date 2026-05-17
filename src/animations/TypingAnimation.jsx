@@ -55,12 +55,20 @@ export default function TypingAnimation({ text = "" }) {
   }, [clearAll, setDisplayed, setTypingCursor, typeForward]);
 
   useEffect(() => {
-    if (!spanRef.current) return;
-    const wrapper = spanRef.current.parentElement;
+  if (!spanRef.current) return;
+  const wrapper = spanRef.current.parentElement;
+
+  const measure = () => {
+    wrapper.style.width = "auto";
     spanRef.current.textContent = text;
     wrapper.style.width = wrapper.offsetWidth + "px";
-    spanRef.current.textContent = "";
-  }, [text]);
+    spanRef.current.textContent = displayedRef.current;
+  };
+
+  measure();
+  window.addEventListener("resize", measure, { passive: true });
+  return () => window.removeEventListener("resize", measure);
+}, [text]);
 
   useEffect(() => {
     isAnimatingRef.current = true;
