@@ -486,9 +486,9 @@
 
 @media (min-width: 1000px) and (max-width: 1200px) {
   .skills-tree-diagram {
-    top: 31rem;
+    top: 17rem;
     width: min(780px, calc(100vw - 10rem));
-    height: 860px;
+    height: 650px;
   }
 
   .skills-tree-diagram1,
@@ -593,9 +593,9 @@
 
   .skills-tree-diagram {
     width: 620px;
-    height: 520px;
+    height: 710px;
 
-    top: 20rem;
+    top: 19rem;
   }
 
   .skills-tree-diagram1,
@@ -609,13 +609,13 @@
   .skills-tree-diagram1,
   .skills-tree-diagram2,
   .skills-animated-branch.top {
-    top: 108px;
+    top: 147px;
   }
 
   .skills-tree-diagram3,
   .skills-tree-diagram4,
   .skills-animated-branch.bottom {
-    top: 360px;
+    top: 470px;
   }
 
   .skills-tree-animated-beam {

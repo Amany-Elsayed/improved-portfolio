@@ -453,3 +453,256 @@
 .projects-inner-ground3 {
   width: 45%;
 }
+
+/* RESPONSITIVITY */
+
+/* LARGE DESKTOP */
+
+@media (min-width: 1200px) {
+  .projects-tree-diagram {
+    top: 17rem;
+    height: 850px;
+  }
+
+  .projects-tree-diagram1,
+  .projects-tree-diagram2 {
+    top: 240px;
+  }
+
+  .projects-tree-diagram3,
+  .projects-tree-diagram4 {
+    top: 647px;
+  }
+}
+
+/* === LARGE DESKTOP === */
+
+/* MEDIUM DESKTOP */
+
+@media (min-width: 1000px) and (max-width: 1200px) {
+  .projects-tree-diagram {
+    top: 17rem;
+    width: min(780px, calc(100vw - 10rem));
+    height: 850px;
+  }
+
+  .projects-tree-diagram1,
+  .projects-tree-diagram2,
+  .projects-tree-diagram3,
+  .projects-tree-diagram4,
+  .projects-animated-branch {
+    width: 95px;
+  }
+
+  .projects-tree-diagram1,
+  .projects-tree-diagram2,
+  .projects-animated-branch.top {
+    top: 240px;
+  }
+
+  .projects-tree-diagram3,
+  .projects-tree-diagram4,
+  .projects-animated-branch.bottom {
+    top: 650px;
+  }
+}
+
+/* === MEDIUM DESKTOP === */
+
+/* SMALL DESKTOP */
+
+@media (min-width: 900px) and (max-width: 1000px) {
+  .projects-tree-diagram {
+    top: 15rem;
+    width: min(780px, calc(100vw - 10rem));
+    height: 850px;
+  }
+
+  .projects-tree-diagram1,
+  .projects-tree-diagram2,
+  .projects-tree-diagram3,
+  .projects-tree-diagram4,
+  .projects-animated-branch {
+    width: 95px;
+  }
+
+  .projects-tree-diagram1,
+  .projects-tree-diagram2,
+  .projects-animated-branch.top {
+    top: 240px;
+  }
+
+  .projects-tree-diagram3,
+  .projects-tree-diagram4,
+  .projects-animated-branch.bottom {
+    top: 650px;
+  }
+}
+
+/* === SMALL DESKTOP === */
+
+/* TABLET */
+
+@media (max-width: 900px) {
+  .projects-section {
+    padding: 6rem 1.5rem;
+  }
+
+  .projects-content {
+    width: 100%;
+    padding-top: 2rem;
+    padding-bottom: 4rem;
+    display: flex;
+    justify-content: center;
+  }
+
+  .projects-grid {
+    grid-template-columns: 2fr 2fr;
+    column-gap: 50px;
+    row-gap: 30px;
+  }
+
+  .projects-card {
+    width: 240px;
+    padding: 20px 18px 24px;
+  }
+
+  .projects-tree-diagram {
+    width: 620px;
+    height: 950px;
+    top: 21rem;
+  }
+
+  .projects-tree-diagram1,
+  .projects-tree-diagram2,
+  .projects-tree-diagram3,
+  .projects-tree-diagram4 {
+    width: 75px;
+    height: 4px;
+  }
+
+  .projects-tree-diagram1,
+  .projects-tree-diagram2,
+  .projects-animated-branch.top {
+    top: 267px;
+  }
+
+  .projects-tree-diagram3,
+  .projects-tree-diagram4,
+  .projects-animated-branch.bottom {
+    top: 725px;
+  }
+
+  .projects-tree-animated-beam {
+    width: 4px;
+  }
+
+  .projects-animated-branch {
+    width: 75px;
+    height: 4px;
+  }
+}
+
+/* === TABLET === */
+
+/* PHONE */
+
+@media (max-width: 768px) {
+  .projects-section {
+    padding: 6rem 1rem;
+  }
+
+  .projects-content {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+    row-gap: 30px;
+  }
+
+  .projects-card-wrapper {
+    display: flex;
+    justify-content: center;
+  }
+
+  .projects-card {
+    width: 20rem;
+    max-width: 100%;
+    padding: 20px 18px 24px;
+  }
+
+  .projects-tree-diagram {
+    width: 620px;
+    height: 1740px;
+    top: 21rem;
+  }
+
+  .projects-tree-diagram1,
+  .projects-tree-diagram2,
+  .projects-tree-diagram3,
+  .projects-tree-diagram4 {
+    width: 75px;
+    height: 4px;
+  }
+
+  .projects-tree-diagram1,
+  .projects-tree-diagram2,
+  .projects-animated-branch.top {
+    top: 160px;
+  }
+
+  .projects-tree-diagram3,
+  .projects-tree-diagram4,
+  .projects-animated-branch.bottom {
+    top: 490px;
+  }
+
+  .projects-tree-animated-beam {
+    width: 4px;
+  }
+
+  .projects-animated-branch {
+    width: 75px;
+    height: 4px;
+  }
+
+  .projects-tree-diagram2::before,
+  .projects-tree-diagram2::after,
+  .projects-tree-diagram4::before,
+  .projects-tree-diagram4::after {
+    display: none;
+  }
+}
+
+/* === PHONE === */
+
+/* SMALL PHONE */
+
+@media (max-width: 480px) {
+  .projects-section {
+    padding: 5rem 0.75rem;
+  }
+
+  .projects-card {
+    width: 17rem;
+    padding: 18px 16px 22px;
+  }
+
+  .projects-tree-diagram {
+    top: 19.5rem;
+    height: calc(100% - 17.5rem);
+  }
+
+  .projects-tree-animated-beam {
+    width: 3px;
+  }
+
+  .projects-ground-reveal {
+    bottom: 2rem;
+  }
+}
+
+/* === SMALL PHONE === */
