@@ -39,6 +39,69 @@ const stats = [
   },
 ];
 
+// ICON POINTS SX
+
+const iconPointsBtn = {
+  border: "1px solid #0af",
+  width: "3rem",
+  height: "3rem",
+  marginRight: "1rem",
+  cursor: "default",
+  flexShrink: 0,
+};
+
+// ABOUT ME POINTS
+const textPoints = [
+  {
+    id: 1,
+    icon: (
+      <IconButton
+        className="neon-blue-button"
+        aria-label="code"
+        color="primary"
+        sx={iconPointsBtn}
+      >
+        <CodeOffIcon className="neon-blue-icon" />
+      </IconButton>
+    ),
+    title: "Full-Stack Development",
+    desc: "Lorem ipsum dolor, sit amet consectetur adipisicing elit.",
+  },
+  {
+    id: 2,
+    icon: (
+      <IconButton
+        className="neon-blue-button"
+        aria-label="performance"
+        color="primary"
+        sx={iconPointsBtn}
+      >
+        <RocketLaunchIcon className="neon-blue-icon" />
+      </IconButton>
+    ),
+    title: "Performance Focused",
+    desc: "Lorem ipsum dolor, sit amet consectetur adipisicing elit.",
+  },
+  {
+    id: 3,
+    icon: (
+      <IconButton
+        className="neon-blue-button"
+        aria-label="solver"
+        color="primary"
+        sx={iconPointsBtn}
+      >
+        <EmojiObjectsIcon className="neon-blue-icon" />
+      </IconButton>
+    ),
+    title: "Problem Solver",
+    desc: "Lorem ipsum dolor, sit amet consectetur adipisicing elit.",
+  },
+];
+
+// POINTS DELAYS
+const pointsDelays = [0.9, 1.0, 1.1];
+
 export default function About() {
   return (
     <>
@@ -88,83 +151,17 @@ export default function About() {
             {/* === THE ABOUT ME DESCRIPTION === */}
 
             {/* THE ABOUT ME ICON POINTS */}
-            <RevealWrapper delay={0.9}>
-              <div className="about-icon-description">
-                <IconButton
-                  className="neon-blue-button"
-                  aria-label="code"
-                  color="primary"
-                  sx={{
-                    border: "1px solid #0af",
-                    width: "3rem",
-                    height: "3rem",
-                    marginRight: "1rem",
-                    cursor: "default",
-                    flexShrink: 0,
-                  }}
-                >
-                  <CodeOffIcon className="neon-blue-icon" />
-                </IconButton>
-                <div className="about-icon-text">
-                  <h3>Full-Stack Development</h3>
-                  <p>
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                  </p>
+            {textPoints.map((point, index) => (
+            <RevealWrapper key={point.id} delay={pointsDelays[index]}>
+                <div className="about-icon-description">
+                  {point.icon}
+                  <div className="about-icon-text">
+                    <h3>{point.title}</h3>
+                    <p>{point.desc}</p>
+                  </div>
                 </div>
-              </div>
             </RevealWrapper>
-
-            <RevealWrapper delay={1.0}>
-              <div className="about-icon-description">
-                <IconButton
-                  className="neon-blue-button"
-                  aria-label="performance"
-                  color="primary"
-                  sx={{
-                    border: "1px solid #0af",
-                    width: "3rem",
-                    height: "3rem",
-                    marginRight: "1rem",
-                    cursor: "default",
-                    flexShrink: 0,
-                  }}
-                >
-                  <RocketLaunchIcon className="neon-blue-icon" />
-                </IconButton>
-                <div className="about-icon-text">
-                  <h3>Performance Focused</h3>
-                  <p>
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                  </p>
-                </div>
-              </div>
-            </RevealWrapper>
-
-            <RevealWrapper delay={1.1}>
-              <div className="about-icon-description">
-                <IconButton
-                  className="neon-blue-button"
-                  aria-label="solver"
-                  color="primary"
-                  sx={{
-                    border: "1px solid #0af",
-                    width: "3rem",
-                    height: "3rem",
-                    marginRight: "1rem",
-                    cursor: "default",
-                    flexShrink: 0,
-                  }}
-                >
-                  <EmojiObjectsIcon className="neon-blue-icon" />
-                </IconButton>
-                <div className="about-icon-text">
-                  <h3>Problem Solver</h3>
-                  <p>
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                  </p>
-                </div>
-              </div>
-            </RevealWrapper>
+            ))}
             {/* === THE ABOUT ME ICON POINTS === */}
 
             {/* STATS BOX */}
