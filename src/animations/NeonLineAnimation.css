@@ -2,6 +2,7 @@
   display: flex;
   align-items: center;
   gap: 10px;
+  min-width: max-content;
 }
 
 .neon-line {
@@ -22,27 +23,32 @@
   height: 6px;
   border-radius: 50%;
   background: #6699ff;
-  box-shadow: 0 0 6px #0047ff, 0 0 14px #0047ff, 0 0 28px #0033cc;
+  box-shadow:
+    0 0 6px #0047ff,
+    0 0 14px #0047ff,
+    0 0 28px #0033cc;
 }
 
 .neon-line-text {
   color: #6699ff;
-  text-shadow: 0 0 8px #0047ff, 0 0 20px #0047ff, 0 0 40px #0033cc;
+  text-shadow:
+    0 0 8px #0047ff,
+    0 0 20px #0047ff,
+    0 0 40px #0033cc;
   letter-spacing: 0.15em;
   font-size: 0.95rem;
   overflow: hidden;
   white-space: nowrap;
-  width: 0;
+  clip-path: inset(0 100% 0 0);
   animation: revealText 1.5s ease forwards;
   animation-delay: 0.8s;
 }
 
 @keyframes revealText {
   to {
-    width: 100%;
+    clip-path: inset(0 0% 0 0);
   }
 }
-
 
 .neon-line {
   width: 0;
