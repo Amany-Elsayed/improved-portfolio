@@ -1,9 +1,9 @@
-import "./App.css"
+import "./App.css";
 
 // COMPONENTS
-import Header from "./components/Header"
-import About from "./components/About"
-import Hero from "./components/Hero"
+import Header from "./components/Header";
+import About from "./components/About";
+import Hero from "./components/Hero";
 import Experience from "./components/Experience";
 import Skills from "./components/Skills";
 import Projects from "./components/Projects";

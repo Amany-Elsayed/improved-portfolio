@@ -115,7 +115,7 @@
 }
 
 .about-picture-container {
-  margin-left: 2.2rem
+  margin-left: 4rem
 }
 
 .about-picture-section img {
@@ -148,7 +148,7 @@
 
   position: absolute;
   top: 68%;
-  left: 50%;
+  left: 57%;
   transform: translateX(-50%);
 
   width: 17rem;

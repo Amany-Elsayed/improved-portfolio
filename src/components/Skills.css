@@ -555,7 +555,7 @@
 
   .skills-tree-diagram {
     top: 17rem;
-    height: 640px;
+    height: 680px;
   }
 
   .skills-tree-diagram1,
@@ -583,7 +583,7 @@
   .skills-tree-diagram {
     top: 17rem;
     width: min(780px, calc(100vw - 10rem));
-    height: 650px;
+    height: 680px;
   }
 
   .skills-tree-diagram1,
@@ -617,9 +617,9 @@
   }
 
   .skills-tree-diagram {
-    top: 14rem;
+    top: 19rem;
     width: min(780px, calc(100vw - 10rem));
-    height: 650px;
+    height: 700px;
   }
 
   .skills-tree-diagram1,

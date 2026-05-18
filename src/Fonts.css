@@ -1,0 +1,52 @@
+/* EXO 2 */
+
+@font-face {
+  font-family: "Exo 2";
+  src: url("./assets/Fonts/Exo2/Exo2-Regular.ttf");
+
+  font-weight: 400;
+  font-style: normal;
+
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Exo 2";
+  src: url("./assets/Fonts/Exo2/Exo2-Bold.ttf");
+
+  font-weight: 700;
+  font-style: normal;
+
+  font-display: swap;
+}
+
+/* SPACE GROTESK */
+
+@font-face {
+  font-family: "Space Grotesk";
+  src: url("./assets/Fonts/Space_Grotesk/SpaceGrotesk-VariableFont_wght.ttf");
+
+  font-display: swap;
+}
+
+/* SPACE MONO */
+
+@font-face {
+  font-family: "Space Mono";
+  src: url("./assets/Fonts/Space_Mono/SpaceMono-Regular.ttf");
+
+  font-weight: 400;
+  font-style: normal;
+
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Space Mono";
+  src: url("./assets/Fonts/Space_Mono/SpaceMono-Bold.ttf");
+
+  font-weight: 700;
+  font-style: normal;
+
+  font-display: swap;
+}
