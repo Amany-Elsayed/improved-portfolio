@@ -22,6 +22,7 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  background-attachment: fixed;
   filter: blur(4px);
   z-index: 0;
 }
@@ -34,6 +35,8 @@
 /* === ABOUT BACKGROUND EFFECT === */
 
 .about-container {
+  position: relative;
+  z-index: 1;
   display: flex;
   justify-content: center;
   align-items: center;
