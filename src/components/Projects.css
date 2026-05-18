@@ -336,12 +336,12 @@
 
   transform: translateY(-50%);
 
-  width: 16px;
-  height: 16px;
+  background-color: #050816;
+
+  width: 22px;
+  height: 22px;
 
   border-radius: 50%;
-
-  background: #050816;
 
   border: 4px solid rgba(0, 51, 255, 0.3);
 
@@ -349,7 +349,6 @@
     0 0 8px rgba(0, 51, 255, 0.45),
     0 0 18px rgba(0, 51, 255, 0.18);
 
-  position: absolute;
   z-index: 5;
 }
 
@@ -361,7 +360,7 @@
 
   position: absolute;
 
-  left: -2px;
+  left: -3px;
   top: 50%;
 
   transform: translateY(-50%);
@@ -378,13 +377,6 @@
     0 0 14px #0033ff;
 
   z-index: 6;
-}
-
-.projects-tree-diagram1::before,
-.projects-tree-diagram1::after,
-.projects-tree-diagram3::before,
-.projects-tree-diagram3::after {
-  display: none;
 }
 
 .projects-tree-diagram1 {
@@ -465,7 +457,7 @@
 
   .projects-tree-diagram {
     top: 17rem;
-    height: 850px;
+    height: 880px;
   }
 
   .projects-tree-diagram1,
@@ -491,7 +483,7 @@
   .projects-tree-diagram {
     top: 17rem;
     width: min(780px, calc(100vw - 10rem));
-    height: 850px;
+    height: 880px;
   }
 
   .projects-tree-diagram1,
@@ -527,7 +519,7 @@
   .projects-tree-diagram {
     top: 15rem;
     width: min(780px, calc(100vw - 10rem));
-    height: 850px;
+    height: 870px;
   }
 
   .projects-tree-diagram1,
@@ -600,13 +592,13 @@
   .projects-tree-diagram1,
   .projects-tree-diagram2,
   .projects-animated-branch.top {
-    top: 267px;
+    top: 240px;
   }
 
   .projects-tree-diagram3,
   .projects-tree-diagram4,
   .projects-animated-branch.bottom {
-    top: 725px;
+    top: 650px;
   }
 
   .projects-tree-animated-beam {
@@ -657,8 +649,8 @@
 
   .projects-tree-diagram {
     width: 620px;
-    height: 1740px;
-    top: 21rem;
+    height: 1720px;
+    top: 20rem;
   }
 
   .projects-tree-diagram1,

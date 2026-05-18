@@ -34,7 +34,6 @@
 /* === ABOUT BACKGROUND EFFECT === */
 
 .about-container {
-  color: #001464;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -112,7 +111,11 @@
 
 .about-picture-section {
   position: relative;
-  margin-top: -1.5rem;
+  margin-bottom: 4rem;
+}
+
+.about-picture-container {
+  margin-left: 2.2rem
 }
 
 .about-picture-section img {
@@ -347,6 +350,7 @@
     width: 20rem;
     max-width: 100%;
     height: 22rem;
+    margin: 0;
   }
 
   .about-picture-window {
@@ -435,11 +439,13 @@
   .about-picture-container {
     width: 17rem;
     height: 19rem;
+    margin: 0;
   }
 
   .about-picture-window {
     width: 13rem;
     height: 6rem;
+    left: 50%;
     top: 72%;
     padding: 0.6rem;
     gap: 0.6rem;
