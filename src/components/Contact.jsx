@@ -282,55 +282,6 @@ export default function Contact() {
   // SOCAIAL BOXES DELAYS
   const socialDelays = [0.6, 0.7, 0.8];
 
-  // SNACKBARS
-  const toasts = [
-    {
-      key: 1,
-      toast: (
-        <Snackbar
-          open={copyToastOpen}
-          autoHideDuration={3000}
-          onClose={() => setCopyToastOpen(false)}
-          anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
-        >
-          <Alert severity="success" onClose={() => setCopyToastOpen(false)}>
-            Email copied to clipboard!
-          </Alert>
-        </Snackbar>
-      ),
-    },
-    {
-      key: 2,
-      toast: (
-        <Snackbar
-          open={toastOpen}
-          autoHideDuration={4000}
-          onClose={() => setToastOpen(false)}
-          anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
-        >
-          <Alert severity="info" onClose={() => setToastOpen(false)}>
-            You already sent a message. I'll get back to you soon!
-          </Alert>
-        </Snackbar>
-      ),
-    },
-    {
-      key: 3,
-      toast: (
-        <Snackbar
-          open={sentToastOpen}
-          autoHideDuration={4000}
-          onClose={() => setSentToastOpen(false)}
-          anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
-        >
-          <Alert severity="success" onClose={() => setSentToastOpen(false)}>
-            Message sent! I'll get back to you soon.
-          </Alert>
-        </Snackbar>
-      ),
-    },
-  ];
-
   return (
     <>
       <div id="contact-section" className="contact-section">
@@ -476,7 +427,72 @@ export default function Contact() {
             </RevealWrapper>
           </Container>
 
-          {toasts.map((t) => {t.toast})}
+          <Snackbar
+            open={copyToastOpen}
+            autoHideDuration={3000}
+            onClose={() => setCopyToastOpen(false)}
+            anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
+          >
+            <Alert
+              severity="success"
+              onClose={() => setCopyToastOpen(false)}
+              sx={{
+                backgroundColor: "#050816",
+                color: "#fff",
+                border: "1px solid rgba(0,140,255,0.4)",
+
+                "& .MuiAlert-icon": {
+                  color: "#00aaff",
+                },
+              }}
+            >
+              Email copied to clipboard!
+            </Alert>
+          </Snackbar>
+          <Snackbar
+            open={toastOpen}
+            autoHideDuration={4000}
+            onClose={() => setToastOpen(false)}
+            anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
+          >
+            <Alert
+              severity="info"
+              onClose={() => setToastOpen(false)}
+              sx={{
+                backgroundColor: "#050816",
+                color: "#fff",
+                border: "1px solid rgba(0,140,255,0.4)",
+
+                "& .MuiAlert-icon": {
+                  color: "#00aaff",
+                },
+              }}
+            >
+              You already sent a message. I'll get back to you soon!
+            </Alert>
+          </Snackbar>
+          <Snackbar
+            open={sentToastOpen}
+            autoHideDuration={4000}
+            onClose={() => setSentToastOpen(false)}
+            anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
+          >
+            <Alert
+              severity="success"
+              onClose={() => setSentToastOpen(false)}
+              sx={{
+                backgroundColor: "#050816",
+                color: "#fff",
+                border: "1px solid rgba(0,140,255,0.4)",
+
+                "& .MuiAlert-icon": {
+                  color: "#00aaff",
+                },
+              }}
+            >
+              Message sent! I'll get back to you soon.
+            </Alert>
+          </Snackbar>
         </Container>
       </div>
     </>

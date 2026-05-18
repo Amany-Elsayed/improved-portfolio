@@ -24,7 +24,7 @@ const projects = [
         target="_blank"
         rel="noopener noreferrer"
         variant="contained"
-        style={{ margin: "1rem" }}
+        className="project-card-btn"
       >
         Open GitHub
       </Button>
@@ -36,14 +36,14 @@ const projects = [
         target="_blank"
         rel="noopener noreferrer"
         variant="contained"
-        style={{ margin: "1rem" }}
+        className="project-card-btn"
       >
         Try It Out
       </Button>
     ),
   },
   {
-    number: "01",
+    number: "02",
     pic: "./project2.png",
     section: "FULL-STACK",
     title: "portfolio",
@@ -56,7 +56,7 @@ const projects = [
         target="_blank"
         rel="noopener noreferrer"
         variant="contained"
-        style={{ margin: "1rem" }}
+        className="project-card-btn"
       >
         Open GitHub
       </Button>
@@ -68,14 +68,14 @@ const projects = [
         target="_blank"
         rel="noopener noreferrer"
         variant="contained"
-        style={{ margin: "1rem" }}
+        className="project-card-btn"
       >
         Try It Out
       </Button>
     ),
   },
   {
-    number: "01",
+    number: "03",
     pic: "/project3.png",
     section: "FULL-STACK",
     title: "portfolio",
@@ -88,7 +88,7 @@ const projects = [
         target="_blank"
         rel="noopener noreferrer"
         variant="contained"
-        style={{ margin: "1rem" }}
+        className="project-card-btn"
       >
         Open GitHub
       </Button>
@@ -100,14 +100,14 @@ const projects = [
         target="_blank"
         rel="noopener noreferrer"
         variant="contained"
-        style={{ margin: "1rem" }}
+        className="project-card-btn"
       >
         Try It Out
       </Button>
     ),
   },
   {
-    number: "01",
+    number: "04",
     pic: "/project4.png",
     section: "FULL-STACK",
     title: "portfolio",
@@ -120,7 +120,7 @@ const projects = [
         target="_blank"
         rel="noopener noreferrer"
         variant="contained"
-        style={{ margin: "1rem" }}
+        className="project-card-btn"
       >
         Open GitHub
       </Button>
@@ -132,7 +132,7 @@ const projects = [
         target="_blank"
         rel="noopener noreferrer"
         variant="contained"
-        style={{ margin: "1rem" }}
+        className="project-card-btn"
       >
         Try It Out
       </Button>
