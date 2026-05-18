@@ -298,6 +298,10 @@
     right: 2%;
   }
 
+  .experience-section-starter {
+    justify-self: left;
+  }
+
   .experience-grid {
     grid-template-columns: 65px 34px 1fr;
   }
@@ -361,7 +365,7 @@
   }
 
   .experience-section-starter {
-    justify-self: center;
+    justify-self: left;
   }
 
   .experience-title {

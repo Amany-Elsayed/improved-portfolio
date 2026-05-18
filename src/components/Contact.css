@@ -262,7 +262,7 @@
   }
 
   .contact-section-starter {
-    justify-content: center;
+    justify-content: left;
   }
 
   .contact-title {
@@ -368,6 +368,10 @@
     padding: 3rem 1rem;
   }
 
+  .contact-section-starter {
+    justify-self: left;
+  }
+
   .contact-content {
     width: 100%;
     gap: 1.5rem;
@@ -445,6 +449,10 @@
 @media screen and (max-width: 480px) {
   .contact-section {
     padding: 2.5rem 0.75rem;
+  }
+
+  .contact-section-starter {
+    justify-self: left;
   }
 
   .contact-title {

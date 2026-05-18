@@ -459,6 +459,10 @@
 /* LARGE DESKTOP */
 
 @media (min-width: 1200px) {
+  .projects-section-starter {
+    justify-self: left;
+  }
+
   .projects-tree-diagram {
     top: 17rem;
     height: 850px;
@@ -480,6 +484,10 @@
 /* MEDIUM DESKTOP */
 
 @media (min-width: 1000px) and (max-width: 1200px) {
+  .projects-section-starter {
+    justify-self: left;
+  }
+
   .projects-tree-diagram {
     top: 17rem;
     width: min(780px, calc(100vw - 10rem));
@@ -512,6 +520,10 @@
 /* SMALL DESKTOP */
 
 @media (min-width: 900px) and (max-width: 1000px) {
+  .projects-section-starter {
+    justify-self: left;
+  }
+
   .projects-tree-diagram {
     top: 15rem;
     width: min(780px, calc(100vw - 10rem));
@@ -546,6 +558,10 @@
 @media (max-width: 900px) {
   .projects-section {
     padding: 6rem 1.5rem;
+  }
+
+  .projects-section-starter {
+    justify-self: left;
   }
 
   .projects-content {
@@ -613,7 +629,7 @@
   }
 
   .projects-section-starter {
-    justify-self: center;
+    justify-self: left;
     margin-top: 2.5rem;
   }
 
@@ -691,6 +707,10 @@
 @media (max-width: 480px) {
   .projects-section {
     padding: 5rem 0.75rem;
+  }
+
+  .projects-section-starter {
+    justify-self: left;
   }
 
   .projects-title {
