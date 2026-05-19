@@ -15,17 +15,17 @@ import IconButton from "@mui/material/IconButton";
 import CodeOffIcon from "@mui/icons-material/CodeOff";
 import RocketLaunchIcon from "@mui/icons-material/RocketLaunch";
 import EmojiObjectsIcon from "@mui/icons-material/EmojiObjects";
-import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
+import WorkspacePremiumIcon from '@mui/icons-material/WorkspacePremium';
 import FolderOpenIcon from "@mui/icons-material/FolderOpen";
-import GroupIcon from "@mui/icons-material/Group";
+import StorageIcon from '@mui/icons-material/Storage';
 import TerminalIcon from "@mui/icons-material/Terminal";
 
 // STATS FOR STATS BOX
 const stats = [
   {
-    icon: <CalendarMonthIcon className="neon-blue-icon" fontSize="large" />,
-    value: "3+",
-    label: "Years of Experience",
+    icon: <WorkspacePremiumIcon className="neon-blue-icon" fontSize="large" />,
+    value: "2+",
+    label: "Professional Certifications",
   },
   {
     icon: <FolderOpenIcon className="neon-blue-icon" fontSize="large" />,
@@ -33,9 +33,9 @@ const stats = [
     label: "Projects Completed",
   },
   {
-    icon: <GroupIcon className="neon-blue-icon" fontSize="large" />,
-    value: "10+",
-    label: "Happy Clients",
+    icon: <StorageIcon className="neon-blue-icon" fontSize="large" />,
+    value: "2+",
+    label: "Tech Stacks",
   },
 ];
 
@@ -65,7 +65,7 @@ const textPoints = [
       </IconButton>
     ),
     title: "Full-Stack Development",
-    desc: "Lorem ipsum dolor, sit amet consectetur adipisicing elit.",
+    desc: "Building scalable apps with MERN and MEAN.",
   },
   {
     id: 2,
@@ -79,8 +79,8 @@ const textPoints = [
         <RocketLaunchIcon className="neon-blue-icon" />
       </IconButton>
     ),
-    title: "Performance Focused",
-    desc: "Lorem ipsum dolor, sit amet consectetur adipisicing elit.",
+    title: "Analytical Problem Solver",
+    desc: "Engineering precise and impactful digital solutions.",
   },
   {
     id: 3,
@@ -94,8 +94,8 @@ const textPoints = [
         <EmojiObjectsIcon className="neon-blue-icon" />
       </IconButton>
     ),
-    title: "Problem Solver",
-    desc: "Lorem ipsum dolor, sit amet consectetur adipisicing elit.",
+    title: "Modern Front-End Focused",
+    desc: "Crafting responsive UIs with React and Redux.",
   },
 ];
 
@@ -142,17 +142,19 @@ export default function About() {
             {/* THE ABOUT ME DESCRIPTION */}
             <RevealWrapper delay={0.8}>
               <p className="about-p">
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                Reprehenderit pariatur eum vero sequi dignissimos? Unde harum
-                facere facilis illum! Error repellat a voluptatibus praesentium
-                nostrum alias beatae porro sit vero.
+                I’m a Junior MERN/MEAN Stack Developer and an Electronics &
+                Communications Engineering graduate with a strong passion for
+                innovation. I blend my analytical engineering background with
+                modern web technologies to build dynamic, full-stack
+                applications and approach complex challenges with creativity and
+                precision.
               </p>
             </RevealWrapper>
             {/* === THE ABOUT ME DESCRIPTION === */}
 
             {/* THE ABOUT ME ICON POINTS */}
             {textPoints.map((point, index) => (
-            <RevealWrapper key={point.id} delay={pointsDelays[index]}>
+              <RevealWrapper key={point.id} delay={pointsDelays[index]}>
                 <div className="about-icon-description">
                   {point.icon}
                   <div className="about-icon-text">
@@ -160,7 +162,7 @@ export default function About() {
                     <p>{point.desc}</p>
                   </div>
                 </div>
-            </RevealWrapper>
+              </RevealWrapper>
             ))}
             {/* === THE ABOUT ME ICON POINTS === */}
 
@@ -188,11 +190,12 @@ export default function About() {
                         <Box sx={{ color: "#4a90d9", mb: 1 }}>{stat.icon}</Box>
                         <Typography
                           variant="h5"
+                          className="about-stat-value"
                           sx={{ color: "#fff", fontWeight: "bold" }}
                         >
                           {stat.value}
                         </Typography>
-                        <Typography variant="p" sx={{ color: "#8899aa" }}>
+                        <Typography variant="body1" className="about-stat-label" sx={{ color: "#8899aa" }}>
                           {stat.label}
                         </Typography>
                       </Box>
@@ -231,11 +234,11 @@ export default function About() {
                   <span className="about-picture-window-span1">const</span>{" "}
                   developer = &#123;
                   <br />
-                  passion:{" "}
-                  <span className="about-picture-window-span2">"Code"</span>
+                  background:{" "}
+                  <span className="about-picture-window-span2">"Engineering"</span>
                   <br />
-                  focus:{" "}
-                  <span className="about-picture-window-span2">"Build"</span>
+                  stack:{" "}
+                  <span className="about-picture-window-span2">"MERN & MEAN"</span>
                   <br />
                   mission:{" "}
                   <span className="about-picture-window-span2">"Impact"</span>

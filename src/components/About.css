@@ -118,7 +118,7 @@
 }
 
 .about-picture-container {
-  margin-left: 4rem
+  margin-left: 6rem
 }
 
 .about-picture-section img {
@@ -151,10 +151,10 @@
 
   position: absolute;
   top: 68%;
-  left: 57%;
+  left: 64%;
   transform: translateX(-50%);
 
-  width: 17rem;
+  width: 19rem;
   height: 8rem;
 
   z-index: 1;
@@ -178,7 +178,7 @@
 }
 
 .about-picture-window-span1 {
-  color: #0033ff;
+  color: #96aaff;
 }
 
 .about-picture-window-span2 {
@@ -242,6 +242,7 @@
     display: flex;
     justify-content: center;
     width: 100%;
+    margin-top: 2rem;
   }
 
   .about-stats-box > div {
@@ -255,6 +256,17 @@
     flex: 1;
   }
 
+  .about-stats-box .about-stat-value {
+    font-size: 1.4rem;
+    line-height: 2;
+    margin-bottom: 0.15rem;
+  }
+
+  .about-stats-box .about-stat-label {
+    font-size: 0.75rem;
+    line-height: 1.1;
+  }
+
   .about-picture-section {
     order: 2;
     display: flex;
@@ -265,10 +277,11 @@
   .about-picture-container {
     width: 24rem;
     height: 26rem;
+    margin: 0;
   }
 
   .about-picture-window {
-    width: 16rem;
+    width: 17rem;
     height: 7.5rem;
     left: 50%;
     transform: translateX(-50%);
@@ -357,7 +370,7 @@
   }
 
   .about-picture-window {
-    width: 15rem;
+    width: 16rem;
     height: 7rem;
     left: 50%;
     transform: translateX(-50%);
@@ -446,7 +459,7 @@
   }
 
   .about-picture-window {
-    width: 13rem;
+    width: 14rem;
     height: 6rem;
     left: 50%;
     top: 72%;
