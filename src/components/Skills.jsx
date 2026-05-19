@@ -1,18 +1,22 @@
 import "./Skills.css";
 import "../App.css";
 
+// MATERIEL UI COMPONENTS
 import Container from "@mui/material/Container";
 
+// MATERIAL UI ICONS
 import CodeIcon from "@mui/icons-material/Code";
 import StorageIcon from "@mui/icons-material/Storage";
 import BrushIcon from "@mui/icons-material/Brush";
 import ControlPointIcon from "@mui/icons-material/ControlPoint";
 
+// ANIMATIONS
 import TypingAnimation from "../animations/TypingAnimation";
 import NeonLineAnimation from "../animations/NeonLineAnimation";
 import SkillsTreeReveal from "../animations/SkillsTreeReveal";
 import RevealWrapper from "../animations/RevealWrapper";
 
+// SKILLS CONTENT
 const skills = [
   {
     number: "01",
@@ -40,13 +44,16 @@ const skills = [
   },
 ];
 
+// SKILLS CARDS DELAYS
 const cardDelays = [0.1, 0.25, 0.4, 0.55];
 
 export default function Skills() {
   return (
     <>
       <div id="skills-section" className="skills-section">
+        {/* SKILLS TITLE SECTION */}
         <Container className="skills-title">
+          {/* SECTION STARTER */}
           <RevealWrapper delay={0.1}>
             {(isVisible) => (
               <div className="skills-section-starter">
@@ -54,7 +61,9 @@ export default function Skills() {
               </div>
             )}
           </RevealWrapper>
+          {/* === SECTION STARTER === */}
 
+          {/* SECTION TITLE */}
           <RevealWrapper delay={0.2}>
             {(isVisible) => (
               <h1 className="skills-title">
@@ -66,18 +75,25 @@ export default function Skills() {
               </h1>
             )}
           </RevealWrapper>
+          {/* === SECTION TITLE === */}
 
+          {/* SECTION SUBTITLE */}
           <RevealWrapper delay={0.3}>
             <p className="skills-section-title-p">
               Technologies I've Mastered Along the Way
             </p>
           </RevealWrapper>
+          {/* === SECTION SUBTITLE === */}
 
+          {/* THE TITLE'S LINE */}
           <RevealWrapper delay={0.3}>
             <hr className="skills-hr neon-blue" />
           </RevealWrapper>
+          {/* THE TITLE'S LINE */}
         </Container>
+        {/* === SKILLS TITLE SECTION === */}
 
+        {/* SKILLS TREE DIAGRAM */}
         <div className="skills-tree-diagram">
           <div className="skills-tree-diagram1"></div>
           <div className="skills-tree-diagram2"></div>
@@ -86,7 +102,9 @@ export default function Skills() {
 
           <SkillsTreeReveal />
         </div>
+        {/* === SKILLS TREE DIAGRAM === */}
 
+        {/* GROUND SYMBOL */}
         <RevealWrapper className="skills-ground-reveal" delay={0.8}>
           <div className="skills-ground">
             <div className="skills-inner-ground1 neon-blue"></div>
@@ -94,7 +112,9 @@ export default function Skills() {
             <div className="skills-inner-ground3 neon-blue"></div>
           </div>
         </RevealWrapper>
+        {/* === GROUND SYMBOL === */}
 
+        {/* SKILLS CARDS */}
         <div className="skills-content">
           <div className="skills-grid">
             {skills.map((skill, index) => (
@@ -135,6 +155,7 @@ export default function Skills() {
             ))}
           </div>
         </div>
+        {/* === SKILLS CARDS === */}
       </div>
     </>
   );
