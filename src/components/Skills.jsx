@@ -33,14 +33,21 @@ const skills = [
   {
     number: "03",
     icon: <BrushIcon className="neon-blue-icon" />,
-    title: "TOOLS & PLATFORMS",
-    chips: ["VS Code", "Postman", "Git/GitHub", "PhotoShop", "Figma"],
+    title: "TOOLS & DATABASES",
+    chips: ["MongoDB", "MySQL", "VS Code", "Postman", "Git/GitHub", "Compass"],
   },
   {
     number: "04",
     icon: <ControlPointIcon className="neon-blue-icon" />,
     title: "OTHERS",
-    chips: ["Software", "Hardware", "Debugging", "CST Studio", "Proteus", "Office"],
+    chips: [
+      "PhotoShop",
+      "Figma",
+      "Debugging",
+      "CST Studio",
+      "Proteus",
+      "Office",
+    ],
   },
 ];
 
@@ -144,7 +151,10 @@ export default function Skills() {
 
                     <div className="skills-chips-grid">
                       {skill.chips.map((chip, chipIndex) => (
-                        <div key={chipIndex} className="skills-chip neon-border">
+                        <div
+                          key={chipIndex}
+                          className="skills-chip neon-border"
+                        >
                           {chip}
                         </div>
                       ))}
