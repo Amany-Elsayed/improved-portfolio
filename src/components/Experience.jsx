@@ -1,13 +1,16 @@
 import "./Experience.css";
 import "../App.css"
 
+// ANIMATIONS
 import TypingAnimation from "../animations/TypingAnimation";
 import NeonLineAnimation from "../animations/NeonLineAnimation";
 import RevealWrapper from "../animations/RevealWrapper";
 import ExperienceReveal from "../animations/ExperienceReveal";
 
+// MATERIAL UI COMPONENTS
 import Container from "@mui/material/Container";
 
+// VARIABLES
 const experiences = [
   {
     key: 1,
@@ -51,7 +54,11 @@ export default function Experience() {
   return (
     <>
       <div id="experience-section" className="experience-section">
+
+        {/* EXPERIENCE TITLE */}
         <Container className="experience-title">
+
+          {/* SECTION STARTER */}
           <RevealWrapper delay={0.1}>
             {(isVisible) => (
               <div className="experience-section-starter">
@@ -59,7 +66,9 @@ export default function Experience() {
               </div>
             )}
           </RevealWrapper>
+          {/* SECTION STARTER */}
 
+          {/* SECTION TITLE */}
           <RevealWrapper delay={0.2}>
             {(isVisible) => (
               <h1 className="experience-title">
@@ -71,23 +80,34 @@ export default function Experience() {
               </h1>
             )}
           </RevealWrapper>
+          {/* === SECTION TITLE === */}
 
+          {/* SECTION SUBTITLE */}
           <RevealWrapper delay={0.3}>
             <p className="experience-section-title-p">
               Timeline of All my Professional Growth
             </p>
           </RevealWrapper>
+          {/* === SECTION SUBTITLE === */}
 
+          {/* TITLE'S LINE */}
           <RevealWrapper delay={0.3}>
             <hr className="experience-hr neon-blue" />
           </RevealWrapper>
-        </Container>
+          {/* TITLE'S LINE */}
 
+        </Container>
+        {/* === EXPERIENCE TITLE === */}
+
+        {/* EXPERIENCE CONTENT */}
         <ExperienceReveal>
           {({ beamRef, rowVisible, setRowRef, setDotRef }) => (
             <div className="experience-content">
+              {/* LIGHT BEAM LINE TRACKING */}
               <div className="experience-beam-track" ref={beamRef} />
+              {/* === LIGHT BEAM LINE TRACKING === */}
 
+              {/* GROUND SYMBOL */}
               <RevealWrapper className="experience-ground-reveal" delay={0.8}>
                 <div className="experience-ground">
                   <div className="experience-inner-ground1 neon-blue"></div>
@@ -95,15 +115,21 @@ export default function Experience() {
                   <div className="experience-inner-ground3 neon-blue"></div>
                 </div>
               </RevealWrapper>
+              {/* === GROUND SYMBOL === */}
 
+              {/* CONTENT GRID */}
               {experiences.map((experience, i) => (
                 <div key={i} className="experience-grid" ref={setRowRef(i)}>
+
+                  {/* YEAR */}
                   <div
                     className={`experience-year-label${rowVisible.has(i) ? " row-item-visible" : ""}`}
                   >
                     <span className="experience-year">{experience.year}</span>
                   </div>
+                  {/* === YEAR === */}
 
+                  {/* LIGHT BEAM LINE */}
                   <div className="experience-light-beam">
                     <div
                       className={`experience-dot neon-blue${rowVisible.has(i) ? " row-item-visible" : ""}`}
@@ -112,7 +138,9 @@ export default function Experience() {
                       <div className="experience-inner-dot neon-blue" />
                     </div>
                   </div>
+                  {/* === LIGHT BEAM LINE === */}
 
+                  {/* CARD */}
                   <div
                     className={`experience-card neon-blue-border${rowVisible.has(i) ? " row-item-visible" : ""}`}
                   >
@@ -131,11 +159,16 @@ export default function Experience() {
                       {experience.description}
                     </p>
                   </div>
+                  {/* CARD */}
+
                 </div>
               ))}
+              {/* === CONTENT GRID === */}
+              
             </div>
           )}
         </ExperienceReveal>
+        {/* === EXPERIENCE CONTENT === */}
       </div>
     </>
   );

@@ -18,25 +18,25 @@ const skills = [
     number: "01",
     icon: <CodeIcon className="neon-blue-icon" />,
     title: "FRONTEND",
-    chips: ["html", "js", "css", "html", "js", "css"],
+    chips: ["Angular", "React JS", "HTML", "CSS", "BootStrap", "Material UI"],
   },
   {
     number: "02",
     icon: <StorageIcon className="neon-blue-icon" />,
-    title: "FRONTEND",
-    chips: ["html", "js", "css", "html", "js", "css"],
+    title: "BACKEND",
+    chips: ["Node JS", "Express JS", "PHP", "Laravel", "Python", "C++"],
   },
   {
     number: "03",
     icon: <BrushIcon className="neon-blue-icon" />,
-    title: "FRONTEND",
-    chips: ["html", "js", "css", "html", "js", "css"],
+    title: "TOOLS & PLATFORMS",
+    chips: ["VS Code", "Postman", "Git/GitHub", "PhotoShop", "Figma"],
   },
   {
     number: "04",
     icon: <ControlPointIcon className="neon-blue-icon" />,
-    title: "FRONTEND",
-    chips: ["html", "js", "css", "html", "js", "css"],
+    title: "OTHERS",
+    chips: ["Software", "Hardware", "Debugging", "CST Studio", "Proteus", "Office"],
   },
 ];
 
