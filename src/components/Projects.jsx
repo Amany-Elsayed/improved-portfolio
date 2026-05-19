@@ -29,20 +29,7 @@ const projects = [
         Open GitHub
       </Button>
     ),
-    openButton: (
-      <Button
-        component="a"
-        href=""
-        target="_blank"
-        rel="noopener noreferrer"
-        variant="contained"
-        className="project-card-btn"
-        disabled
-        sx={{ textDecoration: "line-through" }}
-      >
-        Try It Out
-      </Button>
-    ),
+    openButton: "",
   },
   {
     number: "02",

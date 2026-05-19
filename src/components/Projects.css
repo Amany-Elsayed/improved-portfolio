@@ -470,6 +470,13 @@
   left: 50%;
 }
 
+.projects-tree-diagram1::before,
+.projects-tree-diagram1::after,
+.projects-tree-diagram3::before,
+.projects-tree-diagram3::after {
+  display: none;
+}
+
 .projects-ground-reveal {
   position: absolute;
 

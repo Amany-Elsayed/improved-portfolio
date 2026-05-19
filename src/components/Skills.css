@@ -524,6 +524,13 @@
   left: 50%;
 }
 
+.skills-tree-diagram1::before,
+.skills-tree-diagram1::after,
+.skills-tree-diagram3::before,
+.skills-tree-diagram3::after {
+  display: none;
+}
+
 /* === SKILLS TREE DIAGRAM STYLE === */
 
 /* GROUND SYMBOL STYLE */
