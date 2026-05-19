@@ -119,6 +119,8 @@
   flex-direction: column;
   align-items: flex-end;
 
+  text-align: right;
+
   padding-right: 10px;
   padding-top: 43px;
 
@@ -143,6 +145,8 @@
 
 .experience-card {
   position: relative;
+
+  max-width: 600px;
 
   background: rgba(10, 15, 35, 0.85);
 
@@ -241,6 +245,7 @@
 .experience-card-text {
   font-size: 14px;
   line-height: 1.65;
+  text-align: left;
 
   color: #8fa0c0;
 
@@ -251,7 +256,7 @@
   position: absolute;
 
   left: 102px;
-  bottom: 1rem;
+  bottom: 1.5rem;
 
   transform: translateX(-50%);
 }
@@ -292,23 +297,164 @@
 
 /* RESPONSITIVITY */
 
-/* TABLET */
+/* ========================================================= */
+/* RESPONSITIVITY */
+/* ========================================================= */
 
-@media (max-width: 992px) {
-  .experience-content {
-    right: 2%;
-  }
+/* LARGE DESKTOP */
 
+@media (min-width: 1200px) {
   .experience-section-starter {
     justify-self: left;
   }
 
+  .experience-content {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+
+    right: 4%;
+  }
+
   .experience-grid {
-    grid-template-columns: 65px 34px 1fr;
+    grid-template-columns: 80px 40px 1fr;
+  }
+
+  .experience-card {
+    max-width: 600px;
+  }
+}
+
+/* === LARGE DESKTOP === */
+
+/* MEDIUM DESKTOP */
+
+@media (min-width: 1000px) and (max-width: 1200px) {
+  .experience-section-starter {
+    justify-self: left;
+  }
+
+  .experience-content {
+    right: 3%;
+  }
+
+  .experience-grid {
+    grid-template-columns: 75px 36px 1fr;
+  }
+
+  .experience-year {
+    font-size: 17px;
+  }
+
+  .experience-dot {
+    margin-left: 1rem;
+  }
+
+  .experience-card {
+    max-width: 560px;
+  }
+}
+
+/* === MEDIUM DESKTOP === */
+
+/* SMALL DESKTOP / LARGE TABLET */
+
+@media (min-width: 900px) and (max-width: 1000px) {
+  .experience-section-starter {
+    justify-self: left;
+  }
+
+  .experience-content {
+    right: 2%;
+  }
+
+  .experience-grid {
+    grid-template-columns: 68px 34px 1fr;
+  }
+
+  .experience-year-label {
+    padding-top: 38px;
+  }
+
+  .experience-year {
+    font-size: 15px;
+  }
+
+  .experience-dot {
+    width: 18px;
+    height: 18px;
+
+    margin-top: 4rem;
+  }
+
+  .experience-inner-dot {
+    width: 5px;
+    height: 5px;
+  }
+
+  .experience-card {
+    max-width: 520px;
+
+    padding: 18px 20px;
+
+    margin-left: 14px;
+
+    border-radius: 18px;
+  }
+
+  .experience-card-label {
+    font-size: 17px;
+  }
+
+  .experience-card-location,
+  .experience-card-date,
+  .experience-card-text {
+    font-size: 13px;
+  }
+}
+
+/* === SMALL DESKTOP / LARGE TABLET === */
+
+/* TABLET */
+
+@media (max-width: 900px) {
+  .experience-section {
+    padding: 6rem 1.5rem;
+  }
+
+  .experience-section-starter {
+    justify-self: left;
+    margin-top: 3rem;
+  }
+
+  .experience-title {
+    text-align: center;
+  }
+
+  .experience-section-title-p {
+    text-align: center;
+  }
+
+  .experience-hr {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .experience-content {
+    width: 100%;
+
+    padding-top: 3.5rem;
+    padding-bottom: 4rem;
+
+    right: 0;
+  }
+
+  .experience-grid {
+    grid-template-columns: 65px 32px 1fr;
   }
 
   .experience-year-label {
     padding-top: 36px;
+
     margin-top: 0.8rem;
   }
 
@@ -335,6 +481,10 @@
     margin-bottom: 1.5rem;
 
     border-radius: 16px;
+
+    width: 600px;
+    max-width: 100%;
+    box-sizing: border-box;
   }
 
   .experience-card-label {
@@ -350,31 +500,44 @@
   .experience-card-text {
     line-height: 1.5;
   }
+
+  .experience-ground-reveal {
+    left: 84px;
+    bottom: 1rem;
+  }
 }
 
 /* === TABLET === */
 
 /* PHONE */
 
-@media (max-width: 600px) {
-  .experience-content {
-    width: 100%;
-    right: 0;
-
-    padding-top: 3rem;
-    padding-bottom: 3rem;
+@media (max-width: 768px) {
+  .experience-section {
+    padding: 6rem 1rem;
   }
 
   .experience-section-starter {
     justify-self: left;
+    margin-top: 2.5rem;
   }
 
   .experience-title {
+    text-align: center;
     font-size: 2rem;
   }
 
   .experience-section-title-p {
     font-size: medium;
+    text-align: center;
+  }
+
+  .experience-content {
+    width: 100%;
+
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+
+    right: 0;
   }
 
   .experience-grid {
@@ -382,8 +545,8 @@
   }
 
   .experience-year-label {
-    padding-top: 30px;
-    padding-right: 6px;
+    padding-top: 65px;
+    padding-right: 1px;
   }
 
   .experience-year {
@@ -394,7 +557,7 @@
     width: 15px;
     height: 15px;
 
-    margin-top: 2.6rem;
+    margin-top: 5rem;
 
     border-width: 3px;
   }
@@ -405,14 +568,16 @@
   }
 
   .experience-card {
+    width: calc(100% - 15px);
+    max-width: 500px;
+
     padding: 14px 14px;
 
-    margin-left: 10px;
+    margin-left: 20px;
     margin-bottom: 1.25rem;
 
     border-radius: 14px;
 
-    width: calc(100% - 25px);
     box-sizing: border-box;
   }
 
@@ -434,8 +599,90 @@
   .experience-card-text {
     line-height: 1.45;
   }
+
+  .experience-ground-reveal {
+    left: 66px;
+    bottom: 1rem;
+  }
 }
 
 /* === PHONE === */
+
+/* SMALL PHONE */
+
+@media (max-width: 480px) {
+  .experience-section {
+    padding: 5rem 0.75rem;
+  }
+
+  .experience-title {
+    font-size: 1.8rem;
+  }
+
+  .experience-section-title-p {
+    font-size: 0.95rem;
+  }
+
+  .experience-grid {
+    grid-template-columns: 45px 22px 1fr;
+  }
+
+  .experience-year-label {
+    padding-top: 67px;
+    padding-right: 0;
+  }
+
+  .experience-year {
+    font-size: 11px;
+  }
+
+  .experience-dot {
+    width: 13px;
+    height: 13px;
+
+    margin-left: 1rem;
+    margin-top: 5rem;
+  }
+
+  .experience-inner-dot {
+    width: 3px;
+    height: 3px;
+  }
+
+  .experience-card {
+    width: calc(100% - 20px);
+
+    padding: 12px 12px;
+
+    margin-left: 12px;
+
+    border-radius: 12px;
+  }
+
+  .experience-card-label {
+    font-size: 13px;
+  }
+
+  .experience-card-location,
+  .experience-card-date,
+  .experience-card-text {
+    font-size: 11px;
+  }
+
+  .experience-card-text {
+    line-height: 1.4;
+  }
+
+  .experience-ground-reveal {
+    left: 56px;
+    bottom: 1.2rem;
+  }
+}
+
+/* === SMALL PHONE === */
+
+/* ========================================================= */
+/* === RESPONSITIVITY === */
+/* ========================================================= */
 
 /* === RESPONSITIVITY === */
