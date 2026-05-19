@@ -199,8 +199,8 @@ export default function Contact() {
           <LinkedInIcon className="neon-blue-icon" />
         </IconButton>
       ),
-      title: "EMAIL",
-      link: "amanyelsayed@outlook.com",
+      title: "LINKEDIN",
+      link: "linkedin.com/in/amany-elsayed0",
       actionIcon: (
         <IconButton
           aria-haspopup="true"
@@ -244,8 +244,8 @@ export default function Contact() {
           <GitHubIcon className="neon-blue-icon" />
         </IconButton>
       ),
-      title: "EMAIL",
-      link: "amanyelsayed@outlook.com",
+      title: "GITHUB",
+      link: "github.com/Amany-Elsayed",
       actionIcon: (
         <IconButton
           aria-haspopup="true"
@@ -286,6 +286,7 @@ export default function Contact() {
     <>
       <div id="contact-section" className="contact-section">
         <Container className="contact-section-title">
+          {/* SECTION STARTER */}
           <RevealWrapper delay={0.1}>
             {(isVisible) => (
               <div className="contact-section-starter">
@@ -293,7 +294,9 @@ export default function Contact() {
               </div>
             )}
           </RevealWrapper>
+          {/* === SECTION STARTER === */}
 
+          {/* SECTION TITLE */}
           <RevealWrapper delay={0.2}>
             {(isVisible) => (
               <h1 className="contact-title">
@@ -305,29 +308,36 @@ export default function Contact() {
               </h1>
             )}
           </RevealWrapper>
+          {/* === SECTION TITLE === */}
 
+          {/* TITLE'S LINE */}
           <RevealWrapper delay={0.3}>
             <hr className="contact-hr neon-blue" />
           </RevealWrapper>
+          {/* === TITLE'S LINE === */}
+
         </Container>
 
         <Container className="contact-content" maxWidth="lg">
           <Container className="contact-information-section">
+            {/* CONTACT TEXT */}
             <RevealWrapper delay={0.4}>
               <p className="contact-p">
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                Reprehenderit pariatur eum vero sequi dignissimos? Unde harum
-                facere facilis illum! Error repellat a voluptatibus praesentium
-                nostrum alias beatae porro sit vero.
+                I'm open to new opportunities, collaborations, or just a friendly hello. <br />
+                Feel free to reach out and let's create something impactful.
               </p>
             </RevealWrapper>
+            {/* === CONTACT TEXT === */}
 
+            {/* GET IN TOUCH LINE */}
             <RevealWrapper delay={0.5}>
               <p className="contact-get-in-touch neon-blue-text">
                 Get In Touch
               </p>
             </RevealWrapper>
+            {/* === GET IN TOUCH LINE === */}
 
+            {/* SOCIALS BOXES */}
             {socials.map((social, index) => (
               <RevealWrapper key={social.id} delay={socialDelays[index]}>
                 <div className="contact-box neon-blue-border">
@@ -340,7 +350,9 @@ export default function Contact() {
                 </div>
               </RevealWrapper>
             ))}
+            {/* === SOCIALS BOXES === */}
 
+            {/* TERMAIL WINDOW */}
             <RevealWrapper delay={0.9}>
               <div className="contact-availability-card neon-blue-border">
                 <div className="contact-availability-header">
@@ -371,8 +383,10 @@ export default function Contact() {
                 </div>
               </div>
             </RevealWrapper>
+            {/* === TERMAIL WINDOW === */}
           </Container>
 
+          {/* EMAIL FORM */}
           <Container className="contact-form-section">
             <RevealWrapper delay={1.0}>
               <form
@@ -426,7 +440,9 @@ export default function Contact() {
               </form>
             </RevealWrapper>
           </Container>
+          {/* === EMAIL FORM === */}
 
+          {/* TOASTS */}
           <Snackbar
             open={copyToastOpen}
             autoHideDuration={3000}
@@ -493,6 +509,7 @@ export default function Contact() {
               Message sent! I'll get back to you soon.
             </Alert>
           </Snackbar>
+          {/* === TOASTS === */}
         </Container>
       </div>
     </>

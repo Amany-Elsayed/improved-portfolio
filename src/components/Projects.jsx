@@ -14,13 +14,13 @@ const projects = [
     number: "01",
     pic: "./project1.png",
     section: "FULL-STACK",
-    title: "portfolio",
-    desc: "a simple protfolio design using css, js, and html",
-    chips: ["html", "js", "css", "html"],
+    title: "Chats-App",
+    desc: "A full-stack real-time chat application built with the MEAN stack featuring WebSocket support for instant messaging.",
+    chips: ["NodeJS", "ExpressJS", "MongoDB", "Angular", "Bootstrap"],
     gitButton: (
       <Button
         component="a"
-        href="https://github.com/Amany-Elsayed"
+        href="https://github.com/Amany-Elsayed/Chats-App"
         target="_blank"
         rel="noopener noreferrer"
         variant="contained"
@@ -32,11 +32,13 @@ const projects = [
     openButton: (
       <Button
         component="a"
-        href="https://github.com/Amany-Elsayed"
+        href=""
         target="_blank"
         rel="noopener noreferrer"
         variant="contained"
         className="project-card-btn"
+        disabled
+        sx={{ textDecoration: "line-through" }}
       >
         Try It Out
       </Button>
@@ -45,14 +47,14 @@ const projects = [
   {
     number: "02",
     pic: "./project2.png",
-    section: "FULL-STACK",
-    title: "portfolio",
-    desc: "a simple protfolio design using css, js, and html",
-    chips: ["html", "js", "css", "html"],
+    section: "PYTHON",
+    title: "AI Grading Model",
+    desc: "A simple AI program that takes exams and scores pragraph questions and saves the score of each student seperatly",
+    chips: ["Python", "AI", "API"],
     gitButton: (
       <Button
         component="a"
-        href="https://github.com/Amany-Elsayed"
+        href="https://github.com/Amany-Elsayed/AI-Grading-Model"
         target="_blank"
         rel="noopener noreferrer"
         variant="contained"
@@ -64,7 +66,7 @@ const projects = [
     openButton: (
       <Button
         component="a"
-        href="https://github.com/Amany-Elsayed"
+        href="https://ai-grading-api.onrender.com"
         target="_blank"
         rel="noopener noreferrer"
         variant="contained"
@@ -112,7 +114,7 @@ const projects = [
     section: "FULL-STACK",
     title: "portfolio",
     desc: "a simple protfolio design using css, js, and html",
-    chips: ["html", "js", "css", "html"],
+    chips: ["Python", "AI", "API"],
     gitButton: (
       <Button
         component="a"

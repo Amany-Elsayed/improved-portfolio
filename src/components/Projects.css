@@ -77,7 +77,7 @@
 .projects-card {
   position: relative;
 
-  width: 290px;
+  width: 350px;
 
   display: flex;
   flex-direction: column;
@@ -229,7 +229,7 @@
 
 .projects-chips-grid {
   display: grid;
-  grid-template-columns: 4fr 4fr 4fr 4fr;
+  grid-template-columns: 3fr 3fr 3fr;
   gap: 10px;
 }
 

@@ -33,6 +33,8 @@
 
 /* === CONTACT BACKGROUND EFFECT === */
 
+/* CONTACT TITLE SECTION */
+
 .contact-section-title {
   text-align: left;
 }
@@ -59,11 +61,15 @@
   margin-bottom: 1rem;
 }
 
+/* === CONTACT TITLE SECTION === */
+
 .contact-content {
   justify-content: center;
   align-items: center;
   display: flex;
 }
+
+/* CONTACT INFORMATION SECTION */
 
 .contact-information-section {
   text-align: left;
@@ -112,6 +118,10 @@
   margin-left: auto;
   padding: 5px;
 }
+
+/* === CONTACT INFORMATION SECTION ==== */
+
+/* TERMINAL WINDOW */
 
 .contact-availability-card {
   margin-top: 2rem;
@@ -185,6 +195,10 @@
 .contact-code-green {
   color: #4caf7d;
 }
+
+/* === TERMINAL WINDOW === */
+
+/* CONTACT FORM */
 
 .contact-form {
   display: flex;
@@ -320,6 +334,8 @@
   color: #3a5a7a;
   margin: 0;
 }
+
+/* === CONTACT FORM === */
 
 /* RESPONSITIVITY */
 
