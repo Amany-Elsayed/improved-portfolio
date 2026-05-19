@@ -1,5 +1,5 @@
 import "./Experience.css";
-import "../App.css"
+import "../App.css";
 
 // ANIMATIONS
 import TypingAnimation from "../animations/TypingAnimation";
@@ -19,7 +19,8 @@ const experiences = [
     company: "You Can Academy",
     dates: "Aug 2025 – Present",
     location: "Remote",
-    description: "Leading cross-functional teams to develop an e-learning platform. Ensuring UI/UX quality, managing project delivery milestones, and providing hands-on coding and design support.",
+    description:
+      "Leading cross-functional teams to develop an e-learning platform. Ensuring UI/UX quality, managing project delivery milestones, and providing hands-on coding and design support.",
   },
   {
     key: 2,
@@ -28,7 +29,8 @@ const experiences = [
     company: "National Telecommunication Institute (NTI)",
     dates: "Jul 2025 – Nov 2025",
     location: "Train-to-Hire Program / Egypt",
-    description: "Completed an intensive program focused on building full-stack web applications, gaining hands-on experience with MongoDB, Express.js, Angular, and Node.js.",
+    description:
+      "Completed an intensive program focused on building full-stack web applications, gaining hands-on experience with MongoDB, Express.js, Angular, and Node.js.",
   },
   {
     key: 3,
@@ -37,7 +39,8 @@ const experiences = [
     company: "Tanta University",
     dates: "2019 – 2025",
     location: "Tanta / Egypt",
-    description: "Developed strong analytical, research, and problem-solving skills, building a solid engineering foundation for tackling complex software development challenges.",
+    description:
+      "Developed strong analytical, research, and problem-solving skills, building a solid engineering foundation for tackling complex software development challenges.",
   },
   {
     key: 4,
@@ -46,7 +49,8 @@ const experiences = [
     company: "Self-Employed",
     dates: "2019 – Present",
     location: "Remote",
-    description: "Developing customized MEAN stack web applications, designing UI/UX assets in Figma, and delivering tailored digital solutions for diverse clients.",
+    description:
+      "Designing digital assets in Photoshop, managing professional documentation using Microsoft Office, and developing customized utility programs and scripts in C++ and Python.",
   },
 ];
 
@@ -54,10 +58,8 @@ export default function Experience() {
   return (
     <>
       <div id="experience-section" className="experience-section">
-
         {/* EXPERIENCE TITLE */}
         <Container className="experience-title">
-
           {/* SECTION STARTER */}
           <RevealWrapper delay={0.1}>
             {(isVisible) => (
@@ -95,7 +97,6 @@ export default function Experience() {
             <hr className="experience-hr neon-blue" />
           </RevealWrapper>
           {/* TITLE'S LINE */}
-
         </Container>
         {/* === EXPERIENCE TITLE === */}
 
@@ -120,7 +121,6 @@ export default function Experience() {
               {/* CONTENT GRID */}
               {experiences.map((experience, i) => (
                 <div key={i} className="experience-grid" ref={setRowRef(i)}>
-
                   {/* YEAR */}
                   <div
                     className={`experience-year-label${rowVisible.has(i) ? " row-item-visible" : ""}`}
@@ -160,11 +160,9 @@ export default function Experience() {
                     </p>
                   </div>
                   {/* CARD */}
-
                 </div>
               ))}
               {/* === CONTENT GRID === */}
-              
             </div>
           )}
         </ExperienceReveal>
