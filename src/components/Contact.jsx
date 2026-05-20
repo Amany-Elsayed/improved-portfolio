@@ -27,8 +27,8 @@ import { useRef, useState } from "react";
 export default function Contact() {
   const [popperType, setPopperType] = useState(null);
   const [anchorEl, setAnchorEl] = useState(null);
-  const [copyToastOpen, setCopyToastOpen] = useState(false);
   const [status, setStatus] = useState("");
+  const [copyToastOpen, setCopyToastOpen] = useState(false);
   const [toastOpen, setToastOpen] = useState(false);
   const [sentToastOpen, setSentToastOpen] = useState(false);
   const formRef = useRef();
