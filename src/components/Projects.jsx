@@ -66,14 +66,14 @@ const projects = [
   {
     number: "03",
     pic: "/project3.png",
-    section: "FULL-STACK",
-    title: "portfolio",
-    desc: "a simple protfolio design using css, js, and html",
-    chips: ["html", "js", "css", "html"],
+    section: "FRONTEND",
+    title: "Todo List",
+    desc: "A responsive Todo List application built with React, Vite, and Material UI.",
+    chips: ["ReactJS", "Material UI", "Vite", "CRUD"],
     gitButton: (
       <Button
         component="a"
-        href="https://github.com/Amany-Elsayed"
+        href="https://github.com/Amany-Elsayed/Todo-CRUD-React"
         target="_blank"
         rel="noopener noreferrer"
         variant="contained"
@@ -85,7 +85,7 @@ const projects = [
     openButton: (
       <Button
         component="a"
-        href="https://github.com/Amany-Elsayed"
+        href="todo-crud-react-test.netlify.app"
         target="_blank"
         rel="noopener noreferrer"
         variant="contained"
@@ -98,14 +98,14 @@ const projects = [
   {
     number: "04",
     pic: "/project4.png",
-    section: "FULL-STACK",
-    title: "portfolio",
-    desc: "a simple protfolio design using css, js, and html",
-    chips: ["Python", "AI", "API"],
+    section: "BACKEND",
+    title: "Portfolio Builder",
+    desc: "Backend API for a Portfolio Builder application built with Node.js, Express, and MongoDB. This backend handles authentication, portfolio management, and image uploads.",
+    chips: ["NodeJS", "ExpressJS", "MongoDB", "JWT", "Cloudinary", "Multer"],
     gitButton: (
       <Button
         component="a"
-        href="https://github.com/Amany-Elsayed"
+        href="https://github.com/Amany-Elsayed/Portfolio-Builder"
         target="_blank"
         rel="noopener noreferrer"
         variant="contained"
@@ -114,18 +114,7 @@ const projects = [
         Open GitHub
       </Button>
     ),
-    openButton: (
-      <Button
-        component="a"
-        href="https://github.com/Amany-Elsayed"
-        target="_blank"
-        rel="noopener noreferrer"
-        variant="contained"
-        className="project-card-btn"
-      >
-        Try It Out
-      </Button>
-    ),
+    openButton: "",
   },
 ];
 

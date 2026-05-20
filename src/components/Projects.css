@@ -245,7 +245,7 @@
 .projects-hover-overlay {
   position: absolute;
   inset: 0;
-   background: rgba(6, 10, 28, 0.45);
+  background: rgba(6, 10, 28, 0.45);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   display: flex;
@@ -531,7 +531,7 @@
 
   .projects-tree-diagram {
     top: 17rem;
-    height: 880px;
+    height: 1050px;
   }
 
   .projects-tree-diagram1,
@@ -541,7 +541,7 @@
 
   .projects-tree-diagram3,
   .projects-tree-diagram4 {
-    top: 647px;
+    top: 730px;
   }
 }
 
@@ -557,7 +557,7 @@
   .projects-tree-diagram {
     top: 17rem;
     width: min(780px, calc(100vw - 10rem));
-    height: 880px;
+    height: 1050px;
   }
 
   .projects-tree-diagram1,
@@ -577,7 +577,7 @@
   .projects-tree-diagram3,
   .projects-tree-diagram4,
   .projects-animated-branch.bottom {
-    top: 650px;
+    top: 730px;
   }
 }
 
@@ -593,7 +593,7 @@
   .projects-tree-diagram {
     top: 15rem;
     width: min(780px, calc(100vw - 10rem));
-    height: 870px;
+    height: 1050px;
   }
 
   .projects-tree-diagram1,
@@ -613,7 +613,7 @@
   .projects-tree-diagram3,
   .projects-tree-diagram4,
   .projects-animated-branch.bottom {
-    top: 650px;
+    top: 730px;
   }
 }
 
@@ -645,13 +645,13 @@
   }
 
   .projects-card {
-    width: 240px;
+    width: 320px;
     padding: 20px 18px 24px;
   }
 
   .projects-tree-diagram {
     width: 620px;
-    height: 950px;
+    height: 1125px;
     top: 21rem;
   }
 
@@ -672,7 +672,7 @@
   .projects-tree-diagram3,
   .projects-tree-diagram4,
   .projects-animated-branch.bottom {
-    top: 650px;
+    top: 730px;
   }
 
   .projects-tree-animated-beam {
@@ -723,7 +723,7 @@
 
   .projects-tree-diagram {
     width: 620px;
-    height: 1800px;
+    height: 2050px;
     top: 20rem;
   }
 
@@ -795,7 +795,7 @@
 
   .projects-tree-diagram {
     top: 19.5rem;
-    height: calc(100% - 17.5rem);
+    height: calc(100% - 16.5rem);
   }
 
   .projects-tree-animated-beam {
