@@ -57,7 +57,7 @@ export default function Hero() {
         {/* HERO BUTTONS */}
         <Button
           component="a"
-          href="./Amany_Elsayed_Eg.pdf"
+          href="./Amany_Elsayed.pdf"
           target="_blank"
           rel="noopener noreferrer"
           variant="contained"
