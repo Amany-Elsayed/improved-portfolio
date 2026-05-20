@@ -1,14 +1,17 @@
 import "../App.css";
 import "./Projects.css";
 
+// MATERIAL UI COMPONENTS
 import Container from "@mui/material/Container";
 import Button from "@mui/material/Button";
 
+// ANIMATIONS
 import RevealWrapper from "../animations/RevealWrapper";
 import TypingAnimation from "../animations/TypingAnimation";
 import NeonLineAnimation from "../animations/NeonLineAnimation";
 import ProjectsTreeReveal from "../animations/ProjectsTreeReveal";
 
+// PROJECTS FOR PROJECTS CARDS
 const projects = [
   {
     number: "01",
@@ -118,6 +121,7 @@ const projects = [
   },
 ];
 
+// PROJECT CARDS DELAYS
 const cardDelays = [0.1, 0.25, 0.3, 0.45];
 
 export default function Projects() {
@@ -125,6 +129,7 @@ export default function Projects() {
     <>
       <div id="projects-section" className="projects-section">
         <Container className="projects-title">
+          {/* SECTION STARTER */}
           <RevealWrapper delay={0.1}>
             {(isVisible) => (
               <div className="projects-section-starter">
@@ -132,7 +137,9 @@ export default function Projects() {
               </div>
             )}
           </RevealWrapper>
+          {/* === SECTION STARTER === */}
 
+          {/* SECTION TITLE */}
           <RevealWrapper delay={0.2}>
             {(isVisible) => (
               <h1 className="projects-title">
@@ -144,18 +151,24 @@ export default function Projects() {
               </h1>
             )}
           </RevealWrapper>
+          {/* === SECTION TITLE === */}
 
+          {/* SECTION SUBTITLE */}
           <RevealWrapper delay={0.3}>
             <p className="projects-section-title-p">
               A Showcase of the work I've Built
             </p>
           </RevealWrapper>
+          {/* === SECTION SUBTITLE === */}
 
+          {/* TITLE'S HR */}
           <RevealWrapper delay={0.3}>
             <hr className="projects-hr neon-blue" />
           </RevealWrapper>
+          {/* === TITLE'S HR === */}
         </Container>
 
+        {/* PROJECT TREE DIAGRAM */}
         <div className="projects-tree-diagram">
           <div className="projects-tree-diagram1"></div>
           <div className="projects-tree-diagram2"></div>
@@ -164,7 +177,9 @@ export default function Projects() {
 
           <ProjectsTreeReveal />
         </div>
+        {/* === PROJECT TREE DIAGRAM === */}
 
+        {/* GROUND SYMBOL */}
         <RevealWrapper className="projects-ground-reveal" delay={0.8}>
           <div className="projects-ground">
             <div className="projects-inner-ground1 neon-blue"></div>
@@ -172,7 +187,9 @@ export default function Projects() {
             <div className="projects-inner-ground3 neon-blue"></div>
           </div>
         </RevealWrapper>
+        {/* === GROUND SYMBOL === */}
 
+        {/* PROJECT CARDS */}
         <div className="projects-content">
           <div className="projects-grid">
             {projects.map((project, index) => (
@@ -225,6 +242,7 @@ export default function Projects() {
             ))}
           </div>
         </div>
+        {/* === PROJECT CARDS === */}
       </div>
     </>
   );

@@ -11,6 +11,8 @@
   align-items: center;
 }
 
+/* PROJECTS BACKGROUND EFFECT */
+
 .projects-section::before {
   content: "";
 
@@ -33,6 +35,10 @@
   z-index: 1;
 }
 
+/* === PROJECTS BACKGROUND EFFECT === */
+
+/* PROJECTS TITLE CONTENT */
+
 .projects-hr {
   border: 2px solid #0033cce1;
   border-radius: 5px;
@@ -48,6 +54,8 @@
   text-align: left;
 }
 
+/* === PROJECTS TITLE CONTENT === */
+
 .projects-content {
   padding-top: 2rem;
   padding-bottom: 4rem;
@@ -61,6 +69,8 @@
   column-gap: 100px;
   row-gap: 40px;
 }
+
+/* PROJECTS CARDS */
 
 .projects-card-wrapper {
   position: relative;
@@ -100,6 +110,8 @@
 
   animation: idleBorderPulse 3s ease-in-out infinite;
 }
+
+/* PROJECTS CRAD ANIMATION EFFECTS */
 
 .projects-card::before,
 .projects-card::after {
@@ -166,6 +178,10 @@
     border-color: rgba(0, 89, 255, 0.35);
   }
 }
+
+/* === PROJECTS CRAD ANIMATION EFFECTS === */
+
+/* PROJECTS CARDS CONTENT */
 
 .project-pic {
   margin: -24px -20px 0;
@@ -241,6 +257,10 @@
   font-size: 13px;
   text-transform: capitalize;
 }
+
+/* === PROJECTS CARDS CONTENT === */
+
+/* PROJECTS CARD HOVER EFFECTS */
 
 .projects-hover-overlay {
   position: absolute;
@@ -339,6 +359,12 @@
 .project-card-btn:hover::before {
   left: 100%;
 }
+
+/* === PROJECTS CARD HOVER EFFECTS === */
+
+/* === PROJECTS CARDS === */
+
+/* PROJECTS TREE DIAGRAMS STYLE */
 
 .projects-tree-diagram {
   position: absolute;
@@ -477,6 +503,10 @@
   display: none;
 }
 
+/* === PROJECTS TREE DIAGRAMS STYLE === */
+
+/* GROUND SYMBOL */
+
 .projects-ground-reveal {
   position: absolute;
 
@@ -519,6 +549,8 @@
 .projects-inner-ground3 {
   width: 45%;
 }
+
+/* === GROUND SYMBOL === */
 
 /* RESPONSITIVITY */
 
