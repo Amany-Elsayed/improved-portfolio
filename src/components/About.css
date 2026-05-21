@@ -460,15 +460,15 @@
 
   .about-picture-window {
     width: 14rem;
-    height: 6rem;
+    height: 7rem;
     left: 50%;
-    top: 72%;
+    top: 60%;
     padding: 0.6rem;
     gap: 0.6rem;
   }
 
   .about-picture-window-text {
-    font-size: 0.5rem;
+    font-size: 0.7rem;
   }
 
   .about-stats-box > div {

@@ -15,9 +15,9 @@ import IconButton from "@mui/material/IconButton";
 import CodeOffIcon from "@mui/icons-material/CodeOff";
 import RocketLaunchIcon from "@mui/icons-material/RocketLaunch";
 import EmojiObjectsIcon from "@mui/icons-material/EmojiObjects";
-import WorkspacePremiumIcon from '@mui/icons-material/WorkspacePremium';
+import WorkspacePremiumIcon from "@mui/icons-material/WorkspacePremium";
 import FolderOpenIcon from "@mui/icons-material/FolderOpen";
-import StorageIcon from '@mui/icons-material/Storage';
+import StorageIcon from "@mui/icons-material/Storage";
 import TerminalIcon from "@mui/icons-material/Terminal";
 
 // STATS FOR STATS BOX
@@ -142,12 +142,12 @@ export default function About() {
             {/* THE ABOUT ME DESCRIPTION */}
             <RevealWrapper delay={0.8}>
               <p className="about-p">
-                I’m a Junior MERN/MEAN Stack Developer and an Electronics &
-                Communications Engineering graduate with a strong passion for
-                innovation. I blend my analytical engineering background with
-                modern web technologies to build dynamic, full-stack
-                applications and approach complex challenges with creativity and
-                precision.
+                I'm <span className="neon-blue-text">Amany Elsayed</span>
+                —engineer by training, full-stack developer by passion. I
+                combine my Electronics & Communications background with
+                MERN/MEAN stack expertise to build applications that are
+                technically sound and user-focused. I approach every project
+                with engineering rigor and creative problem-solving.
               </p>
             </RevealWrapper>
             {/* === THE ABOUT ME DESCRIPTION === */}
@@ -195,7 +195,11 @@ export default function About() {
                         >
                           {stat.value}
                         </Typography>
-                        <Typography variant="body1" className="about-stat-label" sx={{ color: "#8899aa" }}>
+                        <Typography
+                          variant="body1"
+                          className="about-stat-label"
+                          sx={{ color: "#8899aa" }}
+                        >
                           {stat.label}
                         </Typography>
                       </Box>
@@ -235,10 +239,14 @@ export default function About() {
                   developer = &#123;
                   <br />
                   background:{" "}
-                  <span className="about-picture-window-span2">"Engineering"</span>
+                  <span className="about-picture-window-span2">
+                    "Engineering"
+                  </span>
                   <br />
                   stack:{" "}
-                  <span className="about-picture-window-span2">"MERN & MEAN"</span>
+                  <span className="about-picture-window-span2">
+                    "MERN & MEAN"
+                  </span>
                   <br />
                   mission:{" "}
                   <span className="about-picture-window-span2">"Impact"</span>
