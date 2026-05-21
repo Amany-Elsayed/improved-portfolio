@@ -54,6 +54,7 @@
 }
 
 .circuit-span {
+  cursor: default;
   --glow: 0;
   transition:
     --glow 0.8s ease,
