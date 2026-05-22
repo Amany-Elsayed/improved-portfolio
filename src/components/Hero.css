@@ -65,6 +65,7 @@
     0 0 calc(var(--glow) * 20px) #0af;
 }
 
+
 .circuit-span:hover {
   --glow: 1;
   color: #92e5fe;
