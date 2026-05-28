@@ -821,12 +821,12 @@
   }
 
   .projects-card {
-    width: 17rem;
+    width: 20rem;
     padding: 18px 16px 22px;
   }
 
   .projects-tree-diagram {
-    top: 19.5rem;
+    top: 20rem;
     height: calc(100% - 16.5rem);
   }
 
