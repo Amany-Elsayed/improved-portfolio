@@ -74,7 +74,6 @@ export default function Hero() {
           startIcon={<AlternateEmailIcon />}
         >
 
-          
           Contact
         </Button>
         {/* === HERO BUTTONS === */}
