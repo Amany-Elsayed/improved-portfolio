@@ -65,7 +65,6 @@ export default function Hero() {
           startIcon={<DescriptionIcon />}
         >
 
-
           show CV
         </Button>
         <Button
