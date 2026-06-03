@@ -66,7 +66,6 @@ export default function Hero() {
         >
 
 
-          
           show CV
         </Button>
         <Button
