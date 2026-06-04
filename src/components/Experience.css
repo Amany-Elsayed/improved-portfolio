@@ -323,7 +323,6 @@
   .experience-content {
     padding-top: 4rem;
     padding-bottom: 4rem;
-
     right: 4%;
   }
 
@@ -394,7 +393,6 @@
   .experience-dot {
     width: 18px;
     height: 18px;
-
     margin-top: 4rem;
   }
 
@@ -405,11 +403,8 @@
 
   .experience-card {
     max-width: 520px;
-
     padding: 18px 20px;
-
     margin-left: 14px;
-
     border-radius: 18px;
   }
 
@@ -453,10 +448,8 @@
 
   .experience-content {
     width: 100%;
-
     padding-top: 3.5rem;
     padding-bottom: 4rem;
-
     right: 0;
   }
 
@@ -466,7 +459,6 @@
 
   .experience-year-label {
     padding-top: 36px;
-
     margin-top: 0.8rem;
   }
 
@@ -477,7 +469,6 @@
   .experience-dot {
     width: 18px;
     height: 18px;
-
     margin-top: 3rem;
   }
 
@@ -488,12 +479,9 @@
 
   .experience-card {
     padding: 16px 18px;
-
     margin-left: 14px;
     margin-bottom: 1.5rem;
-
     border-radius: 16px;
-
     width: 600px;
     max-width: 100%;
     box-sizing: border-box;
@@ -545,10 +533,8 @@
 
   .experience-content {
     width: 100%;
-
     padding-top: 3rem;
     padding-bottom: 3rem;
-
     right: 0;
   }
 
@@ -568,9 +554,7 @@
   .experience-dot {
     width: 15px;
     height: 15px;
-
     margin-top: 5rem;
-
     border-width: 3px;
   }
 
@@ -582,14 +566,10 @@
   .experience-card {
     width: calc(100% - 15px);
     max-width: 500px;
-
     padding: 14px 14px;
-
     margin-left: 20px;
     margin-bottom: 1.25rem;
-
     border-radius: 14px;
-
     box-sizing: border-box;
   }
 
@@ -651,7 +631,6 @@
   .experience-dot {
     width: 13px;
     height: 13px;
-
     margin-left: 1rem;
     margin-top: 5rem;
   }
@@ -663,11 +642,8 @@
 
   .experience-card {
     width: calc(100% - 20px);
-
     padding: 12px 12px;
-
     margin-left: 12px;
-
     border-radius: 12px;
   }
 
