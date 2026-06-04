@@ -245,11 +245,8 @@
 
 .experience-card-date {
   font-size: 14px;
-
   color: #6b7fa3;
-
   margin: 0 0 12px;
-
   display: flex;
   gap: 8px;
 }
@@ -258,9 +255,7 @@
   font-size: 14px;
   line-height: 1.65;
   text-align: left;
-
   color: #8fa0c0;
-
   margin: 0;
 }
 
@@ -268,10 +263,8 @@
 
 .experience-ground-reveal {
   position: absolute;
-
   left: 102px;
   bottom: 1.5rem;
-
   transform: translateX(-50%);
 }
 
@@ -280,9 +273,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
   gap: 4px;
-
   width: 2rem;
   height: 2rem;
 }
@@ -291,9 +282,7 @@
 .experience-inner-ground2,
 .experience-inner-ground3 {
   background-color: #5274fa;
-
   height: 5px;
-
   border-radius: 5px;
 }
 
