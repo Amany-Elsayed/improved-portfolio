@@ -130,11 +130,7 @@ footer {
 
 /* RESPONSITIVITY */
 
-/* =========================
-   RESPONSIVENESS
-========================= */
-
-/* ========= TABLET ========= */
+/* TABLET */
 
 @media (max-width: 900px) {
   footer {
@@ -185,7 +181,9 @@ footer {
   }
 }
 
-/* ========= PHONE ========= */
+/* === TABLET === */
+
+/* PHONE */
 
 @media (max-width: 768px) {
   footer {
@@ -228,7 +226,9 @@ footer {
   }
 }
 
-/* ========= SMALL PHONES ========= */
+/* === PHONE === */
+
+/* SMALL PHONE */
 
 @media (max-width: 480px) {
   footer {
@@ -259,8 +259,6 @@ footer {
   }
 }
 
-/* =========================
-   END RESPONSIVENESS
-========================= */
+/* === SMALL PHONE === */
 
 /* === RESPONSITIVITY === */
