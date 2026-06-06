@@ -42,10 +42,8 @@ footer {
 
 .footer-desc {
   margin: 0 0 1.5rem 0;
-
   line-height: 1.8;
   font-size: 1rem;
-
   color: #b7c2d3;
 }
 
@@ -64,7 +62,6 @@ footer {
   font-size: 1.4rem;
   cursor: pointer;
   justify-content: center;
-
   color: #94a3b8;
   transition: 0.25s ease;
 }
