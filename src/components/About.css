@@ -146,17 +146,13 @@
   background-color: #00061f5e;
   backdrop-filter: blur(3px);
   -webkit-backdrop-filter: blur(3px);
-
   gap: 1.2rem;
-
   position: absolute;
   top: 68%;
   left: 64%;
   transform: translateX(-50%);
-
   width: 19rem;
   height: 8rem;
-
   z-index: 1;
   padding: 0.8rem;
   box-sizing: border-box;
