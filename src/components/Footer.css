@@ -83,20 +83,16 @@ footer {
 .footer-header,
 .footer-heading {
   margin: 0 0 1.25rem 0;
-
   font-size: 1.5rem;
   font-weight: 600;
-
   color: white;
 }
 
 .footer-link,
 .footer-contact p {
   margin: 0 0 0.9rem 0;
-
   font-size: 1rem;
   color: #b7c2d3;
-
   text-decoration: none;
   transition: 0.2s ease;
 }
